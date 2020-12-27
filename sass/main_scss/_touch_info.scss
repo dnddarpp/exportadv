@@ -1,0 +1,77 @@
+@include respond-cozy {
+}
+@include respond-compact {
+
+}
+@include respond-pad {
+
+
+}
+@include respond-mobile {
+
+}
+@include respond-mobilephone {
+    .info_title{
+        font-size: 2em;
+    }
+
+    .mls_picbox {
+    padding: 6px 6px;
+    }
+    .picture_wrap {
+    margin-top: 40px;
+    }
+}
+@include respond-phone {
+    .picselect{
+        margin-bottom: 20px;
+    }
+    .country {
+        li{
+            border-radius: 50px;
+            padding: 8px 12px;
+            border: 1px solid #17A6DC;
+            margin-right: 6px;
+        }
+    }
+
+
+}
+@include respond-phone_xs{
+    .info_title{
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        margin-top: 11px;
+    }
+    .search_picbox{
+        padding: 3px 6px;
+    }
+    .banner_title {
+    font-size: 1.3em;
+    }
+    .page_p {
+    font-size: 0.8em;
+    }
+    .page_title {
+    top: 1%;
+    left: 12%;
+    }
+    .bread_crumb {
+    font-size: 0.8em;
+    }
+    .picselect{
+        margin-bottom: 7px;
+    }
+    .picutre_bg{
+        margin-bottom: 20px;
+    }
+    .picture_name {
+        font-size: 1.2em;
+    }
+    .picmu_font {
+    padding: 12px 40px;
+    }
+    .picture_checkboxicon {
+    top: 12px;
+    }
+}

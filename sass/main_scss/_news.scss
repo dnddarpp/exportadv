@@ -1,0 +1,131 @@
+.news_ppc{
+    width: 80%;
+    margin: 0 auto;
+    img{
+        width: 100%;
+    }
+}
+.nw_ft{
+    font-size: 2em;
+}
+.news_list{
+    border-bottom:1px solid #C4C4C4;
+    padding:40px;
+    margin-bottom: 10px;
+}
+.new_table {
+    max-width: 100%;
+    display: table;
+    border-collapse: collapse;
+}
+
+.row_table {
+    display: table-row;
+}
+.cell_x2 {
+    display: table-cell;
+    vertical-align: middle;
+    width: 50%;
+}
+.nw_more{
+    display: inline-block;
+    margin-top: 30px;
+    li{
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        line-height: 1.5;
+        letter-spacing: 2px;
+    }
+}
+.nwpc{
+    width: 6px;
+    display: inline-block;
+    vertical-align: middle;
+    img{
+        width: 100%;
+    }
+}
+.nw_line{
+    width: 80px;
+    height: 1px;
+    background-color: #c5c5c5;
+}
+.nwes_title{
+    font-size: 2em;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color:$ex_tBlue;
+    display: inline-block;
+    margin-right: 30px;
+    vertical-align: middle;
+    letter-spacing: 1.2px;
+    line-height: 1.5;
+}
+.newspushtime{
+    li{
+        font-size: 1em;
+        line-height: 1.5;
+        color: #888888;
+        letter-spacing: 2px;
+        display: inline-block;
+        margin-right: 10px;
+    }
+}
+.newcontent{
+    font-size: 1.3em!important;
+    line-height: 1.8!important;
+    color: #585858;
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 30px;
+}
+.ne_new{
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 70px;
+    img{
+        width: 100%;
+    }
+}
+.ns_prev{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.ns_prev2{
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -4px;
+}
+.prev_ic{
+    width: 35px;
+    img{
+        width: 100%;
+    }
+}
+.newspoint{
+    overflow : hidden;
+     text-overflow : ellipsis;
+     white-space : nowrap;
+     width : 240px;
+     font-size: 1.3em !important;
+    line-height: 1.8;
+    color: #585858;
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.prv{
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.pr_R{
+    text-align: right;
+    margin-right: 32px;
+}
+.pr_L{
+    text-align: left;
+}

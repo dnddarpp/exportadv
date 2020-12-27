@@ -1,0 +1,49 @@
+.info_title{
+    font-size: 2em;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color:$ex_tBlue;
+    display: inline-block;
+    margin-right: 30px;
+    vertical-align: middle;
+}
+.info_btn{
+    display: inline-block;
+    vertical-align: middle;
+}
+.country{
+    li{
+        display: inline-block;
+        background-color: #ffffff;
+        border-radius: 50px;
+        padding: 8px 20px;
+        border: 1px solid $ex_tBlue;
+        margin-right: 8px;
+    }
+    .active{
+        background-color:$ex_tBlue;
+        color:#ffffff;
+    }
+}
+.country_name{
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.margin_bm{
+    margin-bottom: 30px;
+}
+.cou_pic{
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    img{
+        width: 100%;
+    }
+}
+.cou_font{
+    font-size: 1.3em;
+    text-align: center;
+}
+.national{
+    margin-bottom: 30px;
+}

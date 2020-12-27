@@ -1,0 +1,53 @@
+@include respond-cozy {
+}
+@include respond-compact {
+
+}
+@include respond-pad {
+
+    .graybg_font{
+        margin-bottom: 20px;
+    }
+}
+@include respond-mobile {
+    .newspoint {
+        width: 140px;
+        font-size: 1em !important;
+        margin-right: 10px;
+    }
+
+}
+@include respond-mobilephone {
+    .user_pic{
+        width: 30%;
+    }
+    .issu_name{
+        line-height: 1.2;
+    }
+    .free_full_pic{
+        width: 100%;
+    }
+    .people_pic{
+        width: 50px;
+        height: 50px;
+    }
+
+}
+@include respond-phone {
+    .newspoint {
+        width: 82px;
+    }
+
+
+}
+@include respond-phone_xs{
+    .newspoint {
+        width: 64px;
+    }
+    .prev_ic {
+        width: 20px;
+    }
+    .pr_R {
+    margin-right: 9px;
+    }
+}
