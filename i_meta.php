@@ -21,5 +21,7 @@
 <link href="dist/css/bootstrap-grid.css" rel="stylesheet">
 <link rel="stylesheet" href="lib/css/normalize.min.css">
 <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="dist/js/main.js" charset="utf-8"></script>

@@ -578,6 +578,15 @@ img {
   vertical-align: middle;
 }
 
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
 .m_hd_onlinebt {
   background-color: #17A6DC;
   border-radius: 50px;
@@ -1360,7 +1369,7 @@ img {
   }
 
   .menu_down {
-    display: block;
+    display: none;
   }
 
   .sev_bg {

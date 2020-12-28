@@ -1,4 +1,4 @@
-<div class="menu_down">
+<div class="menu_down" id="mobilemenu">
    <ul class="down_list">
       <li><a href="free">免費諮詢介紹</a></li>
       <li><a href="news">最新消息 </a></li>
@@ -8,6 +8,7 @@
       <li><a href="video">影音專區</a></li>
       <li ><a href="online">線上諮詢</a></li>
    </ul>
+   <div class="mask"></div>
 </div>
 <header>
    <nav class="hd_bg">
