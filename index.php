@@ -113,25 +113,25 @@
             <div class="title_pic"><img src="images/title02.svg" alt="政府輔導及各項外銷資源"></div>
             <div class="row res_wrap">
                <div class="col-6 col-md-3 col-lg-3 res_box" data-aos="flip-left">
-                 <a href="#">
+                 <a href="spreadsheets">
                     <div class="res_pic"><img src="images/re1.svg" alt=""></div>
                     <div class="res_font">政府輔導外銷資源</div>
                   </a>
                </div>
                <div class="col-6 col-md-3 col-lg-3" data-aos="flip-left">
-                 <a href="#">
+                 <a href="spreadsheets">
                   <div class="res_pic"><img src="images/re2.svg" alt=""></div>
                   <div class="res_font">海外市場資訊</div>
                   </a>
                </div>
                <div class="col-6 col-md-3 col-lg-3" data-aos="flip-left">
-                 <a href="#">
+                 <a href="spreadsheets">
                   <div class="res_pic"><img src="images/re3.svg" alt=""></div>
                   <div class="res_font">海外拓銷工具</div>
                   </a>
                </div>
                <div class="col-6 col-md-3 col-lg-3" data-aos="flip-left">
-                 <a href="#">
+                 <a href="spreadsheets">
                   <div class="res_pic"><img src="images/re4.svg" alt=""></div>
                   <div class="res_font">數位轉型專區</div>
                   </a>

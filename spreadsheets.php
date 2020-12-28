@@ -48,7 +48,7 @@
 						<div class="spread_bg">
 							<div class="spr_top_Bg">
 								<div class="bu_icon"><img src="images/spr2.svg" alt=""></div>
-								<div class="bu_font">國際行銷諮詢服務報名</div>
+								<div class="bu_font">海外市場資訊</div>
 							</div>
 							<div class="spr_font">
 								<a href="https://www.taitraesource.com/default.asp" target="_blank">
@@ -76,7 +76,7 @@
 						<div class="spread_bg">
 							<div class="spr_top_Bg">
 								<div class="bu_icon"><img src="images/spr3.svg" alt=""></div>
-								<div class="bu_font">海外拓銷工具</div>
+								<div class="bu_font">數位轉型專區</div>
 							</div>
 							<div class="spr_font">
 								<a href="https://gd.taiwantrade.com/?_ga=2.117056134.1083193909.1609090490-1411834324.1605109940" target="_blank">
@@ -122,7 +122,7 @@
 						<div class="spread_bg">
 							<div class="spr_top_Bg">
 								<div class="bu_icon"><img src="images/spr4.svg" alt=""></div>
-								<div class="bu_font">海外市場資訊</div>
+								<div class="bu_font">海外拓銷工具</div>
 							</div>
 							<div class="spr_font">
 								<a href="http://mk.taiwantrade.com.tw/?_ga=2.117056134.1083193909.1609090490-1411834324.1605109940" target="_blank">
