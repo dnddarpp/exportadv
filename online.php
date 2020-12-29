@@ -43,32 +43,73 @@
 				tmpall.push(tmp1)
 				tmpall.push(tmp2)
 				//qaary = [{"title":"","content":tmpall}]
-				qaary = [{"title":"","content":[{"title":"壹、	國際市場資訊",
-				"content":[
-					{"title":"一、	市場商情",
-					"content":""},
-					{"title":"二、	我國出口相關規定",
-					"content":""},
-					{"title":"三、	外國進口關稅",
-					"content":""},
-					{"title":"四、	外國進口相關規定",
+				qaary = [
+					{"title":"",
 					"content":[
-						{"title":"(一)	食品類",
-						"content":""},
-						{"title":"(二)	工業製品",
-						"content":""}]}]},
-					{"title":"貳、	國際市場開發",
-					"content":[
-						{"title":"一、	篩選目標市場",
-						"content":""},
-						{"title":"二、	市場拓展",
+						{"title":"壹、	國際市場資訊",
 						"content":[
-							{"title":"(一)	買主資料蒐集",
+							{"title":"一、	市場商情",
 							"content":""},
-							{"title":"(二)	外貿協會拓銷活動",
+							{"title":"二、	我國出口相關規定",
 							"content":""},
-							{"title":"(三)	海外布局",
-							"content":""}]}]}
+							{"title":"三、	外國進口關稅",
+							"content":""},
+							{"title":"四、	外國進口相關規定",
+							"content":[
+								{"title":"(一)	食品類",
+								"content":""},
+								{"title":"(二)	工業製品",
+								"content":""}]}]},
+						{"title":"貳、	國際市場開發",
+						"content":[
+							{"title":"一、	篩選目標市場",
+							"content":""},
+							{"title":"二、	市場拓展",
+							"content":[
+								{"title":"(一)	買主資料蒐集",
+								"content":""},
+								{"title":"(二)	外貿協會拓銷活動",
+								"content":""},
+								{"title":"(三)	海外布局",
+								"content":""}]}]},
+						{"title":"參、	數位貿易",
+						"content":[
+							{"title":"一、	網路行銷",
+							"content":""},
+							{"title":"二、	電子商務",
+							"content":""}]},
+						{"title":"肆、	國際貿易常見問題",
+						"content":[
+							{"title":"一、	對國際貿易流程不熟悉；缺乏實務經驗",
+							"content":""},
+							{"title":"二、	精進商用英文及其他外語能力",
+							"content":""},
+							{"title":"三、	貿易糾紛；付款及收帳問題",
+							"content":""},
+							{"title":"四、	貿易風險",
+							"content":""},]},
+						{"title":"伍、	政府輔導資源",
+						"content":[
+							{"title":"一、	經濟部國際貿易局手冊",
+							"content":""},
+							{"title":"二、	展覽補助",
+							"content":""},
+							{"title":"三、	協助廠商布建海外通路",
+							"content":""},
+							{"title":"四、	貿易金融",
+							"content":""},
+							{"title":"五、	其他各項補助措施",
+							"content":""},]},
+						{"title":"陸、	外貿協會服務",
+						"content":[
+							{"title":"一、	貿協官網及ONE TAITRA服務手冊",
+							"content":""},
+							{"title":"二、	駐外單位協助廠商",
+							"content":""},
+							{"title":"三、	培訓國際行銷人才",
+							"content":""},
+							{"title":"四、	企業攬才",
+							"content":""},]},
 						]}]
 
 				console.log(JSON.stringify(qaary))
@@ -101,7 +142,7 @@
 					str+='<a'
 					if(content.length<=0){
 						console.log("0000000:")
-						str+=' href="online_last"'
+						str+=' href="online_last2"'
 					}
 					str+='>'
 					str+='<div class="onlie_qa" data-layer="'+_layer+'" data-id="'+mm+'">'+title+'</div>'
