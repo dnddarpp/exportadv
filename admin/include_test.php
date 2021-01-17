@@ -6,7 +6,7 @@ require_once("fun/magic_quotes.php");
 openDB();
 date_default_timezone_set("Asia/Taipei");
 
-if(!isset($_SESSION['mng_mid']) && empty($_SESSION['mng_mid'])) {
+if(!isset($_SESSION['mid']) && empty($_SESSION['mid'])) {
   echo ("<SCRIPT LANGUAGE='JavaScript'>
     window.alert('登入逾時，請重新登入')
     window.location.href='login';

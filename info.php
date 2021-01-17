@@ -1,8 +1,52 @@
+<?php
+
+	require_once("include.php");
+
+		$typename = Array("東協10+6","美洲","亞洲","非洲","歐洲","中東","其他");
+	$type = $conn->real_escape_string($_GET["type"]);
+	if(!$type){
+		$type=1;
+	}
+
+	//每頁顯示筆數
+
+	$per = 20;
+	$curpage = $conn->real_escape_string($_GET["page"]);
+
+	$sql = "SELECT * FROM tariff where display=1 ORDER BY `type`, `sort` , `id` DESC ";
+	$result = qury_sel($sql, $conn);
+
+	$total = $result->num_rows;
+	$pages = ceil($total/$per);
+
+	if(!$curpage){
+		$curpage=1;
+	}
+	$offset = ($curpage-1)*$per;
+	$sql .= "Limit $per OFFSET $offset";
+	$result = qury_sel($sql, $conn);
+?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<?php require_once('i_meta.php'); ?>
 		<title>各國關稅</title>
+		<script>
+			var type = "<?=$type?>"
+			$( document ).ready(function(){
+					setShowType(type)
+					$(".country li").click(function(){
+						$(".country li").removeClass("active")
+						$(this).addClass("active")
+						type = $(this).data("id")
+						setShowType(type)
+					})
+			})
+			function setShowType(_type){
+				$(".national").hide()
+				$('.national[data-type="'+_type+'"]').show()
+			}
+		</script>
 	</head>
 	<body >
 		<?php require_once('i_header.php'); ?>
@@ -28,57 +72,36 @@
 				<div class="info_title">各國關稅</div>
 				<div class="info_btn">
 					<ul class="country">
-						<li class="active">東協10+6</li>
-						<li>美洲</li>
-						<li>亞洲</li>
-						<li>非洲</li>
-						<li>其他</li>
+						<li class="active" data-id="1">東協10+6</li>
+						<li data-id="2">美洲</li>
+						<li data-id="3">亞洲</li>
+						<li data-id="4">非洲</li>
+						<li data-id="5">歐洲</li>
+						<li data-id="6">中東</li>
+						<li data-id="7">其他</li>
 					</ul>
 				</div>
 				<div class="line"></div>
-				<div class="country_name">東協10+6</div>
-				<p class="margin_bm">發布日期: 2020/09/28</p>
+				<div class="country_name"></div>
+				<!-- <p class="margin_bm">發布日期: 2020/09/28</p> -->
 				<div class="row">
-					<div class="national col-4 col-md-2 col-lg-2">
-						<div class="cou_pic"><img src="images/g1.png" alt=""></div>
-						<div class="cou_font">新加坡</div>
+					<?php
+						while($data = mysqli_fetch_assoc($result)) {
+							$type = $typename[$data["type"]-1];
+							$date =  explode(" ", $data["date"])[0];
+							$public_date =  explode(" ", $data["Public_Date"])[0];
+
+					?>
+					<div class="national col-4 col-md-2 col-lg-2" data-type="<?=$data["type"]?>">
+						<a href="<?=$data["url"]?>" target="_blank">
+							<div class="cou_pic"><img src="pic/tariff/<?=$data["pic"]?>" alt=""></div>
+							<div class="cou_font"><?=$data["title"]?></div>
+						</a>
 					</div>
-					<div class="national col-4 col-md-2 col-lg-2">
-						<div class="cou_pic"><img src="images/g5.png" alt=""></div>
-						<div class="cou_font">泰國</div>
-					</div>
-					<div class="national col-4 col-md-2 col-lg-2">
-						<div class="cou_pic"><img src="images/g6.png" alt=""></div>
-						<div class="cou_font">印尼</div>
-					</div>
-					<div class="national col-4 col-md-2 col-lg-2">
-						<div class="cou_pic"><img src="images/g7.png" alt=""></div>
-						<div class="cou_font">馬來西亞</div>
-					</div>
-					<div class="national col-4 col-md-2 col-lg-2">
-						<div class="cou_pic"><img src="images/g2.png" alt=""></div>
-						<div class="cou_font">越南</div>
-					</div>
-					<div class="national col-4 col-md-2 col-lg-2">
-						<div class="cou_pic"><img src="images/g8.png" alt=""></div>
-						<div class="cou_font">菲律賓</div>
-					</div>
-					<div class="national col-4 col-md-2 col-lg-2">
-						<div class="cou_pic"><img src="images/g9.png" alt=""></div>
-						<div class="cou_font">汶萊</div>
-					</div>
-					<div class="national col-4 col-md-2 col-lg-2">
-						<div class="cou_pic"><img src="images/g3.png" alt=""></div>
-						<div class="cou_font">緬甸</div>
-					</div>
-					<div class="national col-4 col-md-2 col-lg-2">
-						<div class="cou_pic"><img src="images/g4.png" alt=""></div>
-						<div class="cou_font">寮國</div>
-					</div>
-					<div class="national col-4 col-md-2 col-lg-2">
-						<div class="cou_pic"><img src="images/g10.png" alt=""></div>
-						<div class="cou_font">柬埔寨</div>
-					</div>
+					<?php
+						}
+					?>
+
 				</div>
 			</div>
 		</section>

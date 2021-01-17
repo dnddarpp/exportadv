@@ -3437,3 +3437,10 @@ html.touch body #query-list .container::-webkit-scrollbar-thumb:window-inactive 
 .media_bg table tr {
   padding: 20px 0;
 }
+
+#pic {
+  max-width: 300px;
+}
+#pic img {
+  width: 100%;
+}

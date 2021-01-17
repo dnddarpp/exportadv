@@ -1,19 +1,15 @@
 <?php
 
-	require_once("include_test.php");
+	require_once("include.php");
 
-	$typename = Array("最新消息","產業新聞");
-	$type = $conn->real_escape_string($_GET["type"]);
-	if(!$type){
-		$type=1;
-	}
+	$typename = Array("東協10+6","美洲","亞洲","非洲","歐洲","中東","其他");
 
 	//每頁顯示筆數
 
 	$per = 20;
 	$curpage = $conn->real_escape_string($_GET["page"]);
 
-	$sql = "SELECT * FROM news where type = ".$type." ORDER BY `Public_date` DESC, `sort` DESC, `id` DESC ";
+	$sql = "SELECT * FROM `tariff` where 1=1 ORDER BY `type`, `sort`, `id` DESC ";
 	$result = qury_sel($sql, $conn);
 
 	$total = $result->num_rows;
@@ -43,56 +39,27 @@
 				<?php require_once('i_menu.php'); ?>
 				<div class="sidebar">
 					<div class="right_continer">
-						<div class="adsright_title">最新消息-<?=$typename[$type-1]?></div>
-						<form>
-							<div class="news_manag">
-								<div class="manag_box">
-									發布時間
-									<input name="btime" type="text" value="" class=datepicker-input style='border:1px solid #ccc' />  -
-									<input name="etime" type="text" value="" class=datepicker-input style='border:1px solid #ccc' />
-								</div>
-								<!-- <div class="manag_box">選擇分類
-									<label><input name=class type=radio value=0 > 不限</label>
-									<label><input name=class type=radio value=1 checked>最新消息</label>
-									<label><input name=class type=radio value=2 >產業公告</label>
-								</div> -->
-								<div class="manag_box">
-									搜尋標題
-									<div class="man_bord"><input name="title" value="" type="text" /></div>
-								</div>
-								<div class="manag_box">
-									搜尋全文
-									<div class="man_bord"><input name="title_content" value="" type="text" placeholder='標題或內容' /></div>
-								</div>
-								<br>
-								<div class="btnwrap">
-									<button class="delete_btn" id=search_btn>搜尋</button>
-								</div>
-							</div>
-						</form>
-						<div class="icon_dk">
+						<div class="adsright_title">外連資源</div>
+						<!-- <div class="icon_dk">
 							<ul>
 								<li><i class="mdi mdi-view-headline"></i></li>
 								<li><i class="mdi mdi-view-list"></i></li>
 							</ul>
-						</div>
+						</div> -->
 						<div class="news_table">
 							<table width="100%" border="0">
 								<tr>
 									<td class="tab_gray" width="5%">編輯
 									<!-- <td class="tab_gray" width="5%">顯示 -->
 									<!-- <td class="tab_gray" width="5%">刪除 -->
-									<td class="tab_gray">標題
 									<td class="tab_gray" width="10%">類別
+									<td class="tab_gray">標題
 									<td class="tab_gray" width="5%">顯示
-									<td class="tab_gray" width="10%">發佈日期
 									<td class="tab_gray" width="10%">最後更新日期
 								<tr style='border-bottom:1px solid #f2f2f2'>
-									<td><a href="newsedit?type=new&typeid=<?=$type?>"><i class="mdi mdi-plus-box"></i></a>
+									<td><a href="tariffedit?type=new&typeid=<?=$type?>"><i class="mdi mdi-plus-box"></i></a>
 									<td>新增
 									<!-- <td> -->
-									<td>
-									<td>
 									<td>
 									<td>
 								<?php
@@ -102,18 +69,17 @@
 											$display = "N";
 										}
 										$type = $typename[$data["type"]-1];
-										$date =  explode(" ", $data["date"])[0];
-										$public_date =  explode(" ", $data["Public_Date"])[0];
+										$last = new DateTime($data["Last_time"]);
+										$update = $last->format('Y-m-d');
 								?>
 								<tr>
-									<td><a href="newsedit?type=edit&id=<?=$data["id"]?>"><i class="mdi mdi-file-document-edit"></i></a>
+									<td><a href="tariffedit?type=edit&id=<?=$data["id"]?>"><i class="mdi mdi-file-document-edit"></i></a>
 									<!-- <td><a href=news_more.do data-method=post data-param='{"id":118,"act":"display"}'><i class="mdi mdi-eye"></i></a> -->
 									<!-- <td><a href=news_more.do data-method=post data-param='{"id":118,"act":"delete"}' data-confirm=確定要刪除嗎? data-done=reload><i class="mdi mdi-delete"></i></a> -->
-									<td><?=$data["title"]?></td>
 									<td><?=$type?></td>
+									<td><?=$data["title"]?></td>
 									<td><?=$display?></td>
-									<td><?=$public_date?></td>
-									<td><?=$data["Last_time"]?></td>
+									<td><?=$update?></td>
 								<?php
 								}
 								?>

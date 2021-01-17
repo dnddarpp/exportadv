@@ -1,3 +1,19 @@
+<?php
+  require_once('include.php');
+
+  $id = $conn->real_escape_string($_GET["id"]);
+	$sql = "select *  from `news` where 1=1 and id = $id ";
+	$pjdata = qury_sel($sql, $conn);
+	$data = mysqli_fetch_assoc($pjdata);
+	$typename = Array("最新消息","產業新聞");
+	$type = $typename[$data["type"]-1];
+	$date = explode(" ", $data["Public_Date"])[0];
+	$last = new DateTime($data["Last_time"]);
+	$update = $last->format('Y-m-d');
+	//$text = str_ireplace(['\\\\r', '\\\\n'], "", $data["content"]);
+	$text = $data["content"];
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -18,9 +34,9 @@
 					<ul>
 						<li><a href="index">首頁</a></li>
 						<li>/</li>
-						<li><a href="news">最新消息</a></li>
+						<li><a href="news"><?=$type?></a></li>
 						<li>/</li>
-						<li class="bread_active">馬上報名『數位行銷服務團』12場全台巡迴｜免費參加｜專家指導｜行銷秘笈</li>
+						<li class="bread_active"><?=$data["title"]?></li>
 					</ul>
 				</div>
 			</div>
@@ -28,19 +44,15 @@
 		<section>
 			<div class="container">
 				<div class="nwes_title">
-					財團法人台灣永續能源研究基金會訂於109年5月11日至8月1日止受理申請「2020第13屆台灣企業永續獎」，歡迎業者報名參加!
+					<?=$data["title"]?>
 				</div>
 				<ul class="newspushtime">
-					<li>發布日期  : 2020/05/13</li>
-					<li> 更新日期: 2020/05/13</li>
+					<li>發布日期：<?=$date?></li>
+					<li> 更新日期：<?=$update?></li>
 				</ul>
 				<div class="line"></div>
-				<p class="newcontent">
-					展現企業永續績效及社會影響力的絕佳機會來了！由台灣企業永續學院主辦之「2020 第13屆TCSA台灣企業永續獎」於3月16日公告報名簡章，本屆一大亮點為企業卓越案例(前為最佳單項績效)中增設「資訊安全獎」、「大學USR永續方案獎」及「醫院HSR永續方案獎」等獎項。評選將於5月11日起開放受理報名，歡迎台灣企業、外商企業、醫院、學校及非營利機構共同角逐企業永續最高榮譽，相關評選辦法公告及活動詳情請逕至活動官網（tcsaward.org.tw）查詢
-				</p>
-				<div class="ne_new">
-					<img src="images/dee.jpg" alt="">
-					<p class="newcontent">2019年頒獎典禮:透過世界級的舞台 讓國際社會見證台灣永續力</p>
+				<div class="maincontent">
+					<?=$text?>
 				</div>
 				<div class="line"></div>
 				<div class="row prv">
