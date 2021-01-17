@@ -1,3 +1,26 @@
+<?php
+
+	require_once("include.php");
+
+
+	//每頁顯示筆數
+
+	$per = 20;
+	$curpage = $conn->real_escape_string($_GET["page"]);
+
+	$sql = "SELECT * FROM event where display=1 ORDER BY  `sort` , `id` DESC ";
+	$result = qury_sel($sql, $conn);
+
+	$total = $result->num_rows;
+	$pages = ceil($total/$per);
+
+	if(!$curpage){
+		$curpage=1;
+	}
+	$offset = ($curpage-1)*$per;
+	$sql .= "Limit $per OFFSET $offset";
+	$result = qury_sel($sql, $conn);
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -35,7 +58,7 @@
 				<div class="picture_searchbar">
 					<div class="search_picbox">
 						<select name="">
-							<option>2020</option>
+							<option data-id="2020">2020</option>
 							<option>2019</option>
 							<option>2018</option>
 							<option>2017</option>
@@ -45,52 +68,27 @@
 				</div>
 				<div class="line"></div>
 				<div class="row picture_wrap">
+					<?php
+						while($data = mysqli_fetch_assoc($result)) {
+							$type = $typename[$data["type"]-1];
+							$date =  explode(" ", $data["date"])[0];
+							$public_date =  explode(" ", $data["Public_Date"])[0];
+
+					?>
 					<div class="col-6 col-md-6 col-lg-6">
 						<a href="picture_more">
 							<div class="picutre_bg">
-								<div class="picture_top_Bg" style="background-image:url(images/pic1.jpg)" ;=""></div>
+								<div class="picture_top_Bg" style="background-image:url(pic/event/<?=$data['pic']?>)"></div>
 								<div class="picmu_font">
-									<div class="picture_name">臺北場說明會</div>
-									<p>2016-11-21</p>
+									<div class="picture_name"><?=$data["title"]?></div>
+									<p><?=$public_date?></p>
 								</div>
 							</div>
 						</a>
 					</div>
-					<div class="col-6 col-md-6 col-lg-6">
-						<a href="picture_more">
-							<div class="picutre_bg">
-								<div class="picture_top_Bg" style="background-image:url(images/pic1.jpg)" ;=""></div>
-								<div class="picmu_font">
-									<div class="picture_name">臺北場說明會</div>
-									<p>2016-11-21</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-6 col-md-6 col-lg-6">
-						<a href="picture_more">
-							<div class="picutre_bg">
-								<div class="picture_top_Bg" style="background-image:url(images/pic1.jpg)" ;=""></div>
-								<div class="picmu_font">
-									<div class="picture_name">臺北場說明會</div>
-									<p>2016-11-21</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-6 col-md-6 col-lg-6">
-						<a href="picture_more">
-							<div class="picutre_bg">
-								<div class="picture_top_Bg" style="background-image:url(images/pic1.jpg)" ;=""></div>
-								<div class="picmu_font">
-									<div class="picture_name">臺北場說明會</div>
-									<p>2016-11-21</p>
-								</div>
-							</div>
-						</a>
-					</div>
+				<?php } ?>
 				</div>
-				<ul class="prev_btn onlinepage">
+				<!-- <ul class="prev_btn onlinepage">
 					<a href="#">
 						<li>< Prev</li>
 					</a>
@@ -109,7 +107,7 @@
 					<a href="#">
 						<li>Next ></li>
 					</a>
-				</ul>
+				</ul> -->
 			</div>
 		</section>
     <?php require_once('i_bottom.php'); ?>

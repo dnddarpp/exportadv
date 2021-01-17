@@ -1,3 +1,31 @@
+<?php
+
+	require_once("include.php");
+
+	$typename = Array("最新消息","產業新聞");
+	$type = $conn->real_escape_string($_GET["type"]);
+	if(!$type){
+		$type=1;
+	}
+
+	//每頁顯示筆數
+
+	$per = 20;
+	$curpage = $conn->real_escape_string($_GET["page"]);
+
+	$sql = "SELECT * FROM news where display=1 ORDER BY `Public_date` DESC, `sort` DESC, `id` DESC ";
+	$result = qury_sel($sql, $conn);
+
+	$total = $result->num_rows;
+	$pages = ceil($total/$per);
+
+	if(!$curpage){
+		$curpage=1;
+	}
+	$offset = ($curpage-1)*$per;
+	$sql .= "Limit $per OFFSET $offset";
+	$result = qury_sel($sql, $conn);
+?>
 <!DOCTYPE html>
 <html>
    <head>
@@ -41,75 +69,42 @@
          <div class="title_pic"><img src="images/title01.svg" alt="最新消息"></div>
          <div class="container" data-aos="fade-up">
             <div class="row">
+              <?php
+      					while($data = mysqli_fetch_assoc($result)) {
+      						$type = $typename[$data["type"]-1];
+      						$date =  explode(" ", $data["date"])[0];
+      						$public_date =  explode(" ", $data["Public_Date"])[0];
+                  $pdate = new DateTime($data["Public_Date"]);
+                	$yy = $pdate->format('Y');
+                  $mm = $pdate->format('M');
+                  $dd = $pdate->format('d');
+
+      				?>
                <div class="col-12 col-md-12 col-lg-6">
-                 <a href="news_more.php">
+                 <a href="news_more.php?id=<?=$data["id"]?>">
                   <div class="news_bg">
                      <div class="news_L">
-                        <div class="news_pic"style="background-image:url(images/news1.jpg)" ; alt=""></div>
+                        <div class="news_pic"style="background-image:url(pic/news/<?=$data["pic"]?>)" ; alt=""></div>
                      </div>
                      <div class="news_R">
-                        <div class="date">04</div>
-                        <div class="month"><span class="blue">JAN</span> 2020</div>
-                        <h2>2020第十三屆TCSA台灣企業永續獎開跑，自即日起至8月1日止開始受理...</h2>
-                        <p>藉由商業模式九宮格( Business Model Canvas )，解析智慧物流在科技領域中的應用趨勢。...</p>
+                        <div class="date"><?=$dd?></div>
+                        <div class="month"><span class="blue"><?=$mm?></span> <?=$yy?></div>
+                        <h2><?=$data["title"]?></h2>
+                        <p><?=$data["description"]?></p>
                      </div>
                   </div>
                 </a>
                </div>
-               <div class="col-12 col-md-12 col-lg-6">
-                 <a href="news_more.php">
-                  <div class="news_bg">
-                     <div class="news_L">
-                        <div class="news_pic"style="background-image:url(images/news1.jpg)" ; alt=""></div>
-                     </div>
-                     <div class="news_R">
-                        <div class="date">04</div>
-                        <div class="month"><span class="blue">JAN</span> 2020</div>
-                        <h2>2020第十三屆TCSA台灣企業永續獎開跑，自即日起至8月1日止開始受理...</h2>
-                        <p>藉由商業模式九宮格( Business Model Canvas )，解析智慧物流在科技領域中的應用趨勢。...</p>
-                     </div>
-                  </div>
-                </a>
-               </div>
-               <div class="col-12 col-md-12 col-lg-6">
-                 <a href="news_more.php">
-                  <div class="news_bg">
-                     <div class="news_L">
-                        <div class="news_pic"style="background-image:url(images/news1.jpg)" ; alt=""></div>
-                     </div>
-                     <div class="news_R">
-                        <div class="date">04</div>
-                        <div class="month"><span class="blue">JAN</span> 2020</div>
-                        <h2>2020第十三屆TCSA台灣企業永續獎開跑，自即日起至8月1日止開始受理...</h2>
-                        <p>藉由商業模式九宮格( Business Model Canvas )，解析智慧物流在科技領域中的應用趨勢。...</p>
-                     </div>
-                  </div>
-                </a>
-               </div>
-               <div class="col-12 col-md-12 col-lg-6">
-                 <a href="news_more.php">
-                  <div class="news_bg">
-                     <div class="news_L">
-                        <div class="news_pic"style="background-image:url(images/news1.jpg)" ; alt=""></div>
-                     </div>
-                     <div class="news_R">
-                        <div class="date">04</div>
-                        <div class="month"><span class="blue">JAN</span> 2020</div>
-                        <h2>2020第十三屆TCSA台灣企業永續獎開跑，自即日起至8月1日止開始受理...</h2>
-                        <p>藉由商業模式九宮格( Business Model Canvas )，解析智慧物流在科技領域中的應用趨勢。...</p>
-                     </div>
-                  </div>
-                  </a>
-               </div>
+             <?php } ?>
             </div>
-            <div class="dot">
+            <!-- <div class="dot">
                <ul>
                   <li><img src="images/d1.svg" alt=""></li>
                   <li><img src="images/d2.svg" alt=""></li>
                   <li><img src="images/d1.svg" alt=""></li>
                   <li><img src="images/d1.svg" alt=""></li>
                </ul>
-            </div>
+            </div> -->
             <div class="title_pic"><img src="images/title02.svg" alt="政府輔導及各項外銷資源"></div>
             <div class="row res_wrap">
                <div class="col-6 col-md-3 col-lg-3 res_box" data-aos="flip-left">

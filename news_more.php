@@ -55,7 +55,7 @@
 					<?=$text?>
 				</div>
 				<div class="line"></div>
-				<div class="row prv">
+				<!-- <div class="row prv">
 					<div class="col-6 col-md-6 col-lg-6">
 						<a href="#">
 							<div class="ns_prev">
@@ -82,27 +82,7 @@
 							</div>
 						</a>
 					</div>
-				</div>
-				<ul class="prev_btn onlinepage">
-					<a href="#">
-						<li>< Prev</li>
-					</a>
-					<a href="#">
-						<li class="actvie">1</li>
-					</a>
-					<a href="#">
-						<li>2</li>
-					</a>
-					<a href="#">
-						<li>3</li>
-					</a>
-					<a href="#">
-						<li>4</li>
-					</a>
-					<a href="#">
-						<li>Next ></li>
-					</a>
-				</ul>
+				</div> -->
 			</div>
 		</section>
     <?php require_once('i_bottom.php'); ?>

@@ -1,3 +1,26 @@
+<?php
+
+	require_once("include.php");
+
+
+	//每頁顯示筆數
+
+	$per = 20;
+	$curpage = $conn->real_escape_string($_GET["page"]);
+
+	$sql = "SELECT * FROM media where display=1 ORDER BY  `sort` , `id` DESC ";
+	$result = qury_sel($sql, $conn);
+
+	$total = $result->num_rows;
+	$pages = ceil($total/$per);
+
+	if(!$curpage){
+		$curpage=1;
+	}
+	$offset = ($curpage-1)*$per;
+	$sql .= "Limit $per OFFSET $offset";
+	$result = qury_sel($sql, $conn);
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -47,60 +70,29 @@
 				</div>
 				<div class="line"></div>
 				<div class="row picture_wrap">
+					<?php
+						while($data = mysqli_fetch_assoc($result)) {
+							$type = $typename[$data["type"]-1];
+							$date =  explode(" ", $data["date"])[0];
+							$public_date =  explode(" ", $data["Public_Date"])[0];
+
+					?>
 					<div class="col-12 col-md-6 col-lg-6">
-						<a data-fancybox href="https://youtu.be/6hv_Z5t_2Ao">
+						<a data-fancybox href="<?=$data["url"]?>">
 							<div class="picutre_bg">
-								<div class="picture_top_Bg" style="background-image:url(images/pic1.jpg)" ;="">
+								<div class="picture_top_Bg" style="background-image:url(pic/media/<?=$data['pic']?>)">
 									<div class="playicon"><img src="images/play.svg" alt=""></div>
 								</div>
 								<div class="picmu_font">
-									<div class="picture_name">臺北場說明會</div>
-									<p>發布日期: 2020/06/30</p>
+									<div class="picture_name"><?=$data["title"]?></div>
+									<p>發布日期: <?=$public_date?></p>
 								</div>
 							</div>
 						</a>
 					</div>
-					<div class="col-12 col-md-6 col-lg-6">
-						<a data-fancybox href="https://youtu.be/6hv_Z5t_2Ao">
-							<div class="picutre_bg">
-								<div class="picture_top_Bg" style="background-image:url(images/pic1.jpg)" ;="">
-									<div class="playicon"><img src="images/play.svg" alt=""></div>
-								</div>
-								<div class="picmu_font">
-									<div class="picture_name">百項資源單一窗口 國際行銷諮詢中心10...</div>
-									<p>發布日期: 2020/06/30</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-12 col-md-6 col-lg-6">
-						<a data-fancybox href="https://youtu.be/6hv_Z5t_2Ao">
-							<div class="picutre_bg">
-								<div class="picture_top_Bg" style="background-image:url(images/pic1.jpg)" ;="">
-									<div class="playicon"><img src="images/play.svg" alt=""></div>
-								</div>
-								<div class="picmu_font">
-									<div class="picture_name">外貿協會國際行銷諮詢服務升級2.0記者會</div>
-									<p>發布日期: 2020/06/30</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-12 col-md-6 col-lg-6">
-						<a data-fancybox href="https://youtu.be/6hv_Z5t_2Ao">
-							<div class="picutre_bg">
-								<div class="picture_top_Bg" style="background-image:url(images/pic1.jpg)" ;="">
-									<div class="playicon"><img src="images/play.svg" alt=""></div>
-								</div>
-								<div class="picmu_font">
-									<div class="picture_name">ATLife 2017臺灣輔具暨長期照護大展</div>
-									<p>發布日期: 2020/06/30</p>
-								</div>
-							</div>
-						</a>
-					</div>
+				<?php } ?>
 				</div>
-				<ul class="prev_btn onlinepage">
+				<!-- <ul class="prev_btn onlinepage">
 					<a href="#">
 						<li>< Prev</li>
 					</a>
@@ -119,7 +111,7 @@
 					<a href="#">
 						<li>Next ></li>
 					</a>
-				</ul>
+				</ul> -->
 			</div>
 		</section>
     <?php require_once('i_bottom.php'); ?>
