@@ -57,7 +57,7 @@
 					    <div class="search_input"><input name="" type="text"  placeholder="搜尋"/></div>
 					</div>
 					</div> -->
-				<div class="picture_searchbar">
+				<!-- <div class="picture_searchbar">
 					<div class="search_picbox">
 						<select name="">
 							<option>2020</option>
@@ -67,7 +67,7 @@
 							<option>2016</option>
 						</select>
 					</div>
-				</div>
+				</div> -->
 				<div class="line"></div>
 				<div class="row picture_wrap">
 					<?php

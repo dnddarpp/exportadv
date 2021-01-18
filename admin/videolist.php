@@ -1,5 +1,23 @@
 <?php
-	require_once("include_test.php");
+	require_once("include.php");
+
+	//每頁顯示筆數
+
+	$per = 20;
+	$curpage = $conn->real_escape_string($_GET["page"]);
+
+	$sql = "SELECT * FROM media where 1=1 ORDER BY  `sort`, `id` DESC ";
+	$result = qury_sel($sql, $conn);
+
+	$total = $result->num_rows;
+	$pages = ceil($total/$per);
+
+	if(!$curpage){
+		$curpage=1;
+	}
+	$offset = ($curpage-1)*$per;
+	$sql .= "Limit $per OFFSET $offset";
+	$result = qury_sel($sql, $conn);
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,36 +33,6 @@
 				<div class="sidebar">
 					<div class="right_continer">
 						<div class="adsright_title">影音專區</div>
-						<!-- <form>
-							<div class="news_manag">
-								<div class="manag_box">
-									發布時間
-									<input name="btime" type="text" value="" class=datepicker-input style='border:1px solid #ccc' />  -
-									<input name="etime" type="text" value="" class=datepicker-input style='border:1px solid #ccc' />
-								</div>
-								<div class="manag_box">選擇分類
-									<label><input name=class type=radio value=0 > 不限</label>
-									<label><input name=class type=radio value=1 checked>最新消息</label>
-									<label><input name=class type=radio value=2 >產業公告</label>
-								</div>
-								<div class="manag_box">
-									搜尋標題
-									<div class="man_bord"><input name="title" value="" type="text" /></div>
-								</div>
-								<div class="manag_box">
-									搜尋全文
-									<div class="man_bord"><input name="title_content" value="" type="text" placeholder='標題或內容' /></div>
-								</div>
-								<div class="btnwrap">
-									<button class="delete_btn" id=search_btn>搜尋</button>
-									<script>
-										$('form').on('submit', function(){
-										    $(this).attr('action', 'news.' + $(this).find('[name=class]:checked').val() + '.1');
-										});
-									</script>
-								</div>
-							</div>
-						</form> -->
 						<div class="icon_dk">
 							<ul>
 								<li><i class="mdi mdi-view-headline"></i></li>
@@ -55,45 +43,35 @@
 							<table width="100%" border="0">
 								<tr>
 									<td class="tab_gray" width="5%">編輯
-									<!-- <td class="tab_gray" width="5%">顯示 -->
-									<td class="tab_gray" width="5%">刪除
+									<td class="tab_gray" width="5%">顯示
+									<!-- <td class="tab_gray" width="5%">刪除 -->
 									<td class="tab_gray">影音名稱
                   <td class="tab_gray">連結
-									<td class="tab_gray" width="5%">發佈日期
+									<td class="tab_gray" width="10%">更新日期
 								<tr style='border-bottom:1px solid #f2f2f2'>
 									<td><a href=videoedit><i class="mdi mdi-plus-box"></i></a>
 									<td>
 									<td>新增影音
                   <td>
 									<td>
+										<?php
+											while($data = mysqli_fetch_assoc($result)) {
+												$display = "Y";
+												if($data["display"]=="0"){
+													$display = "N";
+												}
+												$last = new DateTime($data["Last_time"]);
+												$update = $last->format('Y-m-d');
+										?>
 								<tr>
-									<td><a href="videoedit"><i class="mdi mdi-file-document-edit"></i></a>
+									<td><a href="videoedit?id=<?=$data["id"]?>"><i class="mdi mdi-file-document-edit"></i></a>
+									<td><?=$display?>
 									<!-- <td><a href=videoedit data-method=post data-param='{"id":118,"act":"display"}'><i class="mdi mdi-eye"></i></a> -->
-									<td><a href=videoedit data-method=post data-param='{"id":118,"act":"delete"}' data-confirm=確定要刪除嗎? data-done=reload><i class="mdi mdi-delete"></i></a>
-									<td>test
-                  <td>https://youtu.be/6hv_Z5t_2Ao
-									<td>2020.11.02
-								<tr>
-									<td><a href="videoedit"><i class="mdi mdi-file-document-edit"></i></a>
-									<!-- <td><a href=videoedit data-method=post data-param='{"id":118,"act":"display"}'><i class="mdi mdi-eye"></i></a> -->
-									<td><a href=videoedit data-method=post data-param='{"id":118,"act":"delete"}' data-confirm=確定要刪除嗎? data-done=reload><i class="mdi mdi-delete"></i></a>
-									<td>test
-                  <td>https://youtu.be/6hv_Z5t_2Ao
-									<td>2020.11.02
-								<tr>
-									<td><a href="videoedit"><i class="mdi mdi-file-document-edit"></i></a>
-									<!-- <td><a href=videoedit data-method=post data-param='{"id":118,"act":"display"}'><i class="mdi mdi-eye"></i></a> -->
-									<td><a href=videoedit data-method=post data-param='{"id":118,"act":"delete"}' data-confirm=確定要刪除嗎? data-done=reload><i class="mdi mdi-delete"></i></a>
-									<td>test
-                  <td>https://youtu.be/6hv_Z5t_2Ao
-									<td>2020.11.02
-								<tr>
-									<td><a href="videoedit"><i class="mdi mdi-file-document-edit"></i></a>
-									<!-- <td><a href=videoedit data-method=post data-param='{"id":118,"act":"display"}'><i class="mdi mdi-eye"></i></a> -->
-									<td><a href=videoedit data-method=post data-param='{"id":118,"act":"delete"}' data-confirm=確定要刪除嗎? data-done=reload><i class="mdi mdi-delete"></i></a>
-									<td>test
-                  <td>https://youtu.be/6hv_Z5t_2Ao
-									<td>2020.11.02
+									<!-- <td><a href=videoedit data-method=post data-param='{"id":118,"act":"delete"}' data-confirm=確定要刪除嗎? data-done=reload><i class="mdi mdi-delete"></i></a> -->
+									<td><?=$data["title"]?>
+                  <td><a data-fancybox href="<?=$data["url"]?>"><?=$data["url"]?></a>
+									<td><?=$update?>
+									<?php } ?>
 							</table>
 						</div>
 						<div class="page_box">
