@@ -1,3 +1,6 @@
+<?php
+	require_once("include_test.php");
+?>
 <!DOCTYPE html>
 <html>
 	<head>

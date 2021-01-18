@@ -1,6 +1,6 @@
 <?php
 
-	require_once("include_test.php");
+	require_once("include.php");
 
 	$typename = Array("最新消息","產業新聞");
 	$type = $conn->real_escape_string($_GET["type"]);
