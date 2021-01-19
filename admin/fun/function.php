@@ -372,5 +372,42 @@ class ResizeImage {
 
 }
 
+function getConsultData($_id,$conn){
+	$str="";
+	$ary = array();
+	$sql= "select *  from `consult` where 1=1 and parent=".$_id;
+	//echo "sql:".$sql."<br>";
+	$pjdata = qury_sel($sql, $conn);
+	while($data = mysqli_fetch_assoc($pjdata)) {
+		$id = $data["id"];
+		$end = $data["endpage"];
+		if($end=="0"){
+			$subary = getConsultData($id,$conn);
+			//echo "ccc";
+			$ary[]=array("title"=>$data["title"], "id"=>$id, "content"=>$subary);
+		}else{
+			$ary[]=array("title"=>$data["title"], "id"=>$id, "content"=>array());
+		}
+		//$str.=$id .":".$data["title"]."<br>";
+	}
+	return $ary;
+}
+function setSelect($_ary,$_layer){
+	$_layer++;
+	$space = "";
+	for($i=1;$i<=$_layer;$i++){
+		$space.="&nbsp;&nbsp;";
+	}
+	foreach ($_ary as $item) {
+		$title = $item["title"];
+		$id = $item["id"];
+		//echo $id.':'.$title."<br>";
+		//echo json_encode($item)."<br>";
+
+		echo '<option value="'.$id.'">'.$space.$title.'</option>';
+		setSelect($item["content"],$_layer);
+	}
+}
+
 
 ?>

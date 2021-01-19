@@ -8,6 +8,8 @@
 <link href="../dist/css/bootstrap-grid.css" rel="stylesheet">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="../bower_components/mdi/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <link rel="stylesheet" href="../css/admin.css">
 <link rel="stylesheet" href="static/cindy.css" type=text/css>
   <script type="text/javascript" src="scripts/uploader.js"></script>
