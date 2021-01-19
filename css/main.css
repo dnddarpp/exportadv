@@ -1085,11 +1085,16 @@ img {
   height: 40px;
   padding-top: 9px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .adke_active {
   background-color: #17A6DC;
   color: #ffffff;
+}
+
+.onlinecontent p {
+  font-size: 1.2em;
 }
 
 .free_title {

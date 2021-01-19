@@ -373,4 +373,54 @@ class ResizeImage {
 }
 
 
+
+function getConsultData($_id,$conn){
+	$str="";
+	$ary = array();
+	$sql= "select *  from `consult` where 1=1 and parent=".$_id;
+	$pjdata = qury_sel($sql, $conn);
+	while($data = mysqli_fetch_assoc($pjdata)) {
+		$id = $data["id"];
+		$end = $data["endpage"];
+		if($end=="0"){
+			$subary = getConsultData($id,$conn);
+			//echo "ccc";
+			$ary[]=array("title"=>$data["title"], "id"=>$id, "content"=>$subary);
+		}else{
+			$ary[]=array("title"=>$data["title"], "id"=>$id, "content"=>array());
+		}
+		//$str.=$id .":".$data["title"]."<br>";
+	}
+	return $ary;
+}
+function getConsultPath($_id,$conn,$_ary){
+	// echo "id:".$_id."  :".json_encode($_ary)."<br>";
+	if($_id!="0"){
+		$sql= "select *  from `consult` where 1=1 and id=".$_id;
+		$pjdata = qury_sel($sql, $conn);
+		$data = mysqli_fetch_assoc($pjdata);
+		$parent = $data["parent"];
+		//echo "parent:".$parent;
+		$_ary[] = array($data["id"],$data["title"]);
+		$_ary = getConsultPath($parent,$conn,$_ary);
+	}
+	return $_ary;
+}
+function setSelect($_ary,$_layer){
+	$_layer++;
+	$space = "";
+	for($i=1;$i<=$_layer;$i++){
+		$space.="&nbsp;&nbsp;";
+	}
+	foreach ($_ary as $item) {
+		$title = $item["title"];
+		$id = $item["id"];
+		//echo $id.':'.$title."<br>";
+		//echo json_encode($item)."<br>";
+
+		echo '<option value="'.$id.'">'.$space.$title.'</option>';
+		setSelect($item["content"],$_layer);
+	}
+}
+
 ?>

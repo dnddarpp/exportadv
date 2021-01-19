@@ -8,11 +8,11 @@
 	$parent = $conn->real_escape_string($_GET["parent"]);
 
 	$sql = "SELECT * FROM consult where 1=1 ";
-	if(isset($_GET["parent"])){
+	if(isset($_GET["parent"]) && strlen($parent)>0){
 		$sql .= " and parent=".$parent." ";
 	}
 	$sql .= "ORDER BY `sort`, `id` DESC ";
-	echo $sql;
+	// echo $sql;
 	$result = qury_sel($sql, $conn);
 
 	$total = $result->num_rows;
@@ -36,12 +36,14 @@
 		<?php require_once('i_meta.php'); ?>
 		<title></title>
 		<script>
+			var parent = "<?=$parent?>"
 			$( document ).ready(function(){
 				$("#parent").change(function(){
 					var id = $(this).val()
 					console.log("id:"+id)
 					location.href="consultlist?parent="+id
 				})
+				$("#parent").val(parent)
 			})
 
 		</script>
@@ -69,14 +71,15 @@
 									搜尋標題
 									<div class="man_bord"><input name="title" value="" type="text" /></div>
 								</div>
-								<div class="manag_box">
+								<!-- <div class="manag_box">
 									搜尋全文
 									<div class="man_bord"><input name="title_content" value="" type="text" placeholder='標題或內容' /></div>
-								</div>
+								</div> -->
                 <div class="manag_box">
 									關鍵字
 									<div class="man_bord"><input name="title_content" value="" type="text" placeholder='關鍵字' /></div>
 								</div>
+								<br>
 								<div class="btnwrap">
 									<button class="delete_btn" id=search_btn>搜尋</button>
 									<script>
@@ -103,7 +106,7 @@
                   <td class="tab_gray">描述
 									<td class="tab_gray" width="10%">更新日期
 								<tr style='border-bottom:1px solid #f2f2f2'>
-									<td><a href="consultedit?type=new"><i class="mdi mdi-plus-box"></i></a>
+									<td><a href="consultedit?type=new&pid=<?=$parent?>"><i class="mdi mdi-plus-box"></i></a>
 									<td>新增咨詢內容
 									<td>
                   <td>
