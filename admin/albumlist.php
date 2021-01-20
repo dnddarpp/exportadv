@@ -1,5 +1,25 @@
 <?php
-	require_once("include_test.php");
+
+	require_once("include.php");
+
+	//每頁顯示筆數
+
+	$per = 20;
+	$curpage = $conn->real_escape_string($_GET["page"]);
+
+	$sql = "SELECT * FROM event where 1=1 ORDER BY `Public_date` DESC, `sort` DESC, `id` DESC ";
+	$result = qury_sel($sql, $conn);
+
+	$total = $result->num_rows;
+	$pages = ceil($total/$per);
+
+	if(!$curpage){
+		$curpage=1;
+	}
+	$offset = ($curpage-1)*$per;
+	$sql .= "Limit $per OFFSET $offset";
+	$result = qury_sel($sql, $conn);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -55,40 +75,36 @@
 							<table width="100%" border="0">
 								<tr>
 									<td class="tab_gray" width="5%">編輯
-									<!-- <td class="tab_gray" width="5%">顯示 -->
-									<td class="tab_gray" width="5%">刪除
+									<!-- <td class="tab_gray" width="5%">刪除 -->
 									<td class="tab_gray">活動名稱
-									<td class="tab_gray" width="5%">發佈日期
+									<td class="tab_gray" width="10%">發佈日期
+										<td class="tab_gray" width="5%">顯示
 								<tr style='border-bottom:1px solid #f2f2f2'>
-									<td><a href=albumedit><i class="mdi mdi-plus-box"></i></a>
-
-									<td>
+									<td><a href="albumedit?type=new"><i class="mdi mdi-plus-box"></i></a>
 									<td>新增活動
 									<td>
-								<tr>
-									<td><a href="albumedit"><i class="mdi mdi-file-document-edit"></i></a>
-									<!-- <td><a href=albumedit data-method=post data-param='{"id":118,"act":"display"}'><i class="mdi mdi-eye"></i></a> -->
-									<td><a href=albumedit data-method=post data-param='{"id":118,"act":"delete"}' data-confirm=確定要刪除嗎? data-done=reload><i class="mdi mdi-delete"></i></a>
-									<td>test
-									<td>2020.11.02
-								<tr>
-									<td><a href="albumedit"><i class="mdi mdi-file-document-edit"></i></a>
-									<!-- <td><a href=albumedit data-method=post data-param='{"id":118,"act":"display"}'><i class="mdi mdi-eye"></i></a> -->
-									<td><a href=albumedit data-method=post data-param='{"id":118,"act":"delete"}' data-confirm=確定要刪除嗎? data-done=reload><i class="mdi mdi-delete"></i></a>
-									<td>test
-									<td>2020.11.02
-								<tr>
-									<td><a href="albumedit"><i class="mdi mdi-file-document-edit"></i></a>
-									<!-- <td><a href=albumedit data-method=post data-param='{"id":118,"act":"display"}'><i class="mdi mdi-eye"></i></a> -->
-									<td><a href=albumedit data-method=post data-param='{"id":118,"act":"delete"}' data-confirm=確定要刪除嗎? data-done=reload><i class="mdi mdi-delete"></i></a>
-									<td>test
-									<td>2020.11.02
-								<tr>
-									<td><a href="albumedit"><i class="mdi mdi-file-document-edit"></i></a>
-									<!-- <td><a href=albumedit data-method=post data-param='{"id":118,"act":"display"}'><i class="mdi mdi-eye"></i></a> -->
-									<td><a href=albumedit data-method=post data-param='{"id":118,"act":"delete"}' data-confirm=確定要刪除嗎? data-done=reload><i class="mdi mdi-delete"></i></a>
-									<td>test
-									<td>2020.11.02
+									<td>
+										<?php
+											while($data = mysqli_fetch_assoc($result)) {
+												$display = "Y";
+												if($data["display"]=="0"){
+													$display = "N";
+												}
+												$type = $typename[$data["type"]-1];
+												$date =  explode(" ", $data["date"])[0];
+												$public_date =  explode(" ", $data["Public_Date"])[0];
+										?>
+										<tr>
+											<td><a href="abumedit?type=edit&id=<?=$data["id"]?>"><i class="mdi mdi-file-document-edit"></i></a>
+											<!-- <td><a href=news_more.do data-method=post data-param='{"id":118,"act":"display"}'><i class="mdi mdi-eye"></i></a> -->
+											<!-- <td><a href=news_more.do data-method=post data-param='{"id":118,"act":"delete"}' data-confirm=確定要刪除嗎? data-done=reload><i class="mdi mdi-delete"></i></a> -->
+											<td><?=$data["title"]?></td>
+											<td><?=$display?></td>
+											<td><?=$public_date?></td>
+											<td><?=$data["Last_time"]?></td>
+										<?php
+										}
+										?>
 							</table>
 						</div>
 						<div class="page_box">

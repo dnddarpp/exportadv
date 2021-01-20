@@ -12,7 +12,7 @@
 	if(isset($_GET["id"]) && $parent>0){
 		$sql = "SELECT a.*, b.title as parenttitle, b.parent as grandparentid FROM consult as a";
 		$sql .= "  inner join consult as b on a.parent = b.id";
-		$sql .= "  where 1=1 and a.parent=".$parent." ";
+		$sql .= "  where 1=1 and a.display=1 and a.parent=".$parent." ";
 	}else{
 		$sql = "SELECT * FROM consult as a where 1=1 and parent = 0 ";
 		$parent = 0;
@@ -32,7 +32,7 @@
 	$str_pathary = json_encode($pathary);
 	$str_path = "";
 	$nowtitle = "";
-	
+
 	foreach ($pathary as $key => $value) {
 		if(strlen($str_path)<=0){
 			$nowtitle = " - ".$value[1];

@@ -7,11 +7,11 @@
 	$curpage = $conn->real_escape_string($_GET["page"]);
 	$parent = $conn->real_escape_string($_GET["parent"]);
 
-	$sql = "SELECT * FROM consult where 1=1 ";
+	$sql = "SELECT a.*, b.id as parentid, b.title as parenttitle FROM consult as a left join consult as b on a.parent = b.id where 1=1 ";
 	if(isset($_GET["parent"]) && strlen($parent)>0){
-		$sql .= " and parent=".$parent." ";
+		$sql .= " and a.parent=".$parent." ";
 	}
-	$sql .= "ORDER BY `sort`, `id` DESC ";
+	$sql .= "ORDER BY b.id, a.`sort`, a.`id`";
 	// echo $sql;
 	$result = qury_sel($sql, $conn);
 
@@ -67,14 +67,14 @@
 											 ?>
 									</select>
 								</div>
-								<div class="manag_box">
+								<!-- <div class="manag_box">
 									搜尋標題
 									<div class="man_bord"><input name="title" value="" type="text" /></div>
 								</div>
 								<!-- <div class="manag_box">
 									搜尋全文
 									<div class="man_bord"><input name="title_content" value="" type="text" placeholder='標題或內容' /></div>
-								</div> -->
+								</div>
                 <div class="manag_box">
 									關鍵字
 									<div class="man_bord"><input name="title_content" value="" type="text" placeholder='關鍵字' /></div>
@@ -87,7 +87,7 @@
 										    $(this).attr('action', 'news.' + $(this).find('[name=class]:checked').val() + '.1');
 										});
 									</script>
-								</div>
+								</div> -->
 							</div>
 
 						<div class="icon_dk">
@@ -102,8 +102,10 @@
 									<td class="tab_gray" width="5%">編輯
 									<!-- <td class="tab_gray" width="5%">顯示 -->
 									<!-- <td class="tab_gray" width="5%">刪除 -->
+									<td class="tab_gray">父層
 									<td class="tab_gray">標題
-                  <td class="tab_gray">描述
+                  <td class="tab_gray">顯示
+									<td class="tab_gray">最終頁
 									<td class="tab_gray" width="10%">更新日期
 								<tr style='border-bottom:1px solid #f2f2f2'>
 									<td><a href="consultedit?type=new&pid=<?=$parent?>"><i class="mdi mdi-plus-box"></i></a>
@@ -117,6 +119,10 @@
 										if($data["display"]=="0"){
 											$display = "N";
 										}
+										$endpage = "Y";
+										if($data["endpage"]=="0"){
+											$endpage = "N";
+										}
 										$last = new DateTime($data["Last_time"]);
 										$update = $last->format('Y-m-d');
 								?>
@@ -124,8 +130,10 @@
 									<td><a href="consultedit?id=<?=$data["id"]?>"><i class="mdi mdi-file-document-edit"></i></a>
 									<!-- <td><a href=consultedit data-method=post data-param='{"id":118,"act":"display"}'><i class="mdi mdi-eye"></i></a> -->
 									<!-- <td><a href=consultedit data-method=post data-param='{"id":118,"act":"delete"}' data-confirm=確定要刪除嗎? data-done=reload><i class="mdi mdi-delete"></i></a> -->
+									<td><?=$data["parenttitle"]?>
 									<td><?=$data["title"]?>
-                  <td><?=$data["description"]?>
+                  <td><?=$display?>
+									<td><?=$endpage?>
 									<td><?=$update?>
 								<?php } ?>
 							</table>

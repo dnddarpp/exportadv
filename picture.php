@@ -49,7 +49,7 @@
 		<section>
 			<div class="container">
 				<div class="info_title">活動照片</div>
-				<div class="picture_searchbar">
+				<!-- <div class="picture_searchbar">
 					<div class="search_picbox">
 						<div class="search_iconL"><img src="images/search_02.svg" alt=""></div>
 						<div class="search_input"><input name="" type="text"  placeholder="搜尋"/></div>
@@ -65,7 +65,7 @@
 							<option>2016</option>
 						</select>
 					</div>
-				</div>
+				</div> -->
 				<div class="line"></div>
 				<div class="row picture_wrap">
 					<?php

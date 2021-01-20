@@ -34,7 +34,7 @@
 					    <div class="search_input"><input name="" type="text"  placeholder="搜尋"/></div>
 					</div>
 					</div> -->
-				<div class="picture_searchbar">
+				<!-- <div class="picture_searchbar">
 					<div class="search_picbox">
 						<select name="">
 							<option>2020</option>
@@ -44,9 +44,9 @@
 							<option>2016</option>
 						</select>
 					</div>
-				</div>
+				</div> -->
 				<div class="line"></div>
-				<div class="picsetting">
+				<!-- <div class="picsetting">
 					<ul class="picselect">
 						<li><input name="" type="checkbox" value="" /></li>
 						<li>全選 ( 全不選 )</li>
@@ -70,7 +70,7 @@
 							</ul>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				<div class="row picture_wrap">
 					<div class="col-12 col-md-4 col-lg-4">
 						<a href="#">
@@ -78,7 +78,7 @@
 								<div class="picture_top_Bg" style="background-image:url(images/pic1.jpg)" ;=""></div>
 								<div class="picmu_font">
 									<div class="picture_name">說明會由國際貿易局發展組何莉芬組長揭開序幕</div>
-									<div class="picture_checkboxicon"><input name="" type="checkbox" value="" /></div>
+									<div class="picture_checkboxicon"><!-- <input name="" type="checkbox" value="" /> --></div>
 								</div>
 							</div>
 						</a>
@@ -89,7 +89,7 @@
 								<div class="picture_top_Bg" style="background-image:url(images/pic1.jpg)" ;=""></div>
 								<div class="picmu_font">
 									<div class="picture_name">說明會由國際貿易局發展組何莉芬組長揭開序幕</div>
-									<div class="picture_checkboxicon"><input name="" type="checkbox" value="" /></div>
+									<div class="picture_checkboxicon"><!-- <input name="" type="checkbox" value="" /> --></div>
 								</div>
 							</div>
 						</a>
@@ -100,7 +100,7 @@
 								<div class="picture_top_Bg" style="background-image:url(images/pic1.jpg)" ;=""></div>
 								<div class="picmu_font">
 									<div class="picture_name">說明會由國際貿易局發展組何莉芬組長揭開序幕。</div>
-									<div class="picture_checkboxicon"><input name="" type="checkbox" value="" /></div>
+									<div class="picture_checkboxicon"><!-- <input name="" type="checkbox" value="" /> --></div>
 								</div>
 							</div>
 						</a>
