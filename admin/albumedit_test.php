@@ -5,7 +5,7 @@
   $id = $conn->real_escape_string($_GET["id"]);
 	$typeid = $conn->real_escape_string($_GET["typeid"]);
   if($id){
-    $sql = "select *  from `event` where 1=1 and id = $id ";
+    $sql = "select *  from `album` where 1=1 and id = $id ";
     $pjdata = qury_sel($sql, $conn);
     $data = mysqli_fetch_assoc($pjdata);
     $date = explode(" ", $data["Public_Date"])[0];
@@ -13,7 +13,8 @@
     $text = $data["content"];
     $type="edit";
     $typename="編輯";
-    $piclist = $data['pic'];
+    if( ( $data['pic'] != '') && file_exists( '../pic/album/'.$data['pic'] ) )
+    $pic = "<img src='../pic/album/".$data['pic']."'>";
 
   }else{
     $type="add";
@@ -28,8 +29,7 @@
 		<?php require_once('i_meta.php'); ?>
 		<title></title>
 		<script type="text/javascript">
-			var pagetype = "<?=$type?>";
-      var piclist = <?=$piclist?>;
+			var pagetype = "<?=$type?>"
 			$( document ).ready(function(){
 				$("#parent").val(parent)
 			 if(pagetype=="new"){
@@ -47,39 +47,7 @@
 
 				}
 			})
-      console.log("piclist.length:"+piclist.length)
-      if(piclist.length>0){
-        for(var i=0;i<piclist.length;i++){
-          var ary = piclist[i];
-          var nn = ary["img"]
-          var ext = ary["type"]
-          var title = ary["title"]
-          var filepath = "../pic/album/"+nn+"."+ext
-          // Add img element in <div id='preview'>
-
-          $('#preview').append('<div class="albumpic '+nn+'" data-id="'+nn+'"><div class="picput pp"><img src="'+filepath+'"></div><div class="picput inp"><input type="text" name="'+nn+'" data-name = "'+nn+'" data-type="'+ext+'" class="form-control imgtitle" value="'+title+'" placeholder="請輸入照片描述"><input type="button" name="" value="delete" class="del_img"></div></div><hr>');
-          $('.'+nn+' .del_img').click(function(){
-           $(this).parent().parent().remove();
-         });
-        }
-      }
-      $(".del_img").click(function(){
-        $(this).parent().parent().remove();
-      })
 			 $("#save").click(function(){
-        var imglist = []
-        $(".imgtitle").each(function(){
-          var val = $(this).val()
-          var nn = $(this).data("name")
-          var type = $(this).data("type")
-          var tmp = {"img":nn, "title":val, "type":type}
-          imglist.push(tmp)
-        })
-        var str_imglist = JSON.stringify(imglist)
-
-        console.log("str_imglist:"+str_imglist)
-
-
 
 				if($("#title").val() == "")
 					alert("請輸入標題");
@@ -92,7 +60,7 @@
 					$.ajax({
 						url: "album_system.php",
 						type: "POST",
-						data: {id: "<?=$id?>", title: $("#title").val(), description: $("#description").val(), pic:str_imglist, display: $("#display").val(), sort: $("#sort").val(), seo_title:$("#seo_title").val(),seo_desc:$("#seo_desc").val(),seo_keywords:$("#seo_keywords").val()},
+						data: {id: "<?=$id?>", title: $("#title").val(), description: $("#description").val(), date: $("#date").val(),  pic:pic, cnt:cnt, url:link, display: $("#display").val(), sort: $("#sort").val(), seo_title:$("#seo_title").val(),seo_desc:$("#seo_desc").val(),seo_keywords:$("#seo_keywords").val()},
 						error: myErr,
 						success: function(msg){
 							var rr = JSON.parse(msg);
@@ -131,25 +99,17 @@
            processData: false,
            success: function (response) {
              for(var index = 0; index < response.length; index++) {
-               var ary = response[index];
-               var nn = ary[0]
-               var ext = ary[1]
-               var filepath = "../pic/album/"+nn+"."+ext
+               var src = response[index];
                // Add img element in <div id='preview'>
 
-               $('#preview').append('<div class="albumpic '+nn+'" data-id="'+nn+'"><div class="picput pp"><img src="'+filepath+'"></div><div class="picput inp"><input type="text" name="'+nn+'" data-name = "'+nn+'" data-type="'+ext+'" class="form-control imgtitle" value="" placeholder="請輸入照片描述"><input type="button" name="" value="delete" class="del_img"></div></div><hr>');
-               $('.'+nn+' .del_img').click(function(){
-             		$(this).parent().parent().remove();
-             	});
+               $('#preview').append('<div class="albumpic" data-id="'+src+'"><img src="../pic/album/'+src+'" width="200px;" height="200px"><input type="text" name="'+src+'" value="" placeholder="請輸入照片描述"></div>');
              }
-
 
            }
          });
 
       });
 			});
-
 		</script>
 	</head>
 	<body>
@@ -169,6 +129,10 @@
                     	<option value="1">顯示</option>
 											<option value="0"<?=$data['display'] == '0' ? ' selected="selected"' : '';?>>不顯示</option>
                     </select>
+								<tr>
+									<td>發佈日期
+									<td>
+										<div class="media_bord"><input name="time" type="text" id="date" class="form-control" value="<?=$date?>" /></div>
 									<tr>
 										<td>標題
 										<td>
@@ -196,16 +160,7 @@
                          <input type="file" id='files' name="files[]" multiple><br>
                          <input type="button" id="submit" value='Upload'>
                       </form>
-                      <div id='preview'>
-                        <!-- <div class="albumpic 6009ed7815c5d.jpg" data-id="6009ed7815c5d.jpg">
-                          <div class="picput pp"><img src="../images/banner.png"></div>
-                          <div class="picput inp"><input type="text" name="6009ed7815c5d.jpg" class="form-control" value="" placeholder="請輸入照片描述"><input type="button" name="" value="delete" class="del_img"></div>
-                        </div>
-                        <div class="albumpic 6009ed781rrr.jpg" data-id="6009ed7815c5d.jpg">
-                          <div class="picput pp"><img src="../images/bgft.png"></div>
-                          <div class="picput inp"><input type="text" name="6009ed7815c5d.jpg" class="form-control" value="" placeholder="請輸入照片描述"><input type="button" name="" value="delete" class="del_img"></div>
-                        </div> -->
-                      </div>
+                      <div id='preview'></div>
 										</td>
 									</tr>
 									<tr>

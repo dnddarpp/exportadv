@@ -73,15 +73,27 @@
 							$type = $typename[$data["type"]-1];
 							$date =  explode(" ", $data["date"])[0];
 							$public_date =  explode(" ", $data["Public_Date"])[0];
+							$str_piclist = $data["pic"];
+							$picary = json_decode($str_piclist);
+							$img = array_column($picary[0], 'img');
+							foreach ($picary[0] as $key => $value) {
+								if($key=="img"){
+									$img =$value;
+								}
+								if($key=="type"){
+									$type =$value;
+								}
+							}
+							$pic = $img.".".$type;
 
 					?>
 					<div class="col-6 col-md-6 col-lg-6">
-						<a href="picture_more">
+						<a href="picture_more?id=<?=$data["id"]?>">
 							<div class="picutre_bg">
-								<div class="picture_top_Bg" style="background-image:url(pic/event/<?=$data['pic']?>)"></div>
+								<div class="picture_top_Bg" style="background-image:url(pic/album/<?=$pic?>)"></div>
 								<div class="picmu_font">
 									<div class="picture_name"><?=$data["title"]?></div>
-									<p><?=$public_date?></p>
+									<p></p>
 								</div>
 							</div>
 						</a>
