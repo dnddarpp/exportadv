@@ -6,7 +6,7 @@
 	$per = 20;
 	$curpage = $conn->real_escape_string($_GET["page"]);
 
-	$sql = "SELECT * FROM media where 1=1 ORDER BY  `sort`, `id` DESC ";
+	$sql = "SELECT a.*, b.catename FROM media as a left join media_cate as b on a.type = b.id where 1=1 ORDER BY  `sort`, `id` DESC ";
 	$result = qury_sel($sql, $conn);
 
 	$total = $result->num_rows;
@@ -45,7 +45,8 @@
 									<td class="tab_gray" width="5%">編輯
 									<td class="tab_gray" width="5%">顯示
 									<!-- <td class="tab_gray" width="5%">刪除 -->
-									<td class="tab_gray">影音名稱
+									<td class="tab_gray" width="45%">影音名稱
+									<td class="tab_gray" width="15%">分類
                   <td class="tab_gray">連結
 									<td class="tab_gray" width="10%">更新日期
 								<tr style='border-bottom:1px solid #f2f2f2'>
@@ -69,6 +70,7 @@
 									<!-- <td><a href=videoedit data-method=post data-param='{"id":118,"act":"display"}'><i class="mdi mdi-eye"></i></a> -->
 									<!-- <td><a href=videoedit data-method=post data-param='{"id":118,"act":"delete"}' data-confirm=確定要刪除嗎? data-done=reload><i class="mdi mdi-delete"></i></a> -->
 									<td><?=$data["title"]?>
+										<td><?=$data["catename"]?>
                   <td><a data-fancybox href="<?=$data["url"]?>"><?=$data["url"]?></a>
 									<td><?=$update?>
 									<?php } ?>

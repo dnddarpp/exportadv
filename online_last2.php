@@ -111,7 +111,7 @@
 				</div>
 				<ul class="prev_btn onlinepage">
 					<a href="online?id=<?=$parent?>#cin">
-						<li>< Prev</li>
+						<li>< 上一頁</li>
 					</a>
 				</ul>
 			</div>

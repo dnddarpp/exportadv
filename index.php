@@ -10,7 +10,7 @@
 
 	//每頁顯示筆數
 
-	$per = 20;
+	$per = 4;
 	$curpage = $conn->real_escape_string($_GET["page"]);
 
 	$sql = "SELECT * FROM news where display=1 ORDER BY `Public_date` DESC, `sort` DESC, `id` DESC ";
@@ -39,7 +39,7 @@
          <div class="container">
             <div class="row sev_wrap">
                <div class="col-4 col-md-4 col-lg-4" data-aos="flip-left">
-                 <a href="#">
+                 <a href="https://events.taiwantrade.com/exportadv" target="_blank">
                   <div class="sev_bg">
                      <div class="sev_icon"><img src="images/icon01.svg" alt=""></div>
                      <div class="sev_font">國際行銷諮詢服務報名</div>
@@ -47,7 +47,7 @@
                   </a>
                </div>
                <div class="col-4 col-md-4 col-lg-4" data-aos="flip-left">
-                 <a href="#">
+                 <a href="https://youtu.be/qsujZ_GB4Bs" target="_blank">
                   <div class="sev_bg">
                      <div class="sev_icon"><img src="images/icon02.svg" alt=""></div>
                      <div class="sev_font">國際行銷諮詢中心協助廠商海外拓銷</div>
@@ -55,7 +55,7 @@
                   </a>
                </div>
                <div class="col-4 col-md-4 col-lg-4" data-aos="flip-left">
-                 <a href="#">
+                 <a href="picture">
                   <div class="sev_bg">
                      <div class="sev_icon"><img src="images/icon03.svg" alt=""></div>
                      <div class="sev_font">國際行銷諮詢歷史活動</div>

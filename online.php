@@ -108,7 +108,7 @@
 				?>
 				<ul class="prev_btn onlinepage">
 					<a href="online?id=<?=$grandid?>#cin">
-						<li>< Prev</li>
+						<li>< 上一頁</li>
 					</a>
 				</ul>
 				<?php

@@ -7,6 +7,7 @@
     $sql = "select *  from `media` where 1=1 and id = $id ";
     $pjdata = qury_sel($sql, $conn);
     $data = mysqli_fetch_assoc($pjdata);
+    $cate = $data["type"];
 
     //$text = str_ireplace(['\\\\r', '\\\\n'], "", $data["content"]);
     $text = $data["content"];
@@ -21,6 +22,8 @@
     $typename="新增";
   }
 
+  $sql2 = "select * from `media_cate` where 1=1 ";
+  $pjdata2 = qury_sel($sql2, $conn);
 ?>
 <!DOCTYPE html>
 <html>
@@ -59,6 +62,7 @@ $(function(){
     else if($("#url").val() == "")
   			alert("請輸入連結");
 		else{
+      var type = $("#type").val()
 			var pic = '';
 		  if( $('#pic img').length > 0 ) pic = $('#pic img').attr('src');
 		  pic = pic.split("media/")[1]
@@ -67,7 +71,7 @@ $(function(){
 			$.ajax({
 				url: "video_system.php",
 				type: "POST",
-				data: {id: "<?=$id?>", title: $("#title").val(), url:link, pic:pic, display: $("#display").val(), sort: $("#sort").val(), seo_title:$("#seo_title").val(),seo_desc:$("#seo_desc").val(),seo_keywords:$("#seo_keywords").val()},
+				data: {id: "<?=$id?>", title: $("#title").val(), type:type, url:link, pic:pic, display: $("#display").val(), sort: $("#sort").val(), seo_title:$("#seo_title").val(),seo_desc:$("#seo_desc").val(),seo_keywords:$("#seo_keywords").val()},
 				error: myErr,
 				success: function(msg){
 					var rr = JSON.parse(msg);
@@ -111,6 +115,23 @@ $(function(){
 										<td>標題
 										<td>
 											<div class="media_bord"><input name="title" type="text" id="title" class="form-control" value="<?=$data["title"] ?>" /></div>
+                  <tr>
+										<td width="160">分類
+										<td>
+											<select class="form-control" name="" id="type" >
+                      	<option value="0">===請選擇===</option>
+                        <?php
+    											while($data2 = mysqli_fetch_assoc($pjdata2)) {
+                            $selected="";
+                            if($data2["id"]==$cate){
+                                $selected="selected";
+                            }
+    										?>
+                        <option value="<?=$data2["id"]?>" <?=$selected?>><?=$data2["catename"]?></option>
+                        <?php
+                          }
+                        ?>
+                      </select>
 									<tr>
                     <td>
                         圖片(600*400)

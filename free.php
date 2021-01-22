@@ -48,7 +48,7 @@
                   </div>
                </div>
                <div class="graybg_font">善用政府輔導資源、強化企業經營體質、快速拓展海外市場、提升國際競爭力</div>
-               <div class="goto_btn">立刻報名免費諮詢</div>
+               <a href="https://events.taiwantrade.com/exportadv" target="_blank"><div class="goto_btn">立刻報名免費諮詢</div></a>
             </div>
             <div class="free_wrap">
                <div class="free_title clean">
@@ -66,7 +66,7 @@
                   <li>提供海外市場拓銷建議，節省資源與時間的耗費。</li>
                   <li>引導業者善用政府輔導資源，強化企業經營體質，提升國際競爭力。</li>
                </ul>
-               <div class="goto_btn">線上報名</div>
+               <a href="https://events.taiwantrade.com/exportadv" target="_blank"><div class="goto_btn">線上報名</div></a>
             </div>
             <div class="free_wrap">
                <div class="free_title clean">

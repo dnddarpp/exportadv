@@ -3,6 +3,7 @@ require_once("include_no.php");
 
 $id = 0 + $conn->real_escape_string($_POST['id']);
 $title = $conn->real_escape_string($_POST['title']);
+$type = 0 + $conn->real_escape_string($_POST['type']);
 $display = 0 + $conn->real_escape_string($_POST['display']);
 $sort = 0 + $conn->real_escape_string($_POST['sort']);
 $url =$conn->real_escape_string($_POST['url']);
@@ -20,6 +21,7 @@ $time_f = date('Y-m-d H:i:s');
 	if( qury_one( $sql, $conn ) == "0" ){
 		$data = array(
 			'title'=>$title,
+			'type'=>$type,
 			'display'=>$display,
 			'sort'=>$sort,
 			'url'=>$url,
@@ -34,6 +36,7 @@ $time_f = date('Y-m-d H:i:s');
 	} else {
 		$data = array(
 			'title'=>$title,
+			'type'=>$type,
 			'display'=>$display,
 			'sort'=>$sort,
 			'url'=>$url,
