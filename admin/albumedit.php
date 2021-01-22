@@ -19,6 +19,7 @@
     $type="add";
     $id="";
     $typename="新增";
+    $piclist = "[]";
   }
 
 ?>
