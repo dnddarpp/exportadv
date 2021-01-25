@@ -624,6 +624,7 @@ img {
   border: 1px solid #17A6DC;
   margin-right: 8px;
   cursor: pointer;
+  margin-bottom: 8px;
 }
 .country .active {
   background-color: #17A6DC;
