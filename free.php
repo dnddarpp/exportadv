@@ -156,6 +156,19 @@
                            <div class="people_country">菲律濱</div>
                         </td>
                      </tr>
+                     <tr>
+                        <td width="30%">
+                           <div class="people_pic" style="background-image:url(images/v7.png)" ; alt=""></div>
+                           <div class="people_name">顧問 駱慧娟</div>
+                           <div class="people_country">日本</div>
+                        </td>
+                        <td>
+                           &nbsp;
+                        </td>
+                        <td>
+                          &nbsp;
+                        </td>
+                     </tr>
                   </table>
                </div>
                <div class="free_full_pic2"><img src="images/1558081476759.jpg" alt=""></div>
