@@ -83,6 +83,7 @@
 		<section>
 			<div class="container">
 				<div class="info_title">線上諮詢<?=$nowtitle?></div>
+				<p>歡迎 廠商先進 使用國際行銷諮詢中心線上諮詢，此服務將提供便捷的線上資訊。針對廠商在海外拓銷所遇到的問題，提供國際市場資訊、貿協資源轉介及數位貿易等服務。</p>
 				<div class="line"></div>
 				<div class="row online_wrap">
 					<?php
