@@ -119,7 +119,10 @@
                            <div class="people_name">副主任  張如蕙</div>
                            <div class="people_country">加拿大</div>
                         </td>
-                        <td>
+                        <td width="30%">
+                           <div class="people_pic" style="background-image:url(images/v7.png)" ; alt=""></div>
+                           <div class="people_name">顧問 駱慧娟</div>
+                           <div class="people_country">日本</div>
                         </td>
                      </tr>
                      <tr>
@@ -154,19 +157,6 @@
                            <div class="people_pic" style="background-image:url(images/v3.png)" ; alt=""></div>
                            <div class="people_name">專委 藍科銘</div>
                            <div class="people_country">菲律濱</div>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td width="30%">
-                           <div class="people_pic" style="background-image:url(images/v7.png)" ; alt=""></div>
-                           <div class="people_name">顧問 駱慧娟</div>
-                           <div class="people_country">日本</div>
-                        </td>
-                        <td>
-                           &nbsp;
-                        </td>
-                        <td>
-                          &nbsp;
                         </td>
                      </tr>
                   </table>
