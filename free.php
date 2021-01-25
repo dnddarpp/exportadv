@@ -179,7 +179,7 @@
                      <div class="nbu_pic"><img src="images/ve02.jpg" alt=""></div>
                   </div>
                </div>
-               <div class="goto_btn">線上報名</div>
+               <a href="https://events.taiwantrade.com/exportadv" target="_blank"><div class="goto_btn">線上報名</div></a>
             </div>
             <div class="free_wrap">
                <div class="free_title clean">
@@ -238,7 +238,7 @@
                      </div>
                   </div>
                </div>
-               <div class="goto_btn">線上報名</div>
+               <a href="https://events.taiwantrade.com/exportadv" target="_blank"><div class="goto_btn">線上報名</div></a>
             </div>
          </div>
       </section>
