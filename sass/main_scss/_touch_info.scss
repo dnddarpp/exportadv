@@ -21,6 +21,121 @@
     .picture_wrap {
     margin-top: 40px;
     }
+    .fe_tittle{
+        font-size: 18px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+    .fr_ft{
+        font-size: 20px;
+    }
+    .free_ul{
+        margin-left: 0;
+        li{
+            font-size: 14px;
+        }
+    }
+    .free_check{
+        margin-left: 0;
+        li{
+            font-size: 14px;
+        }
+    }
+    .fe_font{
+        font-size: 14px;
+    }
+    .priv_font{
+        li{
+            font-size: 14px;
+        }
+    }
+    .goto_btn{
+        font-size: 14px;
+    }
+    .graybg_font{
+        font-size: 14px;
+    }
+    .free_group{
+        font-size: 14px;
+    }
+    .free_g_p{
+        font-size: 14px;
+    }
+    .free_group{
+        padding: 10px 17px;
+    }
+    .grp_box {
+    margin-left: 0px;
+    }
+    .people_name{
+        font-size: 14px;
+    }
+    .issu_name{
+        font-size: 18px;
+    }
+    .free_ex_t_Bg{
+        font-size: 16px;
+    }
+    .free_ex{
+        width: 95%;
+    }
+    .info_title{
+        font-size: 20px;
+    }
+    .free_qa_box{
+        padding-left: 0px;
+    }
+    .graybg_font{
+        margin-left: 0;
+    }
+    .cou_font{
+        font-size: 14px;
+    }
+    .country{
+        li{
+            border-radius:8px!important;
+            font-size: 14px;
+        }
+    }
+    .picture_name{
+        font-size: 17px;
+    }
+    .bu_font{
+        font-size: 18px;
+    }
+    .onlie_qa{
+        font-size: 14px;
+    }
+    .prev_btn {
+        li{
+            font-size: 14px;
+        }
+    }
+    .uij{
+        font-size: 14px;
+    }
+    .bread_crumb{
+        font-size: 14px;
+    }
+    .kekeke{
+        font-size: 14px;
+        padding-top: 6px;
+    }
+    .banner_title{
+        font-size: 22px;
+    }
+    .info_title {
+        margin-bottom: 0;
+    }
+    .free_wrap {
+        margin-top: 22px;
+    }
+    .down_list{
+        li{
+            font-size: 18px;
+        }
+    }
+
 }
 @include respond-phone {
     .picselect{

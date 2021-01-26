@@ -54,6 +54,19 @@
 
 }
 @include respond-mobile {
+
+    .res_font{
+        font-size: 16px;
+    }
+    p{
+        font-size: 14px!important;
+    }
+    h2 {
+        font-size: 16px!important;
+    }
+    .news_bg{
+        border-radius: 20px;
+    }
     .banner_title{
         font-size: 2em;
         margin-bottom: 0.2em;
@@ -89,15 +102,18 @@
     }
 }
 @include respond-mobilephone {
+    .title_pic {
+    max-width: 260px;
+    }
     .m_share{
         text-align: center;
     }
     .news_pic{
-        width: 150px;
-        height: 150px;
+        width: 130px;
+        height: 130px;
     }
     .sev_font{
-        font-size: 1.1em;
+        font-size: 14px;
     }
     .sev_icon{
         width: 87%;
