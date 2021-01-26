@@ -84,8 +84,6 @@
 
 				if($("#title").val() == "")
 					alert("請輸入標題");
-			  else if($("#description").val() == "")
-			 		alert("請輸入概述");
 				else if($("#date").val() == "")
 					alert("請輸入日期");
 				else{

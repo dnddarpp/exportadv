@@ -57,8 +57,6 @@ $(function(){
     //console.log(cnt);
 		if($("#title").val() == "")
 			alert("請輸入標題");
-    else if($("#description").val() == "")
-  			alert("請輸入概述");
 		else{
 			var pic = '';
 			if( $('#pic img').length > 0 ) pic = $('#pic img').attr('src');

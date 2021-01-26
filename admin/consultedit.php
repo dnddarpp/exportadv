@@ -93,8 +93,6 @@
 
 				if($("#title").val() == "")
 					alert("請輸入標題");
-			  else if($("#description").val() == "")
-			 		alert("請輸入概述");
 				else if(endpage=="1" && cnt == "")
 					alert("請輸入內文");
 				else{
