@@ -7,13 +7,13 @@
                   <div class="col-12 col-md-12 col-lg-4">
                      <ul class="ft_font">
                         <li class="ft_bold">主辦單位</li>
-                        <li><a href="#">經濟部國際貿易局</a></li>
+                        <li><a href="https://www.trade.gov.tw/" target="_blank">經濟部國際貿易局</a></li>
                      </ul>
                   </div>
                   <div class="col-12 col-md-12 col-lg-4">
                      <ul class="ft_font">
                         <li class="ft_bold">執行單位</li>
-                        <li><a href="#">中華民國對外貿易發展協會</a></li>
+                        <li><a href="https://www.taitra.org.tw/?_ga=2.213775511.2078128385.1611642896-388339047.1609127056" target="_blank">中華民國對外貿易發展協會</a></li>
                      </ul>
                   </div>
                   <div class="col-12 col-md-12 col-lg-4">
