@@ -30,7 +30,7 @@
 <html>
    <head>
       <?php require_once('i_meta.php'); ?>
-      <title>成長茁壯方案</title>
+      <title>國際行銷成長茁壯方案</title>
    </head>
    <body >
       <?php require_once('i_header.php'); ?>
