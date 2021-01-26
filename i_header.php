@@ -30,6 +30,7 @@
       <div class="hd_right">
          <div class="home"><a href="index"><img src="images/home1.svg" alt=""></a></div>
          <div class="home"><img src="images/search.svg" alt=""></div>
+         <div class="searchbar"><input name="" type="text"  placeholder="請輸入關鍵字"/></div>
       </div>
    </nav>
 </header>

@@ -87,7 +87,7 @@
 							$pic = $img.".".$type;
 
 					?>
-					<div class="col-6 col-md-6 col-lg-6">
+					<div class="col-12 col-md-6 col-lg-6">
 						<a href="picture_more?id=<?=$data["id"]?>">
 							<div class="picutre_bg">
 								<div class="picture_top_Bg" style="background-image:url(pic/album/<?=$pic?>)"></div>

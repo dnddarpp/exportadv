@@ -658,6 +658,78 @@ img {
   margin-bottom: 30px;
 }
 
+.name {
+  border-bottom: 1px solid #ABABAB;
+  padding: 30px 0;
+  font-size: 1.2em;
+}
+.name input {
+  width: 100%;
+}
+.name select {
+  width: 100%;
+  border: none;
+  color: #555555;
+}
+.name textarea {
+  width: 100%;
+  height: 30px;
+}
+
+.tittle_name {
+  font-size: 2em;
+  border-bottom: 1px solid #53B8B8;
+  display: inline;
+  padding-bottom: 8px;
+  font-weight: 600;
+}
+
+.font_Lg {
+  font-size: 1.6em;
+  line-height: 1.6;
+  color: #555555;
+  padding: 0 5%;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.check_images {
+  margin: 20px 0;
+}
+
+.sitmap_box {
+  margin-bottom: 30px;
+}
+
+.sitemap_tittle {
+  font-size: 1.2em;
+  color: #17A6DC;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ABABAB;
+}
+
+.sitemap_font li {
+  padding: 10px 0;
+  font-size: 1em;
+  color: #555555;
+  border-bottom: 1px solid #cccccc;
+}
+
+.searchbar {
+  background-color: #042665;
+  border-radius: 50px;
+  display: inline-block;
+  padding: 8px 8px 8px 20px;
+  vertical-align: text-bottom;
+  color: #ffffff;
+}
+.searchbar input {
+  width: 100%;
+  background-color: #042665;
+  color: #ffffff !important;
+}
+
 .picutre_bg {
   background-color: #ffffff;
   border-radius: 30px;
@@ -1751,6 +1823,34 @@ img {
   .down_list li {
     font-size: 18px;
   }
+
+  .ft_bold {
+    font-size: 16px;
+  }
+
+  .ft_font li {
+    font-size: 14px;
+  }
+
+  .page_title {
+    top: 7%;
+    left: 7%;
+  }
+
+  .country {
+    margin-top: 20px;
+  }
+  .country li {
+    padding: 4px 10px;
+  }
+
+  .news_list {
+    padding: 10px;
+  }
+
+  .nw_line {
+    width: 60px;
+  }
 }
 @media only screen and (max-width: 480px) {
   .picselect {
@@ -1759,7 +1859,7 @@ img {
 
   .country li {
     border-radius: 50px;
-    padding: 8px 12px;
+    padding: 4px 10px;
     border: 1px solid #17A6DC;
     margin-right: 6px;
   }

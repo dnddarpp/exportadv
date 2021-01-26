@@ -135,7 +135,30 @@
             font-size: 18px;
         }
     }
-
+    .ft_bold{
+        font-size: 16px;
+    }
+    .ft_font{
+        li{
+            font-size: 14px;
+        }
+    }
+    .page_title {
+    top: 7%;
+    left: 7%;
+    }
+    .country{
+        li{
+            padding: 4px 10px;
+        }
+        margin-top: 20px;
+    }
+    .news_list {
+        padding: 10px;
+    }
+    .nw_line{
+        width: 60px;
+    }
 }
 @include respond-phone {
     .picselect{
@@ -144,7 +167,7 @@
     .country {
         li{
             border-radius: 50px;
-            padding: 8px 12px;
+            padding: 4px 10px;
             border: 1px solid #17A6DC;
             margin-right: 6px;
         }

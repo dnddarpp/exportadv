@@ -24,7 +24,8 @@
                               服務條款和隱私權政策內容
                         </li>
                         <li><a href="disclaimer.php">免責聲明</a></li>
-                        <li><a href="#">聯絡我們</a></li>
+                        <li><a href="contact.php">聯絡我們</a></li>
+                        <li><a href="sitemap.php">網站地圖</a></li>
                      </ul>
                   </div>
                </div>
