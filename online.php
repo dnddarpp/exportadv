@@ -14,7 +14,7 @@
 		$sql .= "  inner join consult as b on a.parent = b.id";
 		$sql .= "  where 1=1 and a.display=1 and a.parent=".$parent." ";
 	}else{
-		$sql = "SELECT * FROM consult as a where 1=1 and parent = 0 ";
+		$sql = "SELECT * FROM consult as a where 1=1 and display=1 and parent = 0 ";
 		$parent = 0;
 	}
 	$sql .= "ORDER BY a.`sort`, a.`id`";
