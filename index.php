@@ -35,7 +35,7 @@
    <body >
       <?php require_once('i_header.php'); ?>
       <section>
-         <div class="banner_pic"><img src="images/banner.png" alt=""></div>
+         <div class="banner_pic"><img src="images/sa.png" alt=""></div>
          <div class="container">
             <div class="row sev_wrap">
                <div class="col-4 col-md-4 col-lg-4" data-aos="flip-left">

@@ -139,14 +139,6 @@ ul {
   font-style: normal;
 }
 
-h1 {
-  margin-top: 1.25rem !important;
-  margin-bottom: 2rem !important;
-  font-size: 4em !important;
-  color: #ffffff !important;
-  font-weight: 600 !important;
-}
-
 h2 {
   font-size: 1.3em !important;
   line-height: 1.5 !important;
@@ -728,6 +720,61 @@ img {
   width: 100%;
   background-color: #042665;
   color: #ffffff !important;
+}
+
+.onlinecontent h1 {
+  color: #17A6DC;
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+.onlinecontent h2 {
+  font-size: 28px !important;
+  margin-bottom: 10px;
+}
+.onlinecontent h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.onlinecontent h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.onlinecontent p {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+.onlinecontent p img {
+  width: 100%;
+}
+.onlinecontent ul {
+  margin-left: 20px;
+}
+.onlinecontent ul li {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #585858;
+  letter-spacing: 2px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  list-style-image: url("../images/listpoint.svg");
+  list-style-type: none;
+  margin-left: 25px;
+  vertical-align: middle;
+}
+.onlinecontent ol {
+  margin-left: 20px;
+}
+.onlinecontent ol li {
+  list-style: decimal !important;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #585858;
+  letter-spacing: 2px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  list-style-image: url("../images/listpoint.svg");
+  margin-left: 25px;
+  vertical-align: middle;
 }
 
 .picutre_bg {
