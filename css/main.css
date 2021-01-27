@@ -295,7 +295,7 @@ img {
 .page_title {
   position: absolute;
   top: 25%;
-  left: 20%;
+  left: 15%;
   width: 40%;
 }
 
@@ -462,7 +462,7 @@ img {
   border-radius: 100%;
   overflow: hidden;
   background-size: cover;
-  border: 10px solid #55acee;
+  border: 5px solid #55acee;
   box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
 }
 
@@ -594,18 +594,16 @@ img {
 }
 
 .info_title {
-  font-size: 2em;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  font-size: 35px;
+  margin-top: 30px;
+  margin-bottom: 25px;
   color: #17A6DC;
-  display: inline-block;
   margin-right: 30px;
   vertical-align: middle;
 }
 
 .info_btn {
-  display: inline-block;
-  vertical-align: middle;
+  margin-bottom: 40px;
 }
 
 .country li {
@@ -1227,7 +1225,7 @@ img {
 }
 
 .fr_ft {
-  font-size: 2em;
+  font-size: 25px;
   color: #575757;
   float: left;
   width: 89%;
@@ -1247,9 +1245,9 @@ img {
 }
 
 .fe_tittle {
-  font-size: 2em;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   color: #17A6DC;
   margin-right: 30px;
   vertical-align: middle;
@@ -1471,6 +1469,7 @@ img {
   box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
   position: relative;
   margin-bottom: 50px;
+  margin-top: 20px;
 }
 
 .spr_top_Bg {

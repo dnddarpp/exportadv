@@ -70,6 +70,8 @@
 		<section>
 			<div class="container ">
 				<div class="info_title">各國關稅</div>
+
+				<div class="line"></div>
 				<div class="info_btn">
 					<ul class="country">
 						<li class="active" data-id="1">東協10+6</li>
@@ -81,7 +83,6 @@
 						<li data-id="7">其他</li>
 					</ul>
 				</div>
-				<div class="line"></div>
 				<div class="country_name"></div>
 				<!-- <p class="margin_bm">發布日期: 2020/09/28</p> -->
 				<div class="row">

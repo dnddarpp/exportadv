@@ -30,41 +30,41 @@
 
 
 		<div class="row ab_bottom">
-			<div class="m_bm col-12 col-md-10 col-lg-10">
+			<div class="m_bm col-12 col-md-12 col-lg-12">
 
 				<div class="contact_line"></div>
 
 				<div class="row">
-					<div class="col-6 col-md-6 col-lg-6">
+					<div class="col-12 col-md-6 col-lg-6">
 						<div class="name">
 							<input name="" type="text" placeholder="*姓名" />
 						</div>
 
 
 					</div>
-					<div class="col-6 col-md-6 col-lg-6">
+					<div class="col-12 col-md-6 col-lg-6">
 						<div class="name">
 							<input name="" type="text" placeholder="*電話" />
 						</div>
 
 					</div>
-					<div class="col-6 col-md-6 col-lg-6">
+					<div class="col-12 col-md-6 col-lg-6">
 						<div class="name">
 							<input name="" type="text" placeholder="*Eail" />
 						</div>
 
 					</div>
-					<div class="col-6 col-md-6 col-lg-6">
+					<div class="col-12 col-md-6 col-lg-6">
 						<div class="name">
 							<input name="" type="text" placeholder="*地址" />
 						</div>
 					</div>
-					<div class="col-6 col-md-6 col-lg-6">
+					<div class="col-12 col-md-6 col-lg-6">
 						<div class="name">
 							<input name="" type="text" placeholder="*主旨" />
 						</div>
 					</div>
-					<div class="col-6 col-md-6 col-lg-6">
+					<div class="col-12 col-md-6 col-lg-6">
 						<div class="name">
 							<select name="">
 								<option>詢問項目 *</option>

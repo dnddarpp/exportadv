@@ -71,13 +71,14 @@
 		<section>
 			<div class="container">
 				<div class="info_title">最新消息</div>
+
+				<div class="line"></div>
 				<div class="info_btn">
 					<ul class="country">
 						<li class="active" data-id="1">最新消息</li>
 						<li data-id="2">產業新聞</li>
 					</ul>
 				</div>
-				<div class="line"></div>
 				<?php
 					while($data = mysqli_fetch_assoc($result)) {
 						$type = $typename[$data["type"]-1];

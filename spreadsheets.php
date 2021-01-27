@@ -28,7 +28,7 @@
 				<div class="info_title">政府輔導及各項外銷資源</div>
 				<div class="line"></div>
 				<div class="row">
-					<div class="col-12 col-md-3 col-lg-3">
+					<div class="col-12 col-md-6 col-lg-3">
 						<div class="spread_bg">
 							<div class="spr_top_Bg">
 								<div class="bu_icon"><img src="images/spr1.svg" alt=""></div>
@@ -44,7 +44,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-12 col-md-3 col-lg-3">
+					<div class="col-12 col-md-6 col-lg-3">
 						<div class="spread_bg">
 							<div class="spr_top_Bg">
 								<div class="bu_icon"><img src="images/spr2.svg" alt=""></div>
@@ -72,7 +72,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-12 col-md-3 col-lg-3">
+					<div class="col-12 col-md-6 col-lg-3">
 						<div class="spread_bg">
 							<div class="spr_top_Bg">
 								<div class="bu_icon"><img src="images/spr3.svg" alt=""></div>
@@ -118,7 +118,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-12 col-md-3 col-lg-3">
+					<div class="col-12 col-md-6 col-lg-3">
 						<div class="spread_bg">
 							<div class="spr_top_Bg">
 								<div class="bu_icon"><img src="images/spr4.svg" alt=""></div>

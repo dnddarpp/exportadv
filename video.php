@@ -91,6 +91,8 @@
 						</select>
 					</div>
 				</div> -->
+
+				<div class="line"></div>
 				<div class="info_btn">
 					<ul class="country">
 						<li class="active" data-id="">全部</li>
@@ -107,7 +109,6 @@
 						?>
 					</ul>
 				</div>
-				<div class="line"></div>
 				<div class="row picture_wrap">
 					<?php
 						while($data = mysqli_fetch_assoc($result)) {
