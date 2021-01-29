@@ -5,7 +5,7 @@
 
 	//每頁顯示筆數
 
-	$per = 20;
+	$per = 30;
 	$curpage = $conn->real_escape_string($_GET["page"]);
 
 	$sql = "SELECT * FROM media where display=1 ORDER BY  `sort` , `id` DESC ";
@@ -117,7 +117,7 @@
 							$public_date =  explode(" ", $data["Public_Date"])[0];
 
 					?>
-					<div class="col-12 col-md-6 col-lg-6 mediarow" data-type="<?=$data["type"]?>">
+					<div class="col-12 col-md-6 col-lg-6 mediarow" data-type="<?=$data["type"]?>" data-aos="fade-up">
 						<a data-fancybox href="<?=$data["url"]?>">
 							<div class="picutre_bg">
 								<div class="picture_top_Bg" style="background-image:url(pic/media/<?=$data['pic']?>)">
@@ -132,26 +132,17 @@
 					</div>
 				<?php } ?>
 				</div>
-				<!-- <ul class="prev_btn onlinepage">
-					<a href="#">
-						<li>< Prev</li>
-					</a>
-					<a href="#">
-						<li class="actvie">1</li>
-					</a>
-					<a href="#">
-						<li>2</li>
-					</a>
-					<a href="#">
-						<li>3</li>
-					</a>
-					<a href="#">
-						<li>4</li>
-					</a>
-					<a href="#">
-						<li>Next ></li>
-					</a>
-				</ul> -->
+				<ul class="prev_btn onlinepage">
+					<?php
+						for($m=1;$m<=$pages;$m++){
+							if($m==$curpage){
+									echo "<a href=\"video.php?&page=".$m."\" class=\"active\"><li>$m</li></a>";
+							}else{
+									echo "<a href=\"video.php?&page=".$m."\"><li>$m</li></a>";
+							}
+						}
+					 ?>
+				</ul>
 			</div>
 		</section>
     <?php require_once('i_bottom.php'); ?>

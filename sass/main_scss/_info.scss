@@ -22,6 +22,10 @@
         margin-right: 8px;
         cursor: pointer;
         margin-bottom: 8px;
+        &:hover{
+          background-color: $twt-blue-sfont;
+          color:#fff;
+        }
     }
     .active{
         background-color:$ex_tBlue;

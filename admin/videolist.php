@@ -3,7 +3,7 @@
 
 	//每頁顯示筆數
 
-	$per = 20;
+	$per = 30;
 	$curpage = $conn->real_escape_string($_GET["page"]);
 
 	$sql = "SELECT a.*, b.catename FROM media as a left join media_cate as b on a.type = b.id where 1=1 ORDER BY  `sort`, `id` DESC ";
@@ -44,6 +44,7 @@
 								<tr>
 									<td class="tab_gray" width="5%">編輯
 									<td class="tab_gray" width="5%">顯示
+									<td class="tab_gray" width="5%">排序
 									<!-- <td class="tab_gray" width="5%">刪除 -->
 									<td class="tab_gray" width="45%">影音名稱
 									<td class="tab_gray" width="15%">分類
@@ -67,6 +68,7 @@
 								<tr>
 									<td><a href="videoedit?id=<?=$data["id"]?>"><i class="mdi mdi-file-document-edit"></i></a>
 									<td><?=$display?>
+									<td><?=$data["sort"]?></td>
 									<!-- <td><a href=videoedit data-method=post data-param='{"id":118,"act":"display"}'><i class="mdi mdi-eye"></i></a> -->
 									<!-- <td><a href=videoedit data-method=post data-param='{"id":118,"act":"delete"}' data-confirm=確定要刪除嗎? data-done=reload><i class="mdi mdi-delete"></i></a> -->
 									<td><?=$data["title"]?>
@@ -77,7 +79,15 @@
 							</table>
 						</div>
 						<div class="page_box">
-							<div class="dkeb page_active">1</div>
+							<?php
+								for($m=1;$m<=$pages;$m++){
+									if($m==$curpage){
+											echo "<a href=\"videolist.php?&page=".$m."\" class=\"dkeb page_active\">$m</a>";
+									}else{
+											echo "<a href=\"videolist.php?&page=".$m."\" class=\"dkeb\">$m</a>";
+									}
+								}
+							 ?>
 						</div>
 					</div>
 				</div>
