@@ -10,7 +10,7 @@
          <div class="page_banner_pic" style="background-image:url(images/banner_02.png)" ;="">
             <div class="page_title">
                <div class="banner_title">免費諮詢介紹</div>
-               <div class="page_p">快速找尋各國的關稅</div>
+               <!-- <div class="page_p">快速找尋各國的關稅</div> -->
             </div>
          </div>
          <div class="container all_wrapptop">
