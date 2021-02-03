@@ -4,16 +4,34 @@
 
 	$typename = Array("最新消息","產業新聞");
 	$type = $conn->real_escape_string($_GET["type"]);
+	$btime = $conn->real_escape_string($_GET["btime"]);
+	$etime = $conn->real_escape_string($_GET["etime"]);
+	$title = $conn->real_escape_string($_GET["title"]);
+	$keyword = $conn->real_escape_string($_GET["keyword"]);
 	if(!$type){
 		$type=1;
 	}
 
 	//每頁顯示筆數
 
-	$per = 20;
+	$per = 100;
 	$curpage = $conn->real_escape_string($_GET["page"]);
 
-	$sql = "SELECT * FROM news where type = ".$type." ORDER BY `Public_date` DESC, `sort` DESC, `id` DESC ";
+	$sql = "SELECT * FROM news where type = ".$type." ";
+	if($btime){
+		  $sql .= "and Public_Date >= '$btime' ";
+	}
+	if($btime){
+		  $sql .= "and Public_Date <= '$etime' ";
+	}
+	if($title){
+		  $sql .= "and title LIKE '%$title%' ";
+	}
+	if($keyword){
+		  $sql .= "and (title LIKE '%$keyword%' or 	description LIKE '%$keyword%'  or content LIKE '%$keyword%') ";
+	}
+	$sql .= "ORDER BY `Public_date` DESC, `sort` DESC, `id` DESC ";
+	// echo $sql;
 	$result = qury_sel($sql, $conn);
 
 	$total = $result->num_rows;
@@ -35,6 +53,45 @@
 	<head>
 		<?php require_once('i_meta.php'); ?>
 		<title></title>
+		<script>
+		$( document ).ready(function(){
+			$('.datepicker-input').datepicker({
+		    dateFormat: 'yy-mm-dd',
+		    monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+		    dayNamesMin: '日一二三四五六',
+		    yearSuffix: '年',
+		    showMonthAfterYear: true,
+		    changeMonth: true,
+		    changeYear: true
+		  });
+			$(".clear").click(function(){
+				$('input').val("")
+				location.href="newslist.php"
+			})
+			$("#search_btn").click(function(){
+				var btime = $("#btime").val()
+				var etime = $("#etime").val()
+				var title = $("#title").val()
+				var keyword = $("#keyword").val()
+				var url = "newslist.php?"
+				if(btime.length>0){
+					url+="btime="+btime+"&"
+				}
+				if(etime.length>0){
+					url+="etime="+etime+"&"
+				}
+				if(title.length>0){
+					url+="title="+title+"&"
+				}
+				if(keyword.length>0){
+					url+="keyword="+keyword+"&"
+				}
+				location.href=url
+			})
+
+		})
+
+		</script>
 	</head>
 	<body>
 		<?php require_once('i_header.php'); ?>
@@ -44,12 +101,11 @@
 				<div class="sidebar">
 					<div class="right_continer">
 						<div class="adsright_title">最新消息-<?=$typename[$type-1]?></div>
-						<form>
 							<div class="news_manag">
 								<div class="manag_box">
 									發布時間
-									<input name="btime" type="text" value="" class=datepicker-input style='border:1px solid #ccc' />  -
-									<input name="etime" type="text" value="" class=datepicker-input style='border:1px solid #ccc' />
+									<input name="btime" id="btime" type="text" value="<?=$btime?>" class=datepicker-input style='border:1px solid #ccc' />  -
+									<input name="etime" id="etime" type="text" value="<?=$etime?>" class=datepicker-input style='border:1px solid #ccc' />
 								</div>
 								<!-- <div class="manag_box">選擇分類
 									<label><input name=class type=radio value=0 > 不限</label>
@@ -58,18 +114,18 @@
 								</div> -->
 								<div class="manag_box">
 									搜尋標題
-									<div class="man_bord"><input name="title" value="" type="text" /></div>
+									<div class="man_bord"><input name="title" id="title" value="<?=$title?>" type="text" /></div>
 								</div>
 								<div class="manag_box">
 									搜尋全文
-									<div class="man_bord"><input name="title_content" value="" type="text" placeholder='標題或內容' /></div>
+									<div class="man_bord"><input name="title_content" id="keyword" value="<?=$keyword?>" type="text" placeholder='標題、描述或內容' /></div>
 								</div>
 								<br>
 								<div class="btnwrap">
-									<button class="delete_btn" id=search_btn>搜尋</button>
+									<button class="delete_btn" id="search_btn">搜尋</button>
+									<button class="delete_btn clear">清除</button>
 								</div>
 							</div>
-						</form>
 						<div class="icon_dk">
 							<ul>
 								<li><i class="mdi mdi-view-headline"></i></li>

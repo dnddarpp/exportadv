@@ -423,4 +423,24 @@ function setSelect($_ary,$_layer){
 	}
 }
 
+function trackConsult($_id, $conn){
+	$sql = "INSERT INTO consult_log (consult_id) VALUES ($_id)";
+
+if (mysqli_query($conn, $sql)) {
+  $last_id = mysqli_insert_id($conn);
+  return $last_id;
+} else {
+  return "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+	//mysqli_close($conn);
+}
+
+function insertFeedback($_id,$_trackid, $feed, $conn){
+	$data = array(
+		'consult_id'=>$_id,
+		'track_id'=>$_trackid,
+		'feed'=>$feed,
+	);
+	insert_hash( 'consult_feedback', $data, $conn );
+}
 ?>

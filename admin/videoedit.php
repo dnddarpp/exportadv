@@ -107,7 +107,7 @@ $(function(){
 									<tr>
 										<td width="160">顯示
 										<td>
-											<select class="form-control" name="" id="display" >
+											<select class="form-select m-width" name="" id="display" >
                       	<option value="1">顯示</option>
 												<option value="0"<?=$data['display'] == '0' ? ' selected="selected"' : '';?>>不顯示</option>
                       </select>
@@ -118,7 +118,7 @@ $(function(){
                   <tr>
 										<td width="160">分類
 										<td>
-											<select class="form-control" name="" id="type" >
+											<select class="form-select" name="" id="type" >
                       	<option value="0">===請選擇===</option>
                         <?php
     											while($data2 = mysqli_fetch_assoc($pjdata2)) {

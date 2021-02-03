@@ -119,6 +119,10 @@ img {
     display: inline-block;
     vertical-align: middle;
 
+    &.formm{
+      color:#fff;
+    }
+
 }
 .onlineicon{
     display: inline-block;
@@ -428,4 +432,8 @@ img {
             cursor: pointer!important;
         }
     }
+}
+
+#gosearch{
+  cursor: pointer;
 }

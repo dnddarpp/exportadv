@@ -13,6 +13,10 @@
 	//$text = str_ireplace(['\\\\r', '\\\\n'], "", $data["content"]);
 	$text = $data["content"];
 
+  $meta_title=$data["MetaTitle"];
+  $meta_description=$data["MetaDesc"];
+  $meta_keywords = $data["MetaKeywords"];
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,7 +55,7 @@
 					<li> 更新日期：<?=$update?></li>
 				</ul>
 				<div class="line"></div>
-				<div class="maincontent">
+				<div class="maincontent onlinecontent">
 					<?=$text?>
 				</div>
 				<div class="line"></div>

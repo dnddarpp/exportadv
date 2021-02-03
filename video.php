@@ -5,10 +5,16 @@
 
 	//每頁顯示筆數
 
-	$per = 30;
+	$per = 100;
 	$curpage = $conn->real_escape_string($_GET["page"]);
+	$keyword = $conn->real_escape_string($_GET["keyword"]);
 
-	$sql = "SELECT * FROM media where display=1 ORDER BY  `sort` , `id` DESC ";
+	$sql = "SELECT * FROM media where display=1 ";
+	if(strlen($keyword)>0){
+		$sql .= "and title like '%$keyword%' ";
+	}
+	$sql .= " ORDER BY  `sort` , `id` DESC ";
+	// echo $sql;
 	$result = qury_sel($sql, $conn);
 
 	$total = $result->num_rows;
@@ -32,6 +38,7 @@
 		<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 		<title>影音專區</title>
 		<script>
+
 			$( document ).ready(function(){
 					setShowType("")
 					$(".country li").click(function(){
@@ -39,6 +46,15 @@
 						$(this).addClass("active")
 						type = $(this).data("id")
 						setShowType(type)
+					})
+					$("#search").click(function(){
+						var val = $("#keyword").val()
+						if(val.length>0){
+								location.href="video?keyword="+val
+						}
+					})
+					$("#clear").click(function(){
+						location.href="video"
 					})
 			})
 			function setShowType(_type){
@@ -74,12 +90,14 @@
 		<section>
 			<div class="container">
 				<div class="info_title">影音專區</div>
-				<!-- <div class="picture_searchbar">
+				<div class="picture_searchbar">
 					<div class="search_picbox">
 					    <div class="search_iconL"><img src="images/search_02.svg" alt=""></div>
-					    <div class="search_input"><input name="" type="text"  placeholder="搜尋"/></div>
+					    <div class="search_input"><input name="" type="text" id="keyword"  placeholder="搜尋" value="<?=$keyword?>"/></div>
+							<button type="button" name="button" class="btn btn-info" id="search">搜尋</button>
+							<button type="button" name="button" class="btn btn-info" id="clear">清除</button>
 					</div>
-					</div> -->
+				</div>
 				<!-- <div class="picture_searchbar">
 					<div class="search_picbox">
 						<select name="">
@@ -117,7 +135,7 @@
 							$public_date =  explode(" ", $data["Public_Date"])[0];
 
 					?>
-					<div class="col-12 col-md-6 col-lg-6 mediarow" data-type="<?=$data["type"]?>" data-aos="fade-up">
+					<div class="col-12 col-md-6 col-lg-6 mediarow" data-type="<?=$data["type"]?>" >
 						<a data-fancybox href="<?=$data["url"]?>">
 							<div class="picutre_bg">
 								<div class="picture_top_Bg" style="background-image:url(pic/media/<?=$data['pic']?>)">

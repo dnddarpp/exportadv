@@ -213,8 +213,8 @@
                </div>
                <div class="free_full_pic"><img src="images/irkn.jpg" alt=""></div>
                <div class="free_ex">
-                  <div class="exken_pin"><a href="#"><img src="images/left.svg" alt=""></a></div>
-                  <div class="exken_pin2"><a href="#"><img src="images/right.svg" alt=""></a></div>
+                  <!-- <div class="exken_pin"><a href="#"><img src="images/left.svg" alt=""></a></div> -->
+                  <!-- <div class="exken_pin2"><a href="#"><img src="images/right.svg" alt=""></a></div> -->
                   <div class="free_ex_t_Bg">案例1.</div>
                   <div class="free_ex_content">
                      <div class="row">

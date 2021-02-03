@@ -3481,3 +3481,7 @@ html.touch body #query-list .container::-webkit-scrollbar-thumb:window-inactive 
 .preview hr {
   border-top: 1px solid #333;
 }
+
+.m-width {
+  width: 150px;
+}

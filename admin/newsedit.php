@@ -15,11 +15,12 @@
     $typename="編輯";
     if( ( $data['pic'] != '') && file_exists( '../pic/news/'.$data['pic'] ) )
     $pic = "<img src='../pic/news/".$data['pic']."'>";
-
+    $contenttype = $data["contenttype"];
   }else{
     $type="add";
     $id="";
     $typename="新增";
+    $contenttype = "1";
   }
 
 ?>
@@ -30,11 +31,20 @@
 		<title></title>
 		<script type="text/javascript">
 	var pagetype = "<?=$type?>"
+  var contenttype = "<?=$contenttype?>"
 $(function(){
+  $("#date").datepicker({dateFormat: 'yy-mm-dd'})
   if(pagetype=="add"){
+		$("#date").datepicker("setDate", new Date());
     $("#title").val("")
     $("#description").val("")
-  }
+	}
+
+  $("#selecttype").change(function() {
+    var val = $(this).val()
+    console.log("val:"+val)
+    setTypeContent(val)
+  });
   $('#pic_upload').uploader(
 		'pic_upload_news.php',
 		function(filename){
@@ -47,11 +57,21 @@ $(function(){
 	$('.del_img').click(function(){
 		$(this).closest('td').find('img').remove();
 	});
+  $('#file_upload').uploader(
+    'file_upload.php',
+    function(filename){
+      file = filename
+      $('#flielink').html('<a href="../files/file/'+filename+'" target="_blank">檢視檔案</a>');
+    },
+    function(error){
+      alert('Error! '+error);
+    }
+  );
+  $('.del_file').click(function(){
+		$(this).closest('td').find('a').remove();
+	});
 
-  $("#date").datepicker({dateFormat: 'yy-mm-dd'})
-  if(pagetype=="add"){
-		$("#date").datepicker("setDate", new Date());
-	}
+
   $("#delete").click(function(){
 		if(confirm("確定要刪除資料嗎？")){
 				myDelete( 'news', 'id', '<?=$data["id"]?>' ,"newslist.php?page=<?=$getpage?>&type=<?=$typeid?>");
@@ -60,45 +80,89 @@ $(function(){
 		}
 	})
   $("#save").click(function(){
-
+    var type = $("#type").val()
+    var error=""
+    var datatype = $("#selecttype").val()
     //console.log(cnt);
-		if($("#title").val() == "")
-			alert("請輸入標題");
-		else if($("#date").val() == "")
-			alert("請輸入日期");
-		else if(cnt == "")
-			alert("請輸入內文");
-		else{
-      var pic = '';
-		  if( $('#pic img').length > 0 ) pic = $('#pic img').attr('src');
-		  pic = pic.split("news/")[1]
-
+		if($("#title").val() == ""){
+      error+="請輸入標題\n"
+    }
+		if($("#date").val() == ""){
+      error+="請輸入日期\n"
+    }
+    if(datatype=="1"){
       var cnt = CKEDITOR.instances.editor.getData();
-			var type = $("#type").val()
-			var link = $("#url").val()
-      //console.log(cnt);
-			$.ajax({
-				url: "news_system.php",
-				type: "POST",
-				data: {id: "<?=$id?>", type: type, title: $("#title").val(), description: $("#description").val(), date: $("#date").val(),  pic:pic, cnt:cnt, url:link, display: $("#display").val(), sort: $("#sort").val(), seo_title:$("#seo_title").val(),seo_desc:$("#seo_desc").val(),seo_keywords:$("#seo_keywords").val()},
-				error: myErr,
-				success: function(msg){
-					var rr = JSON.parse(msg);
-					if(String(rr["status"])=="success"){
-						alert("儲存完成")
-						location.assign("newslist?page=<?=$getpage?>&type=<?=$typeid?>")
-					}else{
-						alert(rr)
-					}
-				}
-			});
-		}
+      if(cnt == ""){
+        error+="請輸入內文\n"
+      }
+    }else if(datatype=="2"){
+      var link = $("#url").val()
+      if(link == ""){
+        error+="請輸入連結\n"
+      }
+    }else if(datatype=="3"){
+      if( $('#flielink a').length > 0 ){
+        error+="請輸上傳檔案\n"
+      }
+    }
+    if(error.length>0){
+      alert(error)
+      return
+    }
+
+    var pic = '';
+    if( $('#pic img').length > 0 ) pic = $('#pic img').attr('src');
+    pic = pic.split("news/")[1]
+
+    var cnt = ""
+    var link = ""
+    var attach = ""
+    console.log("datatype:"+datatype)
+    if(datatype=="1"){
+      //一般資料
+      cnt = CKEDITOR.instances.editor.getData();
+    }else if(datatype=="2"){
+      //url連結
+      link = $("#url").val()
+    }else if(datatype=="3"){
+      if( $('#flielink a').length > 0 ){
+        attach = $('#flielink a').attr('href');
+        attach = attach.split("file/")[1]
+      }
+      console.log("attach:"+attach)
+    }
+    console.log("cnt:"+cnt)
+    console.log("attach:"+attach)
+    console.log("link:"+link)
+    var dataary = {id: "<?=$id?>", type: type, title: $("#title").val(), description: $("#description").val(), date: $("#date").val(),  pic:pic, cnt:cnt, url:link, attach:attach, display: $("#display").val(), sort: $("#sort").val(), seo_title:$("#seo_title").val(),seo_desc:$("#seo_desc").val(),seo_keywords:$("#seo_keywords").val()}
+    console.log(JSON.stringify(dataary))
+    //console.log(cnt);
+    $.ajax({
+      url: "news_system.php",
+      type: "POST",
+      data: dataary,
+      error: myErr,
+      success: function(msg){
+        var rr = JSON.parse(msg);
+        if(String(rr["status"])=="success"){
+          alert("儲存完成")
+          location.assign("newslist?page=<?=$getpage?>&type=<?=$typeid?>")
+        }else{
+          alert(rr)
+        }
+      }
+    });
 	});
 	$("#cancel").click(function(){
 		if(confirm("不儲存直接離開?") == true)
 			location.assign("newslist?page=<?=$getpage?>&type=<?=$typeid?>");
 	});
+  setTypeContent(contenttype)
 });
+function setTypeContent(_val){
+  $(".conttype").hide()
+  $(".type"+_val).show()
+}
 </script>
 	</head>
 	<body>
@@ -114,14 +178,14 @@ $(function(){
 									<tr>
 										<td width="15%">分類
 										<td width="85%">
-											<select class="form-control" name="" id="type" >
+											<select class="form-select m-width" name="" id="type" >
                       	<option value="1">最新消息</option>
 												<option value="2"<?=$typeid == '2' ? ' selected="selected"' : '';?>>產業新聞</option>
                       </select>
 									<tr>
 										<td>顯示
 										<td>
-											<select class="form-control" name="" id="display" >
+											<select class="form-select m-width" name="" id="display" >
                       	<option value="1">顯示</option>
 												<option value="0"<?=$data['display'] == '0' ? ' selected="selected"' : '';?>>不顯示</option>
                       </select>
@@ -149,15 +213,7 @@ $(function(){
                         <div class="media_bord"><input type="text" name="description" class="form-control" placeholder="建議40字以內" id="description" value="<?=$data["description"] ?>"></div>
                       </td>
                   </tr>
-									<tr>
-                      <td width="10%">
-                        外部連結
-                      </td>
-                      <td width="90%">
-                        <div class="media_bord"><input type="text" name="url" class="form-control" placeholder="" id="url" value="<?=$data["url"] ?>"></div>
-                      </td>
-                  </tr>
-									<tr>
+                  <tr>
                     <td>
                         圖片(483*284)
                     </td>
@@ -169,9 +225,46 @@ $(function(){
 								          <button class='del_img'>刪除圖片</button>
                     </td>
                 </tr>
-								<tr>
-									<td>內容<br>
-									<td><textarea id="editor" name="editor"><?=$text?></textarea>
+                  <tr>
+                      <td width="10%">
+                        資料類型
+                      </td>
+                      <td width="90%">
+                        <select class="form-select m-width" name="" id="selecttype">
+                          <option value="1">一般資料</option>
+                          <option value="2">URL連結</option>
+                          <option value="3">檔案下載</option>
+                        </select>
+                      </td>
+                  </tr>
+                  <tr class="conttype type1">
+  									<td>內容<br>
+  									<td><textarea id="editor" name="editor"><?=$text?></textarea>
+                  </tr>
+									<tr class="conttype type2">
+                      <td width="10%">
+                        外部連結
+                      </td>
+                      <td width="90%">
+                        <div class="media_bord"><input type="text" name="url" class="form-control" placeholder="" id="url" value="<?=$data["url"] ?>"></div>
+                      </td>
+                  </tr>
+                  <tr class="conttype type3">
+  									<td>檔案下載<br></td>
+  									<td>
+                      <div id='file_upload'></div>
+                      <div id='flielink'>
+                        <?php
+                          if($data["attach"]){
+                        ?>
+                        <a href="../files/file/<?=$data["attach"]?>" target="_blank">檢視檔案</a>
+                        <?php
+                        }
+                        ?>
+                      </div>
+                      <button class='del_file'>刪除檔案</button>
+                    </td>
+                  </tr>
 								<tr>
 									<td>SEO title
 									<td>

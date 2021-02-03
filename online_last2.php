@@ -2,6 +2,9 @@
 	require_once("include.php");
 	$id = $conn->real_escape_string($_GET["id"]);
 
+	$trackid = trackConsult($id,$conn);
+	//echo $trackid;
+
 
 	$layer = 0;
 	if($id){
@@ -59,6 +62,34 @@
 	<head>
 		<?php require_once('i_meta.php'); ?>
 		<title>線上諮詢</title>
+		<script>
+		var pageid = "<?=$id?>"
+		var trackid = "<?=$trackid?>"
+		$( document ).ready(function(){
+			$(".kekeke").click(function(){
+				var val = $(this).data("id")
+
+				$.ajax({
+		      url: "feedback_system.php",
+		      type: "POST",
+		      data: {id: "<?=$id?>", trackid: trackid, feed:val},
+		      error: myErr,
+		      success: function(msg){
+		        var rr = JSON.parse(msg);
+		        if(String(rr["status"])=="success"){
+		          alert("我們已經收到您的回應！謝謝")
+							$(".qekc_font").fadeOut()
+		        }else{
+		          alert(rr)
+		        }
+		      }
+		    });
+			})
+		})
+		function myErr(msg){
+			console.log(msg)
+		}
+		</script>
 	</head>
 	<body >
 		<?php require_once('i_header.php'); ?>
@@ -104,8 +135,8 @@
 				<div class="qekc_font">
 					<div class="yes_btn clean">
 						<div class="uij">上述資訊是否有幫助?</div>
-						<div class="kekeke adke_active">是</div>
-						<div class="kekeke">否</div>
+						<div class="kekeke adke_active" data-id="1">是</div>
+						<div class="kekeke" data-id="0">否</div>
 					</div>
 				</div>
 				<ul class="prev_btn onlinepage">
@@ -115,6 +146,6 @@
 				</ul>
 			</div>
 		</section>
-		<?php require_once('i_bottom.php'); ?>
+		<?php require_once('i_bottom2.php'); ?>
 	</body>
 </html>

@@ -92,7 +92,7 @@
                   <li>輸入貨名查詢:<a href="http://db2.wtocenter.org.tw/tariff/search_byProducts.aspx" target="_blank">http://db2.wtocenter.org.tw/tariff/search_byProducts.aspx</a>  </li>
                	</ul>
 
-				<div class="fe_tittle"><a href="https://itrade.taiwantrade.com/" target="_blank"></a>二、iTrade (全球貿易大數據平台) </div>
+				<div class="fe_tittle"><a href="https://itrade.taiwantrade.com/" target="_blank">二、iTrade (全球貿易大數據平台) </a></div>
 				<div class="fe_font">
                     經濟部國際貿易局為協助業者拓銷海外市場，委託外貿協會建置之「itrade全球貿易大數據平台」，提供線上即時的出口情勢分析、跨國關稅比較、篩選潛力市場等大數據統計資訊服務，歡迎廠商多加運用。該網站綜整各國關稅網站，提供以下兩項查詢功能:
                   </div>

@@ -3,7 +3,7 @@
 
 	//每頁顯示筆數
 
-	$per = 20;
+	$per = 100;
 	$curpage = $conn->real_escape_string($_GET["page"]);
 	$parent = $conn->real_escape_string($_GET["parent"]);
 

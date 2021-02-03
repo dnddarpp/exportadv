@@ -84,11 +84,17 @@
 						$type = $typename[$data["type"]-1];
 						$date =  explode(" ", $data["date"])[0];
 						$public_date =  explode(" ", $data["Public_Date"])[0];
+						$link = $data["url"];
+						$target = 'target="_blank"';
+						if(strlen($link)<=0){
+							$link ="news_more?id=".$data["id"];
+							$target="";
+						}
 
 				?>
 				<div class="news_list" data-type="<?=$data["type"]?>">
 					<div class="footer_table">
-						<a href="news_more?id=<?=$data["id"]?>">
+						<a href="<?=$link?>" <?=$target?>>
 							<div class="row_table">
 								<div class="cell_x2">
 									<h2 class="nw_ft"><?=$data["title"]?></h2>

@@ -1,10 +1,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="">
-<meta name="keywords" content="">
-<meta property="og:title" content="" />
-<meta property="og:description" content="" />
+<meta name="description" content="<?=$meta_description?>">
+<meta name="keywords" content="<?=$meta_keywords?>">
+<meta property="og:title" content="<?=$meta_title?>" />
+<meta property="og:description" content="<?=$meta_description?>" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="" />
 <meta property="og:site_name" content="成長茁壯方案" />
@@ -25,3 +25,4 @@
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="dist/js/main.js" charset="utf-8"></script>
+<script async src="https://cse.google.com/cse.js?cx=1dbc5da7c2d6a9eda"></script>
