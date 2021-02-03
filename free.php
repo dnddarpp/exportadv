@@ -35,17 +35,20 @@
             <div class="line"></div>
             <div class="free_wrap">
                <div class="free_title clean">
-                  <div class="fr_ft"><span class="blue">01.</span>報名免費諮詢服務</div>
+                  <div class="fr_ft"><span class="blue">01.</span>「國際行銷諮詢中心」簡介</div>
                   <div class="ft_ic">
                      <img src="images/down.svg" alt="">
                   </div>
                </div>
                <div class="free_qa_box">
-                  <div class="fe_tittle">想拓展海外市場又不知從何開始?在地人脈? <br>市場在哪? 買主在哪?</div>
+                   <div class="fe_font">
+                     「國際行銷諮詢中心」為外貿協會為執行經濟部國際貿易局委辦「中小企業國際行銷成長茁壯方案」而設立的單位，主要目的為連結政府資源，協助具國際競爭力的創新產業或中小企業行銷海外市場。該中心由本會曾派駐海外、具備國際市場豐富經驗的地區專家組成，化身為中小企業國際行銷的專屬顧問，提供客製化、一站式的專業諮詢服務，同時引導業者善用政府輔導資源，強化企業經營體質，提昇國際競爭力。
+                   </div>
+                  <!-- <div class="fe_tittle">想拓展海外市場又不知從何開始?在地人脈? <br>市場在哪? 買主在哪?</div>
                   <div class="fe_font">
                      提供中小企業陪伴式國際行銷諮詢服務<br>
                      一站式連結經濟部各單位輔導資源
-                  </div>
+                  </div> -->
                </div>
                <div class="graybg_font">善用政府輔導資源、強化企業經營體質、快速拓展海外市場、提升國際競爭力</div>
                <a href="https://events.taiwantrade.com/exportadv" target="_blank"><div class="goto_btn">立刻報名免費諮詢</div></a>

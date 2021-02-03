@@ -72,7 +72,7 @@
 				<div class="info_title">各國關稅</div>
 
 				<div class="line"></div>
-				<div class="info_btn">
+				<!-- <div class="info_btn">
 					<ul class="country">
 						<li class="active" data-id="1">東協10+6</li>
 						<li data-id="2">美洲</li>
@@ -82,10 +82,32 @@
 						<li data-id="6">中東</li>
 						<li data-id="7">其他</li>
 					</ul>
-				</div>
+				</div> -->
+				<div class="fe_tittle">一、中華經濟研究院(WTO及RTA中心)網站關稅查詢系統 </div>
+				<div class="fe_font">
+                    WTO及RTA中心建製之「主要國家關稅查詢系統」，與WTO更新同步，該網站可依下列兩種方式查詢各國關稅:
+                  </div>
+				  <ul class="free_ul">
+                  <li>依稅號查詢: <a href="http://db2.wtocenter.org.tw/tariff/Search_byHSCode.aspx" target="_blank"> http://db2.wtocenter.org.tw/tariff/Search_byHSCode.aspx </a></li>
+                  <li>輸入貨名查詢:<a href="http://db2.wtocenter.org.tw/tariff/search_byProducts.aspx" target="_blank">http://db2.wtocenter.org.tw/tariff/search_byProducts.aspx</a>  </li>
+               	</ul>
+
+				<div class="fe_tittle">二、iTrade (全球貿易大數據平台) </div>
+				<div class="fe_font">
+                    經濟部國際貿易局為協助業者拓銷海外市場，委託外貿協會建置之「itrade全球貿易大數據平台」，提供線上即時的出口情勢分析、跨國關稅比較、篩選潛力市場等大數據統計資訊服務，歡迎廠商多加運用。該網站綜整各國關稅網站，提供以下兩項查詢功能:
+                  </div>
+				  <ul class="free_ul">
+					 <li>單一出口國關稅查詢</li>
+					 <li>多國關稅比較</li>
+				  </ul>
+
+				  <div class="fe_font">
+                      ※	如需了解外國進口關稅更多資訊，請參考本網站→<a href="https://exportadv.chun-mu.com/online_last2?id=9" target="_blank"> 「線上諮詢-外國進口關稅」。</a>
+                    </div>
+
 				<div class="country_name"></div>
 				<!-- <p class="margin_bm">發布日期: 2020/09/28</p> -->
-				<div class="row">
+				<!-- <div class="row">
 					<?php
 						while($data = mysqli_fetch_assoc($result)) {
 							$type = $typename[$data["type"]-1];
@@ -103,7 +125,7 @@
 						}
 					?>
 
-				</div>
+				</div> -->
 			</div>
 		</section>
     <?php require_once('i_bottom.php'); ?>
