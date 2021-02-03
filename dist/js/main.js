@@ -15,7 +15,7 @@ $(document).ready(function() {
 
     })
 
-    $("#gosearch").keydown(function(event){
+    $("#websearch").keydown(function(event){
     		if (event.keyCode == "13"){
           var val = $("#websearch").val()
           location.href = "search_result?#gsc.tab=0&gsc.q="+val+"&gsc.sort="
