@@ -55,7 +55,7 @@
 				<?php require_once('i_menu.php'); ?>
 				<div class="sidebar">
 					<div class="right_continer">
-						<div class="adsright_title">線上咨詢</div>
+						<div class="adsright_title">線上資詢</div>
 
 							<div class="news_manag">
 								<div class="manag_box">選擇父層
@@ -109,7 +109,7 @@
 									<td class="tab_gray" width="10%">更新日期
 								<tr style='border-bottom:1px solid #f2f2f2'>
 									<td><a href="consultedit?type=new&pid=<?=$parent?>"><i class="mdi mdi-plus-box"></i></a>
-									<td>新增咨詢內容
+									<td>新增資詢內容
 									<td>
                   <td>
 									<td>

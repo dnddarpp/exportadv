@@ -136,7 +136,7 @@
                         </td>
                         <td>
                            <div class="people_pic" style="background-image:url(images/v2.png)" ; alt=""></div>
-                           <div class="people_name">組長 師育龍</div>
+                           <div class="people_name">組長 施育龍</div>
                            <div class="people_country">越南</div>
                         </td>
                         <td>
@@ -148,7 +148,7 @@
                      <tr>
                         <td width="30%">
                            <div class="people_pic" style="background-image:url(images/v5.png)" ; alt=""></div>
-                           <div class="people_name">顧問 陽冬松</div>
+                           <div class="people_name">顧問 楊冬松</div>
                            <div class="people_country">孟加拉</div>
                         </td>
                         <td>
