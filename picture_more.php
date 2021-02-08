@@ -7,7 +7,7 @@
 	$curpage = $conn->real_escape_string($_GET["page"]);
 	$id = $conn->real_escape_string($_GET["id"]);
 
-	$sql = "SELECT * FROM event where 1=1 and id=$id and display=1 ORDER BY  `sort` , `id` DESC ";
+	$sql = "SELECT * FROM event where 1=1 and id=$id and display=1 ORDER BY  `sort` desc , `id` DESC ";
 	$result = qury_sel($sql, $conn);
 	$data = mysqli_fetch_assoc($result);
 	$str_piclist = $data["pic"];

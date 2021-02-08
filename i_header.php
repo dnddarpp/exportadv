@@ -1,3 +1,4 @@
+<script async src="https://cse.google.com/cse.js?cx=f6a7e9078acfa108b"></script>
 <div class="menu_down" id="mobilemenu">
    <ul class="down_list">
       <li><a href="free">免費諮詢</a></li>

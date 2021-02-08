@@ -13,7 +13,7 @@
 	$per = 20;
 	$curpage = $conn->real_escape_string($_GET["page"]);
 
-	$sql = "SELECT * FROM tariff where display=1 ORDER BY `type`, `sort` , `id` DESC ";
+	$sql = "SELECT * FROM tariff where display=1 ORDER BY `type`, `sort` desc , `id` DESC ";
 	$result = qury_sel($sql, $conn);
 
 	$total = $result->num_rows;

@@ -14,7 +14,7 @@
 	// }else{
 	// 	$parent = 0;
 	// }
-	// $sql .= "ORDER BY `sort`, `id` DESC ";
+	// $sql .= "ORDER BY `sort` desc, `id` DESC ";
 	// echo $sql;
 	// $result = qury_sel($sql, $conn);
 

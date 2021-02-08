@@ -774,12 +774,10 @@ img {
   vertical-align: middle;
 }
 .onlinecontent ol {
-  counter-reset: list;
   position: relative;
   margin-left: 40px;
 }
 .onlinecontent ol li {
-  list-style: none;
   font-size: 16px;
   line-height: 1.8;
   color: #585858;
@@ -788,27 +786,6 @@ img {
   margin-bottom: 10px;
   margin-left: 25px;
   vertical-align: middle;
-}
-
-.onlinecontent ol > li:before {
-  content: counter(list) ". ";
-  counter-increment: list;
-  left: -1.4em;
-  text-indent: 1em;
-}
-
-.onlinecontent ol > li > ol > li:before {
-  content: "(" counter(list) ") ";
-  counter-increment: list;
-  left: -1.4em;
-  text-indent: 1em;
-}
-
-.onlinecontent ol > li > ol > li > ol > li:before {
-  content: "(" counter(list,lower-alpha) ") ";
-  counter-increment: list;
-  left: -1.4em;
-  text-indent: 1em;
 }
 
 .picutre_bg {
@@ -1171,10 +1148,17 @@ img {
   width: 150px;
   display: inline-block;
   margin-bottom: 20px;
-  padding: 10px 10px 8px 10px;
+  padding: 10px;
   background-color: #f5f5f5;
   border: 1px solid #e2e2e2;
   margin-right: 20px;
+}
+.link_other li .linkpic {
+  width: 130px;
+  height: 130px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .link_other li img {
   width: 100%;
@@ -1257,10 +1241,6 @@ img {
 .adke_active {
   background-color: #17A6DC;
   color: #ffffff;
-}
-
-.onlinecontent p {
-  font-size: 1.2em;
 }
 
 .free_title {

@@ -31,6 +31,7 @@
 }
 .link_w_pic{
     width: 40%;
+
     margin: 0 auto;
     img{
         width: 100%;
@@ -40,12 +41,21 @@
 
     li{
         width: 150px;
+
         display: inline-block;
         margin-bottom: 20px;
-        padding: 10px 10px 8px 10px;
+        padding: 10px;
         background-color: #f5f5f5;
         border: 1px solid #e2e2e2;
         margin-right: 20px;
+
+        .linkpic{
+          width:130px;
+          height: 130px;
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
         img{
             width: 100%;
         }
@@ -123,9 +133,4 @@
 .adke_active{
     background-color: $ex_tBlue;
     color:#ffffff;
-}
-.onlinecontent{
-  p{
-    font-size: 1.2em;
-  }
 }

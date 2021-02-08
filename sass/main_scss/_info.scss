@@ -174,11 +174,12 @@
         }
     }
     ol{
-      counter-reset: list;
+      // counter-reset: list;
       position: relative;
         margin-left: 40px;
         li{
-            list-style:none;
+            // list-style:none;
+            // list-style: decimal;
             font-size: 16px;
             line-height: 1.8;
             color: #585858;
@@ -187,6 +188,7 @@
             margin-bottom: 10px;
             margin-left: 25px;
             vertical-align: middle;
+            // text-indent: -24px;
 
 
         }
@@ -194,22 +196,24 @@
 
 
 }
-.onlinecontent ol > li:before{
-      content: counter(list) ". ";
-      counter-increment: list;
-      left: -1.4em;
-      text-indent: 1em;
-}
-
-.onlinecontent ol > li > ol > li:before{
-      content: "(" counter(list) ") ";
-      counter-increment: list;
-      left: -1.4em;
-      text-indent: 1em;
-}
-.onlinecontent ol > li > ol > li > ol > li:before{
-      content: "(" counter(list, lower-alpha) ") ";
-      counter-increment: list;
-      left: -1.4em;
-      text-indent: 1em;
-}
+// .onlinecontent ol > li:before{
+//       content: counter(list) ". ";
+//       counter-increment: list;
+//       left: -1.4em;
+//       text-indent: 1em;
+// }
+// .onlinecontent ol > li > ol{
+//
+// }
+// .onlinecontent ol > li > ol > li:before{
+//       content: "(" counter(list) ") ";
+//       counter-increment: list;
+//       left: -1.4em;
+//       text-indent: 1em;
+// }
+// .onlinecontent ol > li > ol > li > ol > li:before{
+//       content: "(" counter(list, lower-alpha) ") ";
+//       counter-increment: list;
+//       left: -1.4em;
+//       text-indent: 1em;
+// }

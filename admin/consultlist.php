@@ -11,7 +11,7 @@
 	if(isset($_GET["parent"]) && strlen($parent)>0){
 		$sql .= " and a.parent=".$parent." ";
 	}
-	$sql .= "ORDER BY b.id, a.`sort`, a.`id`";
+	$sql .= "ORDER BY b.id DESC, a.`sort` desc, a.`id` DESC ";
 	// echo $sql;
 	$result = qury_sel($sql, $conn);
 

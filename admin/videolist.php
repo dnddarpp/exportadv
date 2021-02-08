@@ -6,7 +6,7 @@
 	$per = 30;
 	$curpage = $conn->real_escape_string($_GET["page"]);
 
-	$sql = "SELECT a.*, b.catename FROM media as a left join media_cate as b on a.type = b.id where 1=1 ORDER BY  `sort`, `id` DESC ";
+	$sql = "SELECT a.*, b.catename FROM media as a left join media_cate as b on a.type = b.id where 1=1 ORDER BY  `sort` desc, `id` DESC ";
 	$result = qury_sel($sql, $conn);
 
 	$total = $result->num_rows;

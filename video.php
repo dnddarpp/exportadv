@@ -13,7 +13,7 @@
 	if(strlen($keyword)>0){
 		$sql .= "and title like '%$keyword%' ";
 	}
-	$sql .= " ORDER BY  `sort` , `id` DESC ";
+	$sql .= " ORDER BY  `sort` desc , `id` DESC ";
 	// echo $sql;
 	$result = qury_sel($sql, $conn);
 
@@ -27,7 +27,7 @@
 	$sql .= "Limit $per OFFSET $offset";
 	$result = qury_sel($sql, $conn);
 
-	$sql2 = "SELECT * FROM media_cate where display=1 ORDER BY  `sort` , `id` DESC ";
+	$sql2 = "SELECT * FROM media_cate where display=1 ORDER BY  `sort` desc , `id` DESC ";
 	$result2 = qury_sel($sql2, $conn);
 ?>
 <!DOCTYPE html>

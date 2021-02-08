@@ -34,7 +34,7 @@
 			$url = $data["url".$i];
 			$pic = $data["pic".$i];
 			if(strlen($url)>0){
-				$str_link.='<li class="link_w_pic"><a href="'.$url.'" target="_blank"><img src="pic/consult/'.$pic.'" alt=""></a></li>';
+				$str_link.='<li class="link_w_pic"><a href="'.$url.'" target="_blank"><div class="linkpic" style="background-image:url(\'pic/consult/'.$pic.'\')"></div></a></li>';
 			}
 		}
 	}

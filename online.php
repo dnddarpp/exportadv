@@ -18,7 +18,7 @@
 		$sql = "SELECT * FROM consult as a where 1=1 and display=1 and parent = 0 ";
 		$parent = 0;
 	}
-	$sql .= "ORDER BY a.`sort`, a.`id`";
+	$sql .= "ORDER BY a.`sort` desc, a.`id` DESC";
 	// echo $sql;
 	$result = qury_sel($sql, $conn);
 	$ary = array();

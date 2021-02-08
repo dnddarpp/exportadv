@@ -25,4 +25,3 @@
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="dist/js/main.js" charset="utf-8"></script>
-<script async src="https://cse.google.com/cse.js?cx=1dbc5da7c2d6a9eda"></script>

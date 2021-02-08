@@ -13,7 +13,7 @@
 	if($id){
 			$sql .="and id=".$id." ";
 	}
-	$sql .="ORDER BY  `sort` , `id` DESC ";
+	$sql .="ORDER BY  `sort` desc , `id` DESC ";
 	$result = qury_sel($sql, $conn);
 
 	$total = $result->num_rows;
