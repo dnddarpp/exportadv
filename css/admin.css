@@ -3448,7 +3448,10 @@ html.touch body #query-list .container::-webkit-scrollbar-thumb:window-inactive 
 .albumpic {
   clear: both;
   vertical-align: top;
-  height: 210px;
+}
+.albumpic table img {
+  width: 200px;
+  height: auto;
 }
 
 .picput {

@@ -3,6 +3,7 @@
 	$mid = $_SESSION["mng_mid"];
 	$id = $conn->real_escape_string($_GET["id"]);
 	$parent = $conn->real_escape_string($_GET["pid"]);
+	$type = $conn->real_escape_string($_GET["type"]);
 
 	$layer = 0;
 	if($id){
@@ -11,6 +12,7 @@
 	  $data = mysqli_fetch_assoc($pjdata);
 		$parent = $data["parent"];
 		$text = $data["content"];
+		$end = $data['endpage'];
 
 		if( ( $data['pic1'] != '') && file_exists( '../pic/consult/'.$data['pic1'] ) )
     $pic1 = "<img src='../pic/consult/".$data['pic1']."'>";
@@ -30,7 +32,7 @@
 	  $type="edit";
 	  $typename="編輯";
 	}else{
-	  $type="add";
+	  $type="new";
 	  $id="";
 	  $typename="新增";
 	}
@@ -50,13 +52,28 @@
 			var pagetype = "<?=$type?>"
 			var dataary = <?=$str_dataary?>;
 			var parent = "<?=$parent?>";
+			var end ="<?=$end?>";
 			console.log("parent:"+parent)
 			$( document ).ready(function(){
 				$("#parent").val(parent)
 			 if(pagetype=="new"){
+				 console.log("newnewnewn")
 			   $("#title").val("")
 			   $("#description").val("")
+				 $(".cc").slideUp()
 			 }
+			 if(end=="0"){
+				 $(".cc").slideUp()
+			 }
+			 $("#endpage").change(function(){
+				 console.log("endpage change")
+				 var value = $(this).val()
+				 if(value == 0){
+					 $(".cc").slideUp()
+				 }else{
+					 $(".cc").slideDown()
+				 }
+			 })
 			 $('#pic_upload1').uploader(
 					'pic_upload_consult.php',
 					function(filename){
@@ -70,6 +87,33 @@
  					'pic_upload_consult.php',
  					function(filename){
  						$('#pic2').html('<img src="../pic/consult/'+filename+'">');
+ 					},
+ 					function(error){
+ 						alert('Error! '+error);
+ 					}
+ 				);
+				$('#pic_upload3').uploader(
+ 					'pic_upload_consult.php',
+ 					function(filename){
+ 						$('#pic3').html('<img src="../pic/consult/'+filename+'">');
+ 					},
+ 					function(error){
+ 						alert('Error! '+error);
+ 					}
+ 				);
+				$('#pic_upload4').uploader(
+ 					'pic_upload_consult.php',
+ 					function(filename){
+ 						$('#pic4').html('<img src="../pic/consult/'+filename+'">');
+ 					},
+ 					function(error){
+ 						alert('Error! '+error);
+ 					}
+ 				);
+				$('#pic_upload5').uploader(
+ 					'pic_upload_consult.php',
+ 					function(filename){
+ 						$('#pic5').html('<img src="../pic/consult/'+filename+'">');
  					},
  					function(error){
  						alert('Error! '+error);
@@ -124,11 +168,17 @@
 					var link3 = $("#url3").val()
 					var link4 = $("#url4").val()
 					var link5 = $("#url5").val()
+
+					var linkname1 = $("#urlname1").val()
+					var linkname2 = $("#urlname2").val()
+					var linkname3 = $("#urlname3").val()
+					var linkname4 = $("#urlname4").val()
+					var linkname5 = $("#urlname5").val()
 			     //console.log(cnt);
 					$.ajax({
 						url: "consult_system.php",
 						type: "POST",
-						data: {id: "<?=$id?>", title: $("#title").val(), description: $("#description").val(), parent: parent, endpage:endpage, pic1:pic1, url1:link1, pic2:pic2, url2:link2,pic3:pic3, url3:link3,pic4:pic4, url4:link4,pic5:pic5, url5:link5, cnt:cnt,  display: $("#display").val(), sort: $("#sort").val(), seo_title:$("#seo_title").val(),seo_desc:$("#seo_desc").val(),seo_keywords:$("#seo_keywords").val()},
+						data: {id: "<?=$id?>", title: $("#title").val(), description: $("#description").val(), parent: parent, endpage:endpage, pic1:pic1, url1:link1, pic2:pic2, url2:link2,pic3:pic3, url3:link3,pic4:pic4, url4:link4,pic5:pic5, url5:link5, urlname1:linkname1, urlname2:linkname2, urlname3:linkname3, urlname4:linkname4, urlname5:linkname5, cnt:cnt,  display: $("#display").val(), sort: $("#sort").val(), seo_title:$("#seo_title").val(),seo_desc:$("#seo_desc").val(),seo_keywords:$("#seo_keywords").val()},
 						error: myErr,
 						success: function(msg){
 							var rr = JSON.parse(msg);
@@ -203,16 +253,19 @@
 									<td>描述
 									<td>
 										<div class="media_bord"><input name="title" type="text" value="" placeholder="" /></div>
-								<tr>
+								<tr class="cc">
 									<td>內容<br>
 									<td><textarea id="editor" name="editor"><?=$text?></textarea>
-								<tr>
+								<tr class="cc">
 									<td width="10%">
 										相關連結1
 									</td>
 									<td width="90%">
 										網址
 										<div class="media_bord"><input type="text" name="url" class="form-control" placeholder="" id="url1" value="<?=$data["url1"] ?>"></div>
+										<br>
+										顯示名稱
+										<div class="media_bord"><input type="text" name="urlname" class="form-control" placeholder="" id="urlname1" value="<?=$data["urlname1"] ?>"></div>
 										<br>
 										<br>
 										圖片(170*70)
@@ -225,13 +278,16 @@
 										</div>
 									</td>
 								</tr>
-								<tr>
+								<tr class="cc">
 									<td width="10%">
 										相關連結2
 									</td>
 									<td width="90%">
 										網址
 										<div class="media_bord"><input type="text" name="url2" class="form-control" placeholder="" id="url2" value="<?=$data["url2"] ?>"></div>
+										<br>
+										顯示名稱
+										<div class="media_bord"><input type="text" name="urlname" class="form-control" placeholder="" id="urlname2" value="<?=$data["urlname2"] ?>"></div>
 										<br>
 										<br>
 										圖片(170*70)
@@ -244,13 +300,16 @@
 										</div>
 									</td>
 								</tr>
-								<tr>
+								<tr class="cc">
 									<td width="10%">
 										相關連結3
 									</td>
 									<td width="90%">
 										網址
 										<div class="media_bord"><input type="text" name="url3" class="form-control" placeholder="" id="url3" value="<?=$data["url3"] ?>"></div>
+										<br>
+										顯示名稱
+										<div class="media_bord"><input type="text" name="urlname" class="form-control" placeholder="" id="urlname3" value="<?=$data["urlname3"] ?>"></div>
 										<br>
 										<br>
 										圖片(170*70)
@@ -263,13 +322,16 @@
 										</div>
 									</td>
 								</tr>
-								<tr>
+								<tr class="cc">
 									<td width="10%">
 										相關連結4
 									</td>
 									<td width="90%">
 										網址
 										<div class="media_bord"><input type="text" name="url4" class="form-control" placeholder="" id="url4" value="<?=$data["url4"] ?>"></div>
+										<br>
+										顯示名稱
+										<div class="media_bord"><input type="text" name="urlname" class="form-control" placeholder="" id="urlname4" value="<?=$data["urlname4"] ?>"></div>
 										<br>
 										<br>
 										圖片(170*70)
@@ -282,13 +344,16 @@
 										</div>
 									</td>
 								</tr>
-								<tr>
+								<tr class="cc">
 									<td width="10%">
 										相關連結5
 									</td>
 									<td width="90%">
 										網址
 										<div class="media_bord"><input type="text" name="url5" class="form-control" placeholder="" id="url5" value="<?=$data["url5"] ?>"></div>
+										<br>
+										顯示名稱
+										<div class="media_bord"><input type="text" name="urlname" class="form-control" placeholder="" id="urlname5" value="<?=$data["urlname5"] ?>"></div>
 										<br>
 										<br>
 										圖片(170*70)

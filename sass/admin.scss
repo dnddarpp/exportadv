@@ -356,7 +356,13 @@
 .albumpic{
   clear: both;
   vertical-align: top;
-  height: 210px;
+  //height: 210px;
+  table{
+    img{
+      width: 200px;
+      height: auto;
+    }
+  }
 }
 .picput{
   float: left;

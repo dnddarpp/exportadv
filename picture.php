@@ -95,9 +95,10 @@
 							$date =  explode(" ", $value["date"])[0];
 							$public_date =  explode(" ", $value["Public_Date"])[0];
 							$str_piclist = $value["pic"];
+							$cover = $value["cover"];
 							$picary = json_decode($str_piclist);
-							$img = array_column($picary[0], 'img');
-							foreach ($picary[0] as $key2 => $value2) {
+							// $img = array_column($picary[$cover], 'img');							
+							foreach ($picary[$cover] as $key2 => $value2) {
 								if($key2=="img"){
 									$img =$value2;
 								}
