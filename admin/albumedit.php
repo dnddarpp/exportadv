@@ -11,6 +11,7 @@
     $date = explode(" ", $data["Public_Date"])[0];
     //$text = str_ireplace(['\\\\r', '\\\\n'], "", $data["content"]);
     $text = $data["content"];
+    $cover = $data["cover"];
     $type="edit";
     $typename="編輯";
     $piclist = $data['pic'];
@@ -31,6 +32,7 @@
 		<script type="text/javascript">
 			var pagetype = "<?=$type?>";
       var piclist = <?=$piclist?>;
+      var cover = <?=$cover?>;
 			$( document ).ready(function(){
 				$("#parent").val(parent)
 			 if(pagetype=="new"){
@@ -58,16 +60,21 @@
           var filepath = "../pic/album/"+nn+"."+ext
           // Add img element in <div id='preview'>
 
-          $('#preview').append('<div class="albumpic '+nn+'" data-id="'+nn+'"><div class="picput pp"><img src="'+filepath+'"></div><div class="picput inp"><input type="text" name="'+nn+'" data-name = "'+nn+'" data-type="'+ext+'" class="form-control imgtitle" value="'+title+'" placeholder="請輸入照片描述"><input type="button" name="" value="delete" class="del_img"></div></div><hr>');
+          // $('#preview').append('<div class="albumpic '+nn+'" data-id="'+nn+'"><div class="picput pp"><img src="'+filepath+'"></div><div class="picput inp"><input type="text" name="'+nn+'" data-name = "'+nn+'" data-type="'+ext+'" class="form-control imgtitle" value="'+title+'" placeholder="請輸入照片描述"><input type="button" name="" value="delete" class="del_img"></div></div><hr>');
+          $('#preview').append('<div class="albumpic '+nn+'" data-id="'+nn+'"><table width="100%"><td width="200px"><img src="'+filepath+'"></td><td><input type="radio" name="cover" value="'+i+'">設為封面<input type="text" name="'+nn+'" data-name = "'+nn+'" data-type="'+ext+'" class="form-control imgtitle" value="" placeholder="請輸入照片描述"><input type="button" name="" value="delete" class="del_img"></td></table></div><hr>');
           $('.'+nn+' .del_img').click(function(){
            $(this).parent().parent().remove();
          });
         }
+        $('input:radio[name=cover][value='+cover+']').attr('checked', true);
       }
+
       $(".del_img").click(function(){
         $(this).parent().parent().remove();
       })
 			 $("#save").click(function(){
+         var cover = $("input[name=cover]:checked").val();
+         console.log("cover")
         var imglist = []
         $(".imgtitle").each(function(){
           var val = $(this).val()
@@ -91,7 +98,7 @@
 					$.ajax({
 						url: "album_system.php",
 						type: "POST",
-						data: {id: "<?=$id?>", title: $("#title").val(), description: $("#description").val(), pic:str_imglist, display: $("#display").val(), sort: $("#sort").val(), seo_title:$("#seo_title").val(),seo_desc:$("#seo_desc").val(),seo_keywords:$("#seo_keywords").val()},
+						data: {id: "<?=$id?>", title: $("#title").val(), description: $("#description").val(), pic:str_imglist, display: $("#display").val(), sort: $("#sort").val(), cover:cover, seo_title:$("#seo_title").val(),seo_desc:$("#seo_desc").val(),seo_keywords:$("#seo_keywords").val()},
 						error: myErr,
 						success: function(msg){
 							var rr = JSON.parse(msg);
@@ -136,7 +143,8 @@
                var filepath = "../pic/album/"+nn+"."+ext
                // Add img element in <div id='preview'>
 
-               $('#preview').append('<div class="albumpic '+nn+'" data-id="'+nn+'"><div class="picput pp"><img src="'+filepath+'"></div><div class="picput inp"><input type="text" name="'+nn+'" data-name = "'+nn+'" data-type="'+ext+'" class="form-control imgtitle" value="" placeholder="請輸入照片描述"><input type="button" name="" value="delete" class="del_img"></div></div><hr>');
+               //$('#preview').append('<div class="albumpic '+nn+'" data-id="'+nn+'"><div class="picput pp"><img src="'+filepath+'"></div><div class="picput inp"><input type="text" name="'+nn+'" data-name = "'+nn+'" data-type="'+ext+'" class="form-control imgtitle" value="" placeholder="請輸入照片描述"><input type="button" name="" value="delete" class="del_img"></div></div><hr>');
+               $('#preview').append('<div class="albumpic '+nn+'" data-id="'+nn+'"><table width="100%"><td width="200px"><img src="'+filepath+'"></td><td><input type="radio" name="cover" value="'+index+'"><input type="text" name="'+nn+'" data-name = "'+nn+'" data-type="'+ext+'" class="form-control imgtitle" value="" placeholder="請輸入照片描述"><input type="button" name="" value="delete" class="del_img"></td></table></div><hr>');
                $('.'+nn+' .del_img').click(function(){
              		$(this).parent().parent().remove();
              	});
@@ -188,6 +196,18 @@
                         <div class="media_bord"><input type="text" name="description" class="form-control" placeholder="建議40字以內" id="description" value="<?=$data["description"] ?>"></div>
                       </td>
                   </tr>
+                  <tr>
+                    <td>
+                        圖片(483*284)
+                    </td>
+                    <td>
+                      <div id='pic_upload'></div>
+								          <div id='pic'>
+								            <?=$pic?>
+								          </div>
+								          <button class='del_img'>刪除圖片</button>
+                    </td>
+                </tr>
 									<tr>
 										<td>上傳照片</td>
 										<td>
@@ -197,12 +217,12 @@
                       </form>
                       <div id='preview'>
                         <!-- <div class="albumpic 6009ed7815c5d.jpg" data-id="6009ed7815c5d.jpg">
-                          <div class="picput pp"><img src="../images/banner.png"></div>
-                          <div class="picput inp"><input type="text" name="6009ed7815c5d.jpg" class="form-control" value="" placeholder="請輸入照片描述"><input type="button" name="" value="delete" class="del_img"></div>
-                        </div>
-                        <div class="albumpic 6009ed781rrr.jpg" data-id="6009ed7815c5d.jpg">
-                          <div class="picput pp"><img src="../images/bgft.png"></div>
-                          <div class="picput inp"><input type="text" name="6009ed7815c5d.jpg" class="form-control" value="" placeholder="請輸入照片描述"><input type="button" name="" value="delete" class="del_img"></div>
+                          <table width="100%">
+                            <tr>
+                              <td width="40%"><img src="../images/banner.png"></td>
+                              <td width="60%"><input type="radio" name="cover" value=""><input type="text" name="6009ed7815c5d.jpg" class="form-control" value="" placeholder="請輸入照片描述"><input type="button" name="" value="delete" class="del_img"></td>
+                            </tr>
+                          </table>
                         </div> -->
                       </div>
 										</td>
