@@ -5,8 +5,8 @@
 			<li><a href="newslist?type=2">-產業新聞</a></li>
 		</ul>
   </div>
+	<div class="list_ietm"><a href="pagelist">單元頁面</a></div>
 	<div class="list_ietm"><a href="linklist">外連資源</a></div>
-  <div class="list_ietm"><a href="tarifflist">各國關稅</a></div>
 	<div class="list_ietm"><a href="albumlist">活動照片</a></div>
   <div class="list_ietm"><a href="videolist">影音專區</a></div>
   <div class="list_ietm"><a href="consultlist">線上諮詢</a></div>

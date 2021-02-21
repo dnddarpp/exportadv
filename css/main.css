@@ -1319,6 +1319,9 @@ img {
   padding: 10px 20px;
   border-radius: 50px;
 }
+.goto_btn a {
+  color: #fff;
+}
 
 .free_wrap {
   border-bottom: 1px solid #C4C4C4;
