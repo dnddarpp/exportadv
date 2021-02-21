@@ -113,6 +113,7 @@
 									<td>
                   <td>
 									<td>
+								</tr>
 								<?php
 									while($data = mysqli_fetch_assoc($result)) {
 										$display = "Y";
@@ -135,6 +136,7 @@
                   <td><?=$display?>
 									<td><?=$endpage?>
 									<td><?=$update?>
+								</tr>
 								<?php } ?>
 							</table>
 						</div>

@@ -36,7 +36,7 @@
 		<?php require_once('i_meta.php'); ?>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 		<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-		<title>影音專區</title>
+		<title>影音學習</title>
 		<script>
 
 			$( document ).ready(function(){
@@ -73,7 +73,7 @@
 		<section>
 			<div class="page_banner_pic" style="background-image:url(images/banner_02.png)" ;="">
 				<div class="page_title">
-					<div class="banner_title">影音專區</div>
+					<div class="banner_title">影音學習</div>
 					<div class="page_p">精采影片回顧</div>
 				</div>
 			</div>
@@ -82,14 +82,14 @@
 					<ul>
 						<li><a href="index">首頁</a></li>
 						<li>/</li>
-						<li class="bread_active">影音專區</li>
+						<li class="bread_active">影音學習</li>
 					</ul>
 				</div>
 			</div>
 		</section>
 		<section>
 			<div class="container">
-				<div class="info_title">影音專區</div>
+				<div class="info_title">影音學習</div>
 				<div class="picture_searchbar">
 					<div class="search_picbox">
 					    <div class="search_iconL"><img src="images/search_02.svg" alt=""></div>
@@ -143,14 +143,20 @@
 								</div>
 								<div class="picmu_font">
 									<div class="picture_name"><?=$data["title"]?></div>
-									<p>發布日期: <?=$public_date?></p>
+									<?php
+									if($public_date){
+										?>
+										<p>發布日期: <?=$public_date?></p>
+										<?php
+									}
+									 ?>
 								</div>
 							</div>
 						</a>
 					</div>
 				<?php } ?>
 				</div>
-				<ul class="prev_btn onlinepage">
+				<!-- <ul class="prev_btn onlinepage">
 					<?php
 						for($m=1;$m<=$pages;$m++){
 							if($m==$curpage){
@@ -160,7 +166,7 @@
 							}
 						}
 					 ?>
-				</ul>
+				</ul> -->
 			</div>
 		</section>
     <?php require_once('i_bottom.php'); ?>

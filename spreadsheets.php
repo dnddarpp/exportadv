@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<?php require_once('i_meta.php'); ?>
-		<title>各國關稅</title>
+		<title>政府輔導資源</title>
 	</head>
 	<body >
 		<?php require_once('i_header.php'); ?>

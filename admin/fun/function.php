@@ -375,7 +375,7 @@ class ResizeImage {
 function getConsultData($_id,$conn){
 	$str="";
 	$ary = array();
-	$sql= "select *  from `consult` where 1=1 and parent=".$_id." order by sort";
+	$sql= "select *  from `consult` where 1=1 and parent=".$_id." order by sort desc";
 	//echo "sql:".$sql."<br>";
 	$pjdata = qury_sel($sql, $conn);
 	while($data = mysqli_fetch_assoc($pjdata)) {

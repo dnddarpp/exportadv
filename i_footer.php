@@ -34,10 +34,9 @@
                <div class="row">
                   <div class="col-12 col-md-6 col-lg-6">
                      <ul class="share_icon">
-                        <li class="share_ic"><a href="#"><img src="images/fb.svg" alt=""></a></li>
-                        <li class="share_ic"><a href="#"><img src="images/line.svg" alt=""></a></li>
-                        <li class="share_ic"><a href="#"><img src="images/youtube.svg" alt=""></a></li>
-                        <li class="share_ic"><a href="#"><img src="images/twetter.svg" alt=""></a></li>
+                        <li class="share_ic"><a href="https://www.facebook.com/myTAITRA/" target="_blank"><img src="images/fb.svg" alt=""></a></li>
+                        <li class="share_ic"><a href="https://maac.io/1l3yc" target="_blank"><img src="images/line.svg" alt=""></a></li>
+                        <li class="share_ic"><a href="https://www.youtube.com/channel/UCdSWvaJ3Wva-A6G5wLD0HRQ" target="_blank"><img src="images/youtube.svg" alt=""></a></li>
                      </ul>
                   </div>
                   <div class="col-12 col-md-6 col-lg-6">
