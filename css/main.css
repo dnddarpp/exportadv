@@ -1618,6 +1618,10 @@ img {
   }
 }
 @media only screen and (max-width: 768px) {
+  .olient_logo {
+    width: 47%;
+  }
+
   .res_font {
     font-size: 16px;
   }

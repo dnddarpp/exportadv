@@ -52,9 +52,13 @@
         height: 180px;
     }
 
+
 }
 @include respond-mobile {
+    .olient_logo{
+        width: 47%;
 
+    }
     .res_font{
         font-size: 16px;
     }
