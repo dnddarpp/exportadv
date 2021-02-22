@@ -131,48 +131,60 @@
 				<div class="row">
 					<div class="col-6 col-md-3 col-lg-2">
 						<div class="link_other">
-							<ul>
-								<?=$str_link?>
+							<ul class="linkpic">
+								<li class="link_w_pic">
+									<div class="linkpic" style="background-image:url('pic/consult/601a0a7418b05.jpg');"></div>
+								</li>
 							</ul>
 						</div>
 						<div class="online_font">sssss</div>
 					</div>
 					<div class="col-6 col-md-3 col-lg-2">
 						<div class="link_other">
-							<ul>
-								<?=$str_link?>
+							<ul class="linkpic">
+								<li class="link_w_pic">
+									<div class="linkpic" style="background-image:url('pic/consult/601a0a7418b05.jpg');"></div>
+								</li>
 							</ul>
 						</div>
 						<div class="online_font">sssss</div>
 					</div>
 					<div class="col-6 col-md-3 col-lg-2">
 						<div class="link_other">
-							<ul>
-								<?=$str_link?>
+							<ul class="linkpic">
+								<li class="link_w_pic">
+									<div class="linkpic" style="background-image:url('pic/consult/601a0a7418b05.jpg');"></div>
+								</li>
 							</ul>
 						</div>
 						<div class="online_font">sssss</div>
 					</div>
 					<div class="col-6 col-md-3 col-lg-2">
 						<div class="link_other">
-							<ul>
-								<?=$str_link?>
+							<ul class="linkpic">
+								<li class="link_w_pic">
+									<div class="linkpic" style="background-image:url('pic/consult/601a0a7418b05.jpg');"></div>
+								</li>
 							</ul>
 						</div>
 						<div class="online_font">sssss</div>
 					</div>
 					<div class="col-6 col-md-3 col-lg-2">
 						<div class="link_other">
-							<ul>
-								<?=$str_link?>
+							<ul class="linkpic">
+								<li class="link_w_pic">
+									<div class="linkpic" style="background-image:url('pic/consult/601a0a7418b05.jpg');"></div>
+								</li>
 							</ul>
 						</div>
 						<div class="online_font">sssss</div>
 					</div>
 					<div class="col-6 col-md-3 col-lg-2">
 						<div class="link_other">
-							<ul>
-								<?=$str_link?>
+							<ul class="linkpic">
+								<li class="link_w_pic">
+									<div class="linkpic" style="background-image:url('pic/consult/601a0a7418b05.jpg');"></div>
+								</li>
 							</ul>
 						</div>
 						<div class="online_font">sssss</div>
