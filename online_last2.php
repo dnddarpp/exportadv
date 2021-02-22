@@ -33,8 +33,10 @@
 		for($i=1;$i<=5;$i++){
 			$url = $data["url".$i];
 			$pic = $data["pic".$i];
+			$urlname = $data["urlname".$i];
 			if(strlen($url)>0){
-				$str_link.='<li class="link_w_pic"><a href="'.$url.'" target="_blank"><div class="linkpic" style="background-image:url(\'pic/consult/'.$pic.'\')"></div></a></li>';
+				// $str_link.='<li class="link_w_pic"><a href="'.$url.'" target="_blank"><div class="linkpic" style="background-image:url(\'pic/consult/'.$pic.'\')"></div></a></li>';
+				$str_link.='<div class="col-6 col-md-3 col-lg-2"><a href="'.$url.'" target="_blank"><div class="link_other"><ul class="linkpic"><li class="link_w_pic"><div class="linkpic" style="background-image:url(\'pic/consult/'.$pic.'\');"></div></li></ul></div><div class="online_font">'.$urlname.'</div></a></div>';
 			}
 		}
 	}
@@ -124,79 +126,17 @@
 					if(strlen($str_link)>0){
 				?>
 				<div class="online_name">相關連結</div>
+				<div class="row">
+				<?=$str_link?>
+			</div>
 				<?php
 					}
 				?>
-
-				<div class="row">
-					<div class="col-6 col-md-3 col-lg-2">
-						<div class="link_other">
-							<ul class="linkpic">
-								<li class="link_w_pic">
-									<div class="linkpic" style="background-image:url('pic/consult/601a0a7418b05.jpg');"></div>
-								</li>
-							</ul>
-						</div>
-						<div class="online_font">sssss</div>
-					</div>
-					<div class="col-6 col-md-3 col-lg-2">
-						<div class="link_other">
-							<ul class="linkpic">
-								<li class="link_w_pic">
-									<div class="linkpic" style="background-image:url('pic/consult/601a0a7418b05.jpg');"></div>
-								</li>
-							</ul>
-						</div>
-						<div class="online_font">sssss</div>
-					</div>
-					<div class="col-6 col-md-3 col-lg-2">
-						<div class="link_other">
-							<ul class="linkpic">
-								<li class="link_w_pic">
-									<div class="linkpic" style="background-image:url('pic/consult/601a0a7418b05.jpg');"></div>
-								</li>
-							</ul>
-						</div>
-						<div class="online_font">sssss</div>
-					</div>
-					<div class="col-6 col-md-3 col-lg-2">
-						<div class="link_other">
-							<ul class="linkpic">
-								<li class="link_w_pic">
-									<div class="linkpic" style="background-image:url('pic/consult/601a0a7418b05.jpg');"></div>
-								</li>
-							</ul>
-						</div>
-						<div class="online_font">sssss</div>
-					</div>
-					<div class="col-6 col-md-3 col-lg-2">
-						<div class="link_other">
-							<ul class="linkpic">
-								<li class="link_w_pic">
-									<div class="linkpic" style="background-image:url('pic/consult/601a0a7418b05.jpg');"></div>
-								</li>
-							</ul>
-						</div>
-						<div class="online_font">sssss</div>
-					</div>
-					<div class="col-6 col-md-3 col-lg-2">
-						<div class="link_other">
-							<ul class="linkpic">
-								<li class="link_w_pic">
-									<div class="linkpic" style="background-image:url('pic/consult/601a0a7418b05.jpg');"></div>
-								</li>
-							</ul>
-						</div>
-						<div class="online_font">sssss</div>
-					</div>
-
-				</div>
-
 				<div class="qekc_font">
 					<div class="yes_btn clean">
 						<div class="uij">上述資訊是否有幫助?</div>
 						<div class="kekeke adke_active" data-id="1">是</div>
-						<div class="kekeke" data-id="0">否</div>
+						<div class="kekeke" data-id="0"><a href="">否</a></div>
 					</div>
 				</div>
 				<ul class="prev_btn onlinepage">
