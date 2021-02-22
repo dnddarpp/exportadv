@@ -127,11 +127,59 @@
 				<?php
 					}
 				?>
-				<div class="link_other">
-					<ul>
-						<?=$str_link?>
-					</ul>
+
+				<div class="row">
+					<div class="col-6 col-md-3 col-lg-2">
+						<div class="link_other">
+							<ul>
+								<?=$str_link?>
+							</ul>
+						</div>
+						<div class="online_font">sssss</div>
+					</div>
+					<div class="col-6 col-md-3 col-lg-2">
+						<div class="link_other">
+							<ul>
+								<?=$str_link?>
+							</ul>
+						</div>
+						<div class="online_font">sssss</div>
+					</div>
+					<div class="col-6 col-md-3 col-lg-2">
+						<div class="link_other">
+							<ul>
+								<?=$str_link?>
+							</ul>
+						</div>
+						<div class="online_font">sssss</div>
+					</div>
+					<div class="col-6 col-md-3 col-lg-2">
+						<div class="link_other">
+							<ul>
+								<?=$str_link?>
+							</ul>
+						</div>
+						<div class="online_font">sssss</div>
+					</div>
+					<div class="col-6 col-md-3 col-lg-2">
+						<div class="link_other">
+							<ul>
+								<?=$str_link?>
+							</ul>
+						</div>
+						<div class="online_font">sssss</div>
+					</div>
+					<div class="col-6 col-md-3 col-lg-2">
+						<div class="link_other">
+							<ul>
+								<?=$str_link?>
+							</ul>
+						</div>
+						<div class="online_font">sssss</div>
+					</div>
+
 				</div>
+
 				<div class="qekc_font">
 					<div class="yes_btn clean">
 						<div class="uij">上述資訊是否有幫助?</div>
