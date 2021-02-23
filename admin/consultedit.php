@@ -207,7 +207,7 @@
 				<div class="sidebar">
 					<div class="right_continer">
 						<input type=hidden name=id value=109>
-						<div class="adsright_title">線上資詢-編輯</div>
+						<div class="adsright_title">線上諮詢-編輯</div>
 						<div class="media_bg">
 							<table width="100%" border="0">
 								<tr>
