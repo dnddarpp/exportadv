@@ -136,7 +136,7 @@
 					<div class="yes_btn clean">
 						<div class="uij">上述資訊是否有幫助?</div>
 						<div class="kekeke adke_active" data-id="1">是</div>
-						<div class="kekeke" data-id="0"><a href="">否</a></div>
+						<div class="kekeke" data-id="0"><a href="https://events.taiwantrade.com/exportadv" target="_blank">否</a></div>
 					</div>
 				</div>
 				<ul class="prev_btn onlinepage">
