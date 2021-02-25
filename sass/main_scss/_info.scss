@@ -134,6 +134,7 @@
 
 
 .onlinecontent{
+  color:#000;
     h1{
         color:$ex_tBlue;
         font-size: 35px;
@@ -152,6 +153,7 @@
     margin-bottom: 10px;
     }
     p{
+        color:#000;
         font-size: 1.3em;
         margin-bottom: 10px;
         img{
@@ -163,7 +165,7 @@
         li{
             font-size: 16px;
             line-height: 1.8;
-            color: #585858;
+            color: #000;
             letter-spacing: 2px;
             margin-right: 10px;
             margin-bottom: 10px;
@@ -182,7 +184,7 @@
             // list-style: decimal;
             font-size: 16px;
             line-height: 1.8;
-            color: #585858;
+            color: #000;
             letter-spacing: 2px;
             margin-right: 10px;
             margin-bottom: 10px;

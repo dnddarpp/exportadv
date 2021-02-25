@@ -734,6 +734,9 @@ img {
   color: #ffffff !important;
 }
 
+.onlinecontent {
+  color: #000;
+}
 .onlinecontent h1 {
   color: #17A6DC;
   font-size: 35px;
@@ -752,6 +755,7 @@ img {
   margin-bottom: 10px;
 }
 .onlinecontent p {
+  color: #000;
   font-size: 1.3em;
   margin-bottom: 10px;
 }
@@ -764,7 +768,7 @@ img {
 .onlinecontent ul li {
   font-size: 16px;
   line-height: 1.8;
-  color: #585858;
+  color: #000;
   letter-spacing: 2px;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -780,7 +784,7 @@ img {
 .onlinecontent ol li {
   font-size: 16px;
   line-height: 1.8;
-  color: #585858;
+  color: #000;
   letter-spacing: 2px;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -1212,6 +1216,7 @@ img {
   width: 100%;
   background-color: #F6F6F6;
   padding: 15px 20px;
+  margin-top: 20px;
 }
 
 .onlinepage {
