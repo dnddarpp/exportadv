@@ -30,8 +30,8 @@
 		<?php require_once('i_meta.php'); ?>
 		<title></title>
 		<script type="text/javascript">
-	var pagetype = "<?=$type?>"
-  var contenttype = "<?=$contenttype?>"
+	var pagetype = "<?=$type?>";
+  var contenttype = "<?=$contenttype?>";
 $(function(){
   $("#date").datepicker({dateFormat: 'yy-mm-dd'})
   if(pagetype=="add"){
