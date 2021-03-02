@@ -108,6 +108,12 @@
 					<?php
 						}
 					?>
+					<div class="qa_btn col-6 col-md-3 col-lg-3">
+						<a href="https://events.taiwantrade.com/exportadv" target="_blank">
+							<div class="onlie_qa onreal">報名實體諮詢面談</div>
+						</a>
+					</div>
+
 				</div>
 				<?php if($parent>0){
 				?>

@@ -1,3 +1,5 @@
 
 admin/ckfinder/*
 admin/ckeditor/*
+*.scssc
+.sass-cache/*
