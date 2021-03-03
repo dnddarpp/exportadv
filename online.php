@@ -68,7 +68,7 @@
 	<body >
 		<?php require_once('i_header.php'); ?>
 		<section>
-			<div class="page_banner_pic" style="background-image:url(images/banner_02.png)" ;="">
+			<div class="page_banner_pic" style="background-image:url(images/a.png)" ;="">
 				<div class="page_title">
 					<div class="banner_title">線上諮詢</div>
 				</div>
