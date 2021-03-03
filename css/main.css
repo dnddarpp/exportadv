@@ -173,7 +173,7 @@ img {
 }
 
 .banner_title {
-  margin-top: 1.25rem;
+  margin-top: 7.25rem;
   margin-bottom: 1rem;
   font-size: 3em;
   color: #ffffff;
@@ -285,8 +285,8 @@ img {
 
 .page_banner_pic {
   position: relative;
-  padding-bottom: 31%;
-  top: 72px;
+  padding-bottom: 46%;
+  top: -44px;
   background-size: cover;
   width: 100%;
 }
@@ -1588,6 +1588,10 @@ img {
   .sev_bg {
     min-height: 250px;
   }
+
+  .page_banner_pic {
+    top: 0px;
+  }
 }
 @media only screen and (max-width: 992px) {
   .banner_pic {
@@ -1595,7 +1599,7 @@ img {
   }
 
   .page_banner_pic {
-    top: 63px;
+    top: 21px;
   }
 
   .menu_down {
@@ -1635,8 +1639,16 @@ img {
     width: 180px;
     height: 180px;
   }
+
+  .banner_title {
+    margin-top: 3.25rem;
+  }
 }
 @media only screen and (max-width: 768px) {
+  .page_banner_pic {
+    top: 41px;
+  }
+
   .olient_logo {
     width: 47%;
   }
@@ -1660,6 +1672,7 @@ img {
   .banner_title {
     font-size: 2em;
     margin-bottom: 0.2em;
+    margin-top: 3.25rem;
   }
 
   .page_p {

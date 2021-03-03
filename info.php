@@ -4,7 +4,7 @@
    $sql = "select a.*, b.catename from `page` as a inner join page_cate as b on a.type = b.id where 1=1 and a.id = 2 ";
    $pjdata = qury_sel($sql, $conn);
    $data = mysqli_fetch_assoc($pjdata);
-	 $banner="images/banner_02.png";
+	 $banner="images/a.png";
    ?>
 <!DOCTYPE html>
 <html>

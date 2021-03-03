@@ -48,7 +48,7 @@
 	<body >
 		<?php require_once('i_header.php'); ?>
 		<section>
-			<div class="page_banner_pic" style="background-image:url(images/banner_02.png)" ;="">
+			<div class="page_banner_pic" style="background-image:url(images/a.png)" ;="">
 				<div class="page_title">
 					<div class="banner_title">活動照片</div>
 					<div class="page_p">精彩活動照片</div>
@@ -97,7 +97,7 @@
 							$str_piclist = $value["pic"];
 							$cover = $value["cover"];
 							$picary = json_decode($str_piclist);
-							// $img = array_column($picary[$cover], 'img');							
+							// $img = array_column($picary[$cover], 'img');
 							foreach ($picary[$cover] as $key2 => $value2) {
 								if($key2=="img"){
 									$img =$value2;

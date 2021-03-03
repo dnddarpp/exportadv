@@ -7,7 +7,7 @@
 	<body >
 		<?php require_once('i_header.php'); ?>
 		<section>
-			<div class="page_banner_pic" style="background-image:url(images/banner_02.png)" ;="">
+			<div class="page_banner_pic" style="background-image:url(images/a.png)" ;="">
 				<div class="page_title">
 					<div class="banner_title">政府輔導及各項外銷資源</div>
 					<!-- <div class="page_p"></div> -->

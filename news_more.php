@@ -27,7 +27,7 @@
 	<body >
 		<?php require_once('i_header.php'); ?>
 		<section>
-			<div class="page_banner_pic" style="background-image:url(images/banner_02.png)" ;="">
+			<div class="page_banner_pic" style="background-image:url(images/a.png)" ;="">
 				<div class="page_title">
 					<div class="banner_title">最新消息</div>
 					<div class="page_p">最新消息及產業新聞</div>
