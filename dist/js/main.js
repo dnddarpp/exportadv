@@ -22,3 +22,24 @@ $(document).ready(function() {
     		}
     	});
 })
+function showComfirmAndGo(_msg, _link){
+	$.confirm({
+	    title: '',
+	    content: _msg,
+	    buttons: {
+				"報名實體諮詢": {
+					btnClass: 'btn-info',
+					action: function () {
+            window.open(_link)
+            // window.location.href = _link;
+					}
+				},
+        "不需要，謝謝":{
+          btnClass: 'btn-info',
+          action: function () {
+
+          }
+        }
+	    }
+	});
+}

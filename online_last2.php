@@ -81,6 +81,7 @@
 		        if(String(rr["status"])=="success"){
 		          alert("我們已經收到您的回應！謝謝")
 							$(".qekc_font").fadeOut()
+							showComfirmAndGo("如需獲得更多協助，歡迎報名實體諮詢。","https://events.taiwantrade.com/exportadv")
 		        }else{
 		          alert(rr)
 		        }
@@ -136,7 +137,7 @@
 					<div class="yes_btn clean">
 						<div class="uij">上述資訊是否有幫助?</div>
 						<div class="kekeke adke_active" data-id="1">是</div>
-						<div class="kekeke" data-id="0"><a href="https://events.taiwantrade.com/exportadv" target="_blank">否</a></div>
+						<div class="kekeke" data-id="0"><a>否</a></div>
 					</div>
 				</div>
 				<ul class="prev_btn onlinepage">
