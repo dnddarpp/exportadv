@@ -1,3 +1,10 @@
+<?php
+
+	require_once("include.php");
+
+	$sql2 = "SELECT * FROM media_cate where display=1 ORDER BY  `sort` desc , `id` DESC ";
+	$result2 = qury_sel($sql2, $conn);
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -29,53 +36,35 @@
 				<div class="line"></div>
 				<div class="row">
 					<div class="sitmap_box col-12 col-md-6 col-lg-3">
-						<a href="free.php"><div class="sitemap_tittle">免費諮詢</div></a>
+						<a href="free"><div class="sitemap_tittle">免費諮詢</div></a>
+					</div>
+					<div class="sitmap_box col-12 col-md-6 col-lg-3">
+						<a href="news"><div class="sitemap_tittle"> 最新消息</div></a>
 						<ul class="sitemap_font">
-							<a href="free.php" target="_blank"><li>報名免費諮詢服務</li></a>
-							<a href="free.php" target="_blank"><li>何謂國際行銷諮詢服務?</li></a>
-							<a href="free.php" target="_blank"><li>諮詢服務的好處?</li></a>
-							<a href="free.php" target="_blank"><li>誰來擔任諮詢服務?</li></a>
-							<a href="free.php" target="_blank"><li>諮詢服務內容?</li></a>
-							<a href="free.php" target="_blank"><li>諮詢流程?</li></a>
-							<a href="free.php" target="_blank"><li>重要諮詢服務案例?</li></a>
+							<a href="news" target="_blank"><li>最新消息</li></a>
+							<a href="news" target="_blank"><li>產業新聞</li></a>
 						</ul>
+                	</div>
+					<div class="sitmap_box col-12 col-md-6 col-lg-3">
+						<a href="info"><div class="sitemap_tittle">各國關稅</div></a>
+                	</div>
+					<div class="sitmap_box col-12 col-md-6 col-lg-3">
+						<a href="picture"><div class="sitemap_tittle"> 活動照片</div></a>
+                	</div>
+					<div class="sitmap_box col-12 col-md-6 col-lg-3">
+						<a href="video"><div class="sitemap_tittle"> 影音學習</div></a>
+						<ul class="sitemap_font">
+							<?php
+								while($data = mysqli_fetch_assoc($result2)) {
+									$type = $typename[$data["type"]-1];
+									$date =  explode(" ", $data["date"])[0];
+									$public_date =  explode(" ", $data["Public_Date"])[0];
 
-                	</div>
-					<div class="sitmap_box col-12 col-md-6 col-lg-3">
-						<a href="news.php"><div class="sitemap_tittle"> 最新消息</div></a>
-						<ul class="sitemap_font">
-							<a href="news.php" target="_blank"><li>最新消息</li></a>
-							<a href="news.php" target="_blank"><li>產業新聞</li></a>
-						</ul>
-                	</div>
-					<div class="sitmap_box col-12 col-md-6 col-lg-3">
-						<a href="info.php"><div class="sitemap_tittle">各國關稅</div></a>
-						<ul class="sitemap_font">
-							<a href="info.php" target="_blank"><li>東協10+6</li></a>
-							<a href="info.php" target="_blank"><li>美洲</li></a>
-							<a href="info.php" target="_blank"><li>亞洲</li></a>
-							<a href="info.php" target="_blank"><li>非洲</li></a>
-							<a href="info.php" target="_blank"><li>歐洲</li></a>
-							<a href="info.php" target="_blank"><li>中東</li></a>
-							<a href="info.php" target="_blank"><li>其他</li></a>
-						</ul>
-                	</div>
-					<div class="sitmap_box col-12 col-md-6 col-lg-3">
-						<a href="picture.php"><div class="sitemap_tittle"> 活動照片</div></a>
-                	</div>
-					<div class="sitmap_box col-12 col-md-6 col-lg-3">
-						<a href="video.php"><div class="sitemap_tittle"> 影音學習</div></a>
-						<ul class="sitemap_font">
-							<a href="video.php" target="_blank"><li>數位行銷概論</li></a>
-							<a href="video.php" target="_blank"><li>關鍵字</li></a>
-							<a href="video.php" target="_blank"><li>搜尋引擎(SEO)優化</li></a>
-							<a href="video.php" target="_blank"><li>Google工具</li></a>
-							<a href="video.php" target="_blank"><li>網紅行銷</li></a>
-							<a href="video.php" target="_blank"><li>影音行銷</li></a>
-							<a href="video.php" target="_blank"><li>社群媒體(FB)行銷</li></a>
-							<a href="video.php" target="_blank"><li>品牌行銷</li></a>
-							<a href="video.php" target="_blank"><li>電子商務</li></a>
-							<a href="video.php" target="_blank"><li>數位行銷成功案例</li></a>
+							?>
+							<a href="video" target="_blank"><li><?=$data["catename"]?></li></a>
+							<?php
+								}
+							?>
 						</ul>
                 	</div>
 					<div class="sitmap_box col-12 col-md-6 col-lg-3">
@@ -104,13 +93,13 @@
 					<div class="sitmap_box col-12 col-md-6 col-lg-3">
 						<div class="sitemap_tittle"> 關於本站</div>
 						<ul class="sitemap_font">
-							<a href="Privacy.php" target="_blank"><li>服務條款和隱私權政策內容</li></a>
-							<a href="disclaimer.php" target="_blank"><li>免責聲明</li></a>
-							<a href="contact.php" target="_blank"><li>聯絡我們</li></a>
+							<a href="Privacy" target="_blank"><li>服務條款和隱私權政策內容</li></a>
+							<a href="disclaimer" target="_blank"><li>免責聲明</li></a>
+							<a href="contact" target="_blank"><li>聯絡我們</li></a>
 						</ul>
                 	</div>
 					<div class="sitmap_box col-12 col-md-6 col-lg-3">
-						<a href="online.php"><div class="sitemap_tittle"> 線上諮詢</div></a>
+						<a href="online"><div class="sitemap_tittle"> 線上諮詢</div></a>
                 	</div>
 
 				</div>

@@ -20,12 +20,12 @@
                      <ul class="ft_font">
                         <li class="ft_bold">關於本站</li>
                         <li>
-                           <a href="Privacy.php">
+                           <a href="Privacy">
                               服務條款和隱私權政策內容
                         </li>
-                        <li><a href="disclaimer.php">免責聲明</a></li>
-                        <li><a href="contact.php">聯絡我們</a></li>
-                        <li><a href="sitemap.php">網站地圖</a></li>
+                        <li><a href="disclaimer">免責聲明</a></li>
+                        <li><a href="contact">聯絡我們</a></li>
+                        <li><a href="sitemap">網站地圖</a></li>
                      </ul>
                   </div>
                </div>
