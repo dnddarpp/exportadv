@@ -32,7 +32,7 @@
 		<script type="text/javascript">
 			var pagetype = "<?=$type?>";
       var piclist = <?=$piclist?>;
-      var cover = <?=$cover?>;
+      var cover = "<?=$cover?>";
 			$( document ).ready(function(){
 				$("#parent").val(parent)
 			 if(pagetype=="new"){
@@ -196,18 +196,6 @@
                         <div class="media_bord"><input type="text" name="description" class="form-control" placeholder="建議40字以內" id="description" value="<?=$data["description"] ?>"></div>
                       </td>
                   </tr>
-                  <tr>
-                    <td>
-                        圖片(483*284)
-                    </td>
-                    <td>
-                      <div id='pic_upload'></div>
-								          <div id='pic'>
-								            <?=$pic?>
-								          </div>
-								          <button class='del_img'>刪除圖片</button>
-                    </td>
-                </tr>
 									<tr>
 										<td>上傳照片</td>
 										<td>
