@@ -20,7 +20,7 @@
     		success: function(msg){
     			if(msg.indexOf("success")>=0){
           			alert("登入成功")
-          			location.href = "newslist.php"
+          			location.href = "newslist"
           	    }else{
           	    	alert(msg)
           	    	$("#mid").val("");
