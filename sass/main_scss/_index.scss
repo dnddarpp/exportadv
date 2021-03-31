@@ -199,14 +199,15 @@ img {
     background-color: #ffffff;
     border-radius: 20px;
     padding: 50px 20px;
-    width: 80%;
+    width: 92%;
     margin: 0 auto;
     min-height: 289px;
     box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
 }
 .sev_font{
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.4em;
+    line-height: 1.4em;
     color:$ex_tBlue;
 }
 .sev_icon{
@@ -222,6 +223,10 @@ img {
     img{
         width: 100%;
     }
+}
+.center_wrap{
+    max-width:1200px;
+    margin: 0 auto;
 }
 .title_pic{
     padding-bottom:50px;
@@ -315,8 +320,8 @@ img {
     position: absolute;
     top: -30px;
     left: -30px;
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     background-color: #f2f2f2;
     border-radius:100%;
     overflow: hidden;
