@@ -41,7 +41,7 @@
                   </div>
                   <div class="col-12 col-md-6 col-lg-6">
                     <ul class="ft_font">
-                      <li><div class="qrcode"><img src="images/qrcode.jpg" alt="">手機版</div></li>
+                      <li><div class="qrcode"><img src="images/210231115319.svg" alt="">手機版</div></li>
                     </ul>
                   </div>
                </div>
