@@ -61,7 +61,7 @@
           // Add img element in <div id='preview'>
 
           // $('#preview').append('<div class="albumpic '+nn+'" data-id="'+nn+'"><div class="picput pp"><img src="'+filepath+'"></div><div class="picput inp"><input type="text" name="'+nn+'" data-name = "'+nn+'" data-type="'+ext+'" class="form-control imgtitle" value="'+title+'" placeholder="請輸入照片描述"><input type="button" name="" value="delete" class="del_img"></div></div><hr>');
-          $('#preview').append('<div class="albumpic '+nn+'" data-id="'+nn+'"><table width="100%"><td width="200px"><img src="'+filepath+'"></td><td><input type="radio" name="cover" value="'+i+'">設為封面<input type="text" name="'+nn+'" data-name = "'+nn+'" data-type="'+ext+'" class="form-control imgtitle" value="" placeholder="請輸入照片描述"><input type="button" name="" value="delete" class="del_img"></td></table></div><hr>');
+          $('#preview').append('<div class="albumpic '+nn+'" data-id="'+nn+'"><table width="100%"><td width="200px"><img src="'+filepath+'"></td><td><input type="radio" name="cover" value="'+i+'">設為封面<input type="text" name="'+nn+'" data-name = "'+nn+'" data-type="'+ext+'" class="form-control imgtitle" value="'+title+'" placeholder="請輸入照片描述"><input type="button" name="" value="delete" class="del_img"></td></table></div><hr>');
           $('.'+nn+' .del_img').click(function(){
            $(this).parent().parent().remove();
          });
