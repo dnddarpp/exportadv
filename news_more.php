@@ -22,7 +22,7 @@
 <html>
 	<head>
 		<?php require_once('i_meta.php'); ?>
-		<title>最新消息</title>
+		<title>最新消息 - <?=$data["title"]?></title>
     <script>
     $(document).ready(function() {
       var ww = $(window).width()
