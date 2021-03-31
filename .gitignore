@@ -4,3 +4,4 @@ admin/ckeditor/*
 *.scssc
 .sass-cache/*
 *.cache
+pic/album/*
