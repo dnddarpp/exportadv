@@ -28,6 +28,7 @@ $time_f = date('Y-m-d H:i:s');
 		$data = array(
 			'title'=>$title,
 			'description'=>$description,
+			'Public_Date'=>$time_f,
 			'display'=>$display,
 			'sort'=>$sort,
 			'cover'=>$cover,
@@ -37,7 +38,7 @@ $time_f = date('Y-m-d H:i:s');
 			'MetaKeywords'=>$seo_keywords,
 			'init_time'=>$time_f,
 			'Last_time'=>$time_f,
-		);
+		);		
 		insert_hash( 'event', $data, $conn );
 	} else {
 		$data = array(
