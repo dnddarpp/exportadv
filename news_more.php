@@ -22,7 +22,7 @@
 <html>
 	<head>
 		<?php require_once('i_meta.php'); ?>
-		<title>最新消息</title>
+		<title>最新消息 - <?=$data["title"]?></title>
 	</head>
 	<body >
 		<?php require_once('i_header.php'); ?>
