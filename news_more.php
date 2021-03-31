@@ -23,6 +23,19 @@
 	<head>
 		<?php require_once('i_meta.php'); ?>
 		<title>最新消息</title>
+    <script>
+    $(document).ready(function() {
+      var ww = $(window).width()
+        $(".onlinecontent img").each(function(){
+          $(this).css("text-align","center")
+          var pw = $(this).width()
+          if(pw>ww){
+            $(this).css("width","100%")
+            $(this).css("height","auto")
+          }
+        })
+    })
+    </script>
 	</head>
 	<body >
 		<?php require_once('i_header.php'); ?>
