@@ -45,7 +45,7 @@
 		 	}
 			 $("#delete").click(function(){
 				if(confirm("確定要刪除資料嗎？")){
-						myDelete( 'album', 'id', '<?=$data["id"]?>' ,"albumlist.php?page=<?=$getpage?>&parent=<?=$parent?>");
+						myDelete( 'event', 'id', '<?=$data["id"]?>' ,"albumlist.php");
 				}else{
 
 				}
