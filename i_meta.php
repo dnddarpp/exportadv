@@ -8,7 +8,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="" />
 <meta property="og:site_name" content="成長茁壯方案" />
-<meta property="og:image" content="http:// # /images/1200x630.jpg" />
+<meta property="og:image" content="https://www.exportadv.com.tw/images/1200x630.jpg" />
 <link rel="shortcut icon" href="images/ico.png" type="favicon">
 <link href="dist/css/aos.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
