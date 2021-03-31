@@ -34,6 +34,16 @@
             $(this).css("height","auto")
           }
         })
+        $( window ).resize(function() {
+          var ww = $(window).width()
+          $(".onlinecontent img").each(function(){
+            var pw = $(this).width()
+            if(pw>ww){
+              $(this).css("width","100%")
+              $(this).css("height","auto")
+            }
+          })
+        })
     })
     </script>
 	</head>
