@@ -67,7 +67,7 @@
 						</div>
 						<div class="log_fogt">
 							<div class="save_card">
-								<div class="g-recaptcha" data-sitekey="6LefgjAaAAAAAMuxb6ICTlhgegI70YTa_ngN5CcV"></div>
+								<div class="g-recaptcha" data-sitekey="6LfgKJUaAAAAAGR0WVFeSDJDGONQMfghzu_Tt4zc"></div>
 							</div>
 							<!-- <div class="forget"><a href="#">忘記密碼?</a></div> -->
 						</div>
