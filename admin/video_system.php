@@ -22,6 +22,7 @@ $time_f = date('Y-m-d H:i:s');
 		$data = array(
 			'title'=>$title,
 			'type'=>$type,
+			'Public_Date'=>$time_f,
 			'display'=>$display,
 			'sort'=>$sort,
 			'url'=>$url,

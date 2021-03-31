@@ -29,6 +29,7 @@ $time_f = date('Y-m-d H:i:s');
 			'title'=>$title,
 			'subtitle'=>$subtitle,
 			'description'=>$description,
+			'Public_Date'=>$time_f,
 			'content'=>$content,
 			'MetaTitle'=>$seo_title,
 			'MetaDesc'=>$seo_desc,

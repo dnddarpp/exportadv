@@ -42,6 +42,7 @@ $time_f = date('Y-m-d H:i:s');
 		$data = array(
 			'title'=>$title,
 			'description'=>$description,
+			'Public_Date'=>$time_f,
 			'parent'=>$parent,
 			'display'=>$display,
 			'endpage'=>$endpage,
