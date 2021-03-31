@@ -4,7 +4,7 @@ function openDB(){
     global $conn;
     $servername = "localhost";
     $username = "chunmu_dev";
-    $dbname = "chunmu_exportadv";
+    $dbname = "exportadv";
     $password = "6FUovp3k64";
 
 

@@ -1,4 +1,4 @@
-<?
+<?php
 
 function qury_sel($sql, $conn){
 	$result = $conn->query($sql) or die('select error: '.mysqli_error());
