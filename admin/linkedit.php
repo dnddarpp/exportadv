@@ -20,6 +20,9 @@
     $typename="新增";
   }
 
+  $sql2 = "select * from `link_cate` where 1=1 ";
+  $pjdata2 = qury_sel($sql2, $conn);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -47,7 +50,7 @@ $(function(){
 	});
   $("#delete").click(function(){
 		if(confirm("確定要刪除資料嗎？")){
-				myDelete( 'link', 'id', '<?=$data["id"]?>' ,"linklist.php?page=<?=$getpage?>&type=<?=$typeid?>");
+				myDelete( 'link', 'id', '<?=$data["id"]?>' ,"linklist");
 		}else{
 
 		}
@@ -95,10 +98,40 @@ $(function(){
 							<div class="adsright_title">外連資源-編輯</div>
 							<div class="media_bg">
 								<table width="100%" border="0">
+                  <tr>
+										<td width="160">顯示</td>
+										<td>
+											<select class="form-select m-width" name="" id="display" >
+                      	<option value="1">顯示</option>
+												<option value="0"<?=$data['display'] == '0' ? ' selected="selected"' : '';?>>不顯示</option>
+                      </select>
+                    </td>
+                  </tr>
 									<tr>
-										<td>標題
+										<td>標題</td>
 										<td>
 											<div class="media_bord"><input name="title" type="text" id="title" class="form-control" value="<?=$data["title"] ?>" /></div>
+                    </td>
+                  </tr>
+                  <tr>
+										<td width="160">分類</td>
+										<td>
+											<select class="form-select" name="" id="type" >
+                      	<option value="0">===請選擇===</option>
+                        <?php
+    											while($data2 = mysqli_fetch_assoc($pjdata2)) {
+                            $selected="";
+                            if($data2["id"]==$cate){
+                                $selected="selected";
+                            }
+    										?>
+                        <option value="<?=$data2["id"]?>" <?=$selected?>><?=$data2["catename"]?></option>
+                        <?php
+                          }
+                        ?>
+                      </select>
+                      </td>
+                  </tr>
 									<tr>
                       <td width="10%">
                         外部連結
@@ -107,14 +140,6 @@ $(function(){
                         <div class="media_bord"><input type="text" name="url" class="form-control" placeholder="" id="url" value="<?=$data["url"] ?>"></div>
                       </td>
                   </tr>
-									<tr>
-										<td>顯示
-										<td>
-											<select class="form-control" name="" id="display" >
-                      	<option value="1">顯示</option>
-												<option value="0"<?=$data['display'] == '0' ? ' selected="selected"' : '';?>>不顯示</option>
-                      </select>
-
 									<tr>
                       <td>
                           排序
