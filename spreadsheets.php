@@ -1,3 +1,17 @@
+<?php
+
+	require_once("include.php");
+
+
+	//每頁顯示筆數
+
+	$per = 100;
+
+	$sql_cate = "SELECT * FROM link_cate where display=1 ";
+	$sql_cate .= " ORDER BY  `sort` desc , `id` DESC ";
+	// echo $sql;
+	$result_cate = qury_sel($sql_cate, $conn);
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -28,154 +42,42 @@
 				<div class="info_title">政府輔導及各項外銷資源</div>
 				<div class="line"></div>
 				<div class="row">
+					<?php
+						while($catedata = mysqli_fetch_assoc($result_cate)) {
+							$catename = $catedata["catename"];
+							$cateid = $catedata["id"];
+							$sql_link = "SELECT * FROM link where display=1 and type=".$cateid;
+							$sql_link .= " ORDER BY  `sort` desc , `id` DESC ";
+							// echo $sql;
+							$result_link = qury_sel($sql_link, $conn);
+					?>
 					<div class="col-12 col-md-6 col-lg-3">
 						<div class="spread_bg">
 							<div class="spr_top_Bg">
-								<div class="bu_icon"><img src="images/spr1.svg" alt=""></div>
-								<div class="bu_font">政府輔導外銷資源</div>
+								<div class="bu_icon"><img src="images/spr<?=$cateid?>.svg" alt=""></div>
+								<div class="bu_font"><?=$catename?></div>
 							</div>
 							<div class="spr_font">
-								<a href="https://docs.google.com/spreadsheets/d/1XGr22ow9As7gy0yO5_1EDwelrQq1dUBas4gblXrA6jE/edit?usp=sharing" target="_blank">
-									<div class="bm_line clean">
-										<div class="spr_L">政府輔導外銷資源</div>
-										<div class="spr_R">></div>
-									</div>
-								</a>
+								<?php
+								while($linkdata = mysqli_fetch_assoc($result_link)) {
+								 ?>
+
+									<a href="<?=$linkdata["url"]?>" target="_blank">
+										<div class="bm_line clean">
+											<div class="spr_L"><?=$linkdata["title"]?></div>
+											<div class="spr_R">></div>
+										</div>
+									</a>
+
+								<?php
+								}
+								?>
 							</div>
 						</div>
 					</div>
-					<div class="col-12 col-md-6 col-lg-3">
-						<div class="spread_bg">
-							<div class="spr_top_Bg">
-								<div class="bu_icon"><img src="images/spr2.svg" alt=""></div>
-								<div class="bu_font">海外市場資訊</div>
-							</div>
-							<div class="spr_font">
-								<a href="https://www.taitraesource.com/default.asp" target="_blank">
-									<div class="bm_line clean">
-										<div class="spr_L">貿協全球資訊網</div>
-										<div class="spr_R">></div>
-									</div>
-								</a>
-								<a href="http://itrade.taitra.org.tw/?_ga=2.68217233.1083193909.1609090490-1411834324.1605109940" target="_blank">
-									<div class="bm_line clean">
-										<div class="spr_L">iTrade全球貿易大數據</div>
-										<div class="spr_R">></div>
-									</div>
-								</a>
-								<a href="http://www.tsp.org.tw/" target="_blank">
-									<div class="bm_line clean">
-										<div class="spr_L">海外參展決策輔助平台</div>
-										<div class="spr_R">></div>
-									</div>
-								</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-3">
-						<div class="spread_bg">
-							<div class="spr_top_Bg">
-								<div class="bu_icon"><img src="images/spr3.svg" alt=""></div>
-								<div class="bu_font">數位轉型專區</div>
-							</div>
-							<div class="spr_font">
-								<a href="https://gd.taiwantrade.com/?_ga=2.117056134.1083193909.1609090490-1411834324.1605109940" target="_blank">
-									<div class="bm_line clean">
-										<div class="spr_L">數位基地</div>
-										<div class="spr_R">></div>
-									</div>
-								</a>
-								<a href="https://info.taiwantrade.com/promotion/event?_ga=2.117056134.1083193909.1609090490-1411834324.1605109940#menu=11608" target="_blank">
-									<div class="bm_line clean">
-										<div class="spr_L">電商研討會</div>
-										<div class="spr_R">></div>
-									</div>
-								</a>
-								<a href="https://info.taiwantrade.com/promotion/eclass?_ga=2.117056134.1083193909.1609090490-1411834324.1605109940#menu=11608" target="_blank">
-									<div class="bm_line clean">
-										<div class="spr_L">電商行銷課程</div>
-										<div class="spr_R">></div>
-									</div>
-								</a>
-								<a href="https://taiwantradeseo.blogspot.com/" target="_blank">
-									<div class="bm_line clean">
-										<div class="spr_L">台灣經貿網SEO小學堂</div>
-										<div class="spr_R">></div>
-									</div>
-								</a>
-								<a href="https://info.taiwantrade.com/biznews/%E7%89%A9%E8%81%AF%E7%B6%B2%20IoT%20AIoT%20AI-search.html?match=2&_ga=2.117056134.1083193909.1609090490-1411834324.1605109940#menu=11607" target="_blank">
-									<div class="bm_line clean">
-										<div class="spr_L">AIoT商情</div>
-										<div class="spr_R">></div>
-									</div>
-								</a>
-								<a href="https://www.exportadv.com.tw/zh-tw/menu/8CEB14A6DCF4E70CD0636733C6861689/info.html" target="_blank">
-									<div class="bm_line clean">
-										<div class="spr_L">視訊會議軟體操作分享</div>
-										<div class="spr_R">></div>
-									</div>
-								</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-3">
-						<div class="spread_bg">
-							<div class="spr_top_Bg">
-								<div class="bu_icon"><img src="images/spr4.svg" alt=""></div>
-								<div class="bu_font">海外拓銷工具</div>
-							</div>
-							<div class="spr_font">
-								<a href="http://mk.taiwantrade.com.tw/?_ga=2.117056134.1083193909.1609090490-1411834324.1605109940" target="_blank">
-									<div class="bm_line clean">
-										<div class="spr_L">海外參展･拓展團</div>
-										<div class="spr_R">></div>
-									</div>
-								</a>
-								<a href="https://info.taiwantrade.com/subject/obc?_ga=2.117056134.1083193909.1609090490-1411834324.1605109940" target="_blank">
-									<div class="bm_line clean">
-										<div class="spr_L">海外商務中心</div>
-										<div class="spr_R">></div>
-									</div>
-								</a>
-								<a href="https://events.taiwantrade.com.tw/imdplus?_ga=2.135399089.1083193909.1609090490-1411834324.1605109940" target="_blank">
-									<div class="bm_line clean">
-										<div class="spr_L">國際市場開發專案Plus</div>
-										<div class="spr_R">></div>
-									</div>
-								</a>
-								<a href="http://www.taiwantradeshows.com.tw/zh_TW/index.html" target="_blank">
-									<div class="bm_line clean">
-										<div class="spr_L">臺灣國際專業展</div>
-										<div class="spr_R">></div>
-									</div>
-								</a>
-								<a href="http://www.taiwanservices.com.tw/" target="_blank">
-									<div class="bm_line clean">
-										<div class="spr_L">推廣服務貿易</div>
-										<div class="spr_R">></div>
-									</div>
-								</a>
-								<a href="http://info.taiwantrade.com/CH/?_ga=2.135399089.1083193909.1609090490-1411834324.1605109940" target="_blank">
-									<div class="bm_line clean">
-										<div class="spr_L">臺灣經貿網</div>
-										<div class="spr_R">></div>
-									</div>
-								</a>
-								<a href="http://www.taiwanexcellence.org/" target="_blank">
-									<div class="bm_line clean">
-										<div class="spr_L">台灣精品</div>
-										<div class="spr_R">></div>
-									</div>
-								</a>
-								<a href="https://thpc.taiwantrade.com/?_ga=2.135399089.1083193909.1609090490-1411834324.1605109940" target="_blank">
-									<div class="bm_line clean">
-										<div class="spr_L">清真推廣中心</div>
-										<div class="spr_R">></div>
-									</div>
-								</a>
-							</div>
-						</div>
-					</div>
+					<?php
+					}
+					 ?>
 				</div>
 			</div>
 		</section>
