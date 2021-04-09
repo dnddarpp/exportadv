@@ -5,3 +5,4 @@ admin/ckeditor/*
 .sass-cache/*
 *.cache
 pic/album/*
+.DS_Store
