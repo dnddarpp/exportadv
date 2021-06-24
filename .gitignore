@@ -1,8 +1,4 @@
-
-admin/ckfinder/*
-admin/ckeditor/*
 *.scssc
 .sass-cache/*
 *.cache
-pic/album/*
 .DS_Store
