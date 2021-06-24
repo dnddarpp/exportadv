@@ -81,7 +81,9 @@
 		        if(String(rr["status"])=="success"){
 		          alert("我們已經收到您的回應！謝謝")
 							$(".qekc_font").fadeOut()
-							showComfirmAndGo("如需獲得更多協助，歡迎報名實體諮詢。","https://events.taiwantrade.com/exportadv")
+							if(val=="0"){
+								showComfirmAndGo("如需獲得更多協助，歡迎報名實體諮詢。","https://events.taiwantrade.com/exportadv")
+							}
 		        }else{
 		          alert(rr)
 		        }

@@ -5,7 +5,7 @@
 	$sql = "select *  from `news` where 1=1 and id = $id ";
 	$pjdata = qury_sel($sql, $conn);
 	$data = mysqli_fetch_assoc($pjdata);
-	$typename = Array("最新消息","產業新聞");
+	$typename = Array("最新消息","顧問專欄");
 	$type = $typename[$data["type"]-1];
 	$date = explode(" ", $data["Public_Date"])[0];
 	$last = new DateTime($data["Last_time"]);
@@ -53,7 +53,7 @@
 			<div class="page_banner_pic" style="background-image:url(images/a.png)" ;="">
 				<div class="page_title">
 					<div class="banner_title">最新消息</div>
-					<div class="page_p">最新消息及產業新聞</div>
+					<div class="page_p">最新消息及顧問專欄</div>
 				</div>
 			</div>
 			<div class="container all_wrapptop">

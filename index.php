@@ -2,7 +2,7 @@
 
 	require_once("include.php");
 
-	$typename = Array("最新消息","產業新聞");
+	$typename = Array("最新消息","顧問專欄");
 	$type = $conn->real_escape_string($_GET["type"]);
 	if(!$type){
 		$type=1;

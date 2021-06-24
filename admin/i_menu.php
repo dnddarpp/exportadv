@@ -2,7 +2,7 @@
 	<div class="list_ietm"><a href="newslist">最新消息</a>
     <ul>
 			<li><a href="newslist?type=1">-最新消息</a></li>
-			<li><a href="newslist?type=2">-產業新聞</a></li>
+			<li><a href="newslist?type=2">-顧問專欄</a></li>
 		</ul>
   </div>
 	<div class="list_ietm"><a href="pagelist">單元頁面</a></div>

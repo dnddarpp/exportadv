@@ -180,7 +180,7 @@ function setTypeContent(_val){
 										<td width="85%">
 											<select class="form-select m-width" name="" id="type" >
                       	<option value="1">最新消息</option>
-												<option value="2"<?=$typeid == '2' ? ' selected="selected"' : '';?>>產業新聞</option>
+												<option value="2"<?=$typeid == '2' ? ' selected="selected"' : '';?>>顧問專欄</option>
                       </select>
 									<tr>
 										<td>顯示

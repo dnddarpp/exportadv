@@ -3,7 +3,7 @@
 
 	require_once("include.php");
 
-	$typename = Array("最新消息","產業新聞");
+	$typename = Array("最新消息","顧問專欄");
 	$type = $conn->real_escape_string($_GET["type"]);
 	if(!$type){
 		$type=1;
@@ -55,7 +55,7 @@
 			<div class="page_banner_pic" style="background-image:url(images/a.png)">
 				<div class="page_title">
 					<div class="banner_title">最新消息</div>
-					<div class="page_p">最新消息及產業新聞</div>
+					<div class="page_p">最新消息及顧問專欄</div>
 				</div>
 			</div>
 			<div class="container all_wrapptop">
@@ -76,7 +76,7 @@
 				<div class="info_btn">
 					<ul class="country">
 						<li class="active" data-id="1">最新消息</li>
-						<li data-id="2">產業新聞</li>
+						<li data-id="2">顧問專欄</li>
 					</ul>
 				</div>
 				<?php

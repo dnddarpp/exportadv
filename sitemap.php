@@ -42,7 +42,7 @@
 						<a href="news"><div class="sitemap_tittle"> 最新消息</div></a>
 						<ul class="sitemap_font">
 							<a href="news" target="_blank"><li>最新消息</li></a>
-							<a href="news" target="_blank"><li>產業新聞</li></a>
+							<a href="news" target="_blank"><li>顧問專欄</li></a>
 						</ul>
                 	</div>
 					<div class="sitmap_box col-12 col-md-6 col-lg-3">

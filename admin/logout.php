@@ -3,5 +3,6 @@ session_start();
 session_destroy();
 ?>
 <script type="text/javascript">
-	location.assign("login.php");
+	localStorage.removeItem('ADaccount');
+	location.assign("https://exportadv.com.tw/admin/ADLogin/login.aspx");
 </script>
