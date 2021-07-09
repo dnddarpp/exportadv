@@ -33,6 +33,7 @@
 	var pagetype = "<?=$type?>";
   var contenttype = "<?=$contenttype?>";
 $(function(){
+	//$("#type).val(<?=$typeid?>)
   $("#date").datepicker({dateFormat: 'yy-mm-dd'})
   if(pagetype=="add"){
 		$("#date").datepicker("setDate", new Date());

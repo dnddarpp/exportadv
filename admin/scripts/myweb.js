@@ -72,7 +72,7 @@ function myTimeout(){
 	//location.assign("logout.php");
 }
 
-function myDelete( table_name, key, value){
+function myDelete( table_name, key, value, page){
 	$.ajax({
 		url: "fun/myDelete.php",
 		type: "POST",

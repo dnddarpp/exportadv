@@ -157,16 +157,16 @@
 										if($data["display"]=="0"){
 											$display = "N";
 										}
-										$type = $typename[$data["type"]-1];
+										$typenn = $typename[$data["type"]-1];
 										$date =  explode(" ", $data["date"])[0];
 										$public_date =  explode(" ", $data["Public_Date"])[0];
 								?>
 								<tr>
-									<td><a href="newsedit?type=edit&id=<?=$data["id"]?>"><i class="mdi mdi-file-document-edit"></i></a>
+									<td><a href="newsedit?type=edit&id=<?=$data["id"]?>&typeid=<?=$type?>"><i class="mdi mdi-file-document-edit"></i></a>
 									<!-- <td><a href=news_more.do data-method=post data-param='{"id":118,"act":"display"}'><i class="mdi mdi-eye"></i></a> -->
 									<!-- <td><a href=news_more.do data-method=post data-param='{"id":118,"act":"delete"}' data-confirm=確定要刪除嗎? data-done=reload><i class="mdi mdi-delete"></i></a> -->
 									<td><?=$data["title"]?></td>
-									<td><?=$type?></td>
+									<td><?=$typenn?></td>
 									<td><?=$display?></td>
 									<td><?=$public_date?></td>
 									<td><?=$data["Last_time"]?></td>

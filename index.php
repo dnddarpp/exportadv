@@ -47,7 +47,7 @@
                   </a>
                </div>
                <div class="col-4 col-md-4 col-lg-4" data-aos="flip-left">
-                 <a href="https://youtu.be/qsujZ_GB4Bs" target="_blank">
+                 <a data-fancybox href="#myVideo">
                   <div class="sev_bg">
                      <div class="sev_icon"><img src="images/icon02.svg" alt=""></div>
                      <div class="sev_font">國際行銷諮詢中心協助廠商海外拓銷</div>
@@ -135,5 +135,9 @@
          </div>
       </section>
       <?php require_once('i_bottom.php'); ?>
+	  <video width="80%" height="auto" controls id="myVideo" style="display:none;">
+        <source src="trade.mp4" type="video/mp4">
+        Your browser doesn't support HTML5 video tag.
+      </video>
    </body>
 </html>

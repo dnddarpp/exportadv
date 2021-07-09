@@ -1,5 +1,5 @@
 <?
-require_once("noscreen_top.php");
+require_once("include_no.php");
 
 $id = 0 + $conn->real_escape_string($_POST['id']);
 $title = $conn->real_escape_string($_POST['title']);

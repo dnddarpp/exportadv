@@ -1,5 +1,5 @@
 <?php
-require_once("../include.php");
+require_once("../include_no.php");
 $table = mysqli_real_escape_string( $conn,$_POST["table_name"] );
 $key = mysqli_real_escape_string( $conn,$_POST["key"] );
 $value = mysqli_real_escape_string( $conn,$_POST["value"] );
