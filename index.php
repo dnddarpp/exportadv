@@ -35,7 +35,7 @@
    <body >
       <?php require_once('i_header.php'); ?>
       <section>
-         <div class="banner_pic"><a href="https://exportadv.chun-mu.com/free"><img src="images/sa.png" alt=""></a></div>
+         <div class="banner_pic"><a href="free"><img src="images/sa.png" alt=""></a></div>
          <div class="container center_wrap">
             <div class="row sev_wrap">
                <div class="col-4 col-md-4 col-lg-4" data-aos="flip-left">
